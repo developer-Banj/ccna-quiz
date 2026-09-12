@@ -2,6 +2,9 @@
 
 A static, client-side-only CCNA practice quiz. No backend, no database, no build step — just HTML/CSS/vanilla JS.
 
+View the live site here:
+https://ccna-quiz.onrender.com/
+
 ## Run locally
 
 Open `index.html` directly in a browser, or serve the folder with any static file server, e.g.:
