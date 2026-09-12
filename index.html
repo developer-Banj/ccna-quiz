@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CCNA Practice Quiz</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ===================== SELECT SCREEN ===================== -->
+  <section class="screen screen--select" id="screen-select">
+    <div class="select-wrap">
+      <div class="brand">
+        <span class="brand-mark">CCNA</span>
+        <span class="brand-sub">Practice Quiz</span>
+      </div>
+      <h1>Sharpen your CCNA before exam day</h1>
+      <p class="lede">Pick a question batch below. Each run reshuffles the questions and answer order, so no two attempts look the same.</p>
+
+      <div class="batch-grid" id="batch-grid">
+        <!-- batch cards injected by JS -->
+      </div>
+
+      <button class="btn btn--primary btn--start" id="btn-start" disabled>Start Quiz</button>
+    </div>
+  </section>
+
+  <!-- ===================== QUIZ SCREEN ===================== -->
+  <section class="screen screen--quiz" id="screen-quiz" hidden>
+    <header class="quiz-header">
+      <div class="quiz-header__top">
+        <button class="btn btn--ghost btn--sm" id="btn-quit">&larr; Batches</button>
+        <div class="quiz-progress-label" id="quiz-progress-label">Question 1/100</div>
+        <div class="quiz-score-pill" id="quiz-live-pill" hidden></div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </header>
+
+    <div class="quiz-body">
+      <div class="question-card" id="question-card">
+        <!-- injected per question -->
+      </div>
+    </div>
+
+    <footer class="quiz-footer">
+      <button class="btn btn--ghost" id="btn-prev" disabled>Previous</button>
+      <span class="answered-hint" id="answered-hint"></span>
+      <button class="btn btn--primary" id="btn-next">Next</button>
+    </footer>
+  </section>
+
+  <!-- ===================== RESULTS SCREEN ===================== -->
+  <section class="screen screen--results" id="screen-results" hidden>
+    <div class="results-wrap">
+      <div class="score-card" id="score-card">
+        <div class="score-ring" id="score-ring">
+          <svg viewBox="0 0 120 120" class="score-ring__svg">
+            <circle cx="60" cy="60" r="52" class="score-ring__track" />
+            <circle cx="60" cy="60" r="52" class="score-ring__fill" id="score-ring-fill" />
+          </svg>
+          <div class="score-ring__label">
+            <span class="score-ring__pct" id="score-pct">0%</span>
+          </div>
+        </div>
+        <div class="score-details">
+          <h2 id="score-headline">Nice work!</h2>
+          <p class="score-fraction" id="score-fraction">0 / 0 correct</p>
+          <div class="score-actions">
+            <button class="btn btn--primary" id="btn-retake">Retake this batch</button>
+            <button class="btn btn--ghost" id="btn-back">Back to batch selection</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-section" id="review-section">
+        <h3 class="review-title">Review missed questions</h3>
+        <p class="review-empty" id="review-empty" hidden>Perfect score — nothing to review. 🎉</p>
+        <div class="review-list" id="review-list"></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===================== IMAGE LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" hidden>
+  <img id="lightbox-img" alt="Enlarged exhibit" />
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
