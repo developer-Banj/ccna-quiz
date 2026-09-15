@@ -3,14 +3,16 @@
 
   var BATCHES = {
     A: { key: 'A', label: 'Batch A', data: (window.BATCH_A || []) },
-    B: { key: 'B', label: 'Batch B', data: (window.BATCH_B || []) }
+    B: { key: 'B', label: 'Batch B', data: (window.BATCH_B || []) },
+    C: { key: 'C', label: 'Batch C', data: (window.BATCH_C || []) }
   };
 
   var state = {
     selectedBatch: null,
     questions: [],      // shuffled working copy for this attempt
     current: 0,
-    answers: []          // array of arrays (selected option indexes) per question, sparse
+    answers: [],         // per question: array of selected option indexes (mcq) or {itemId: targetId} map (dragdrop)
+    selectedDragItem: null // itemId currently "picked up" for tap-to-place, or null
   };
 
   // ---------- utilities ----------
@@ -55,6 +57,18 @@
   function prepareAttempt(batchKey) {
     var src = BATCHES[batchKey].data;
     var shuffledQuestions = shuffle(src).map(function (q) {
+      if (q.type === 'dragdrop') {
+        return {
+          type: 'dragdrop',
+          number: q.number,
+          question: q.question,
+          image: q.image || null,
+          items: shuffle(q.items),
+          targets: shuffle(q.targets),
+          correctMapping: q.correctMapping,
+          explanation: q.explanation
+        };
+      }
       var optionOrder = shuffle(q.options.map(function (_, idx) { return idx; }));
       var newOptions = optionOrder.map(function (origIdx) { return q.options[origIdx]; });
       var newCorrect = [];
@@ -62,6 +76,7 @@
         if (q.correctIndexes.indexOf(origIdx) !== -1) newCorrect.push(newIdx);
       });
       return {
+        type: 'mcq',
         number: q.number,
         question: q.question,
         image: q.image || null,
@@ -73,7 +88,8 @@
     state.selectedBatch = batchKey;
     state.questions = shuffledQuestions;
     state.current = 0;
-    state.answers = shuffledQuestions.map(function () { return []; });
+    state.selectedDragItem = null;
+    state.answers = shuffledQuestions.map(function (q) { return q.type === 'dragdrop' ? {} : []; });
   }
 
   // ---------- SELECT SCREEN ----------
@@ -87,7 +103,7 @@
 
   function renderBatchGrid() {
     batchGrid.innerHTML = '';
-    ['A', 'B'].forEach(function (key) {
+    ['A', 'B', 'C'].forEach(function (key) {
       var b = BATCHES[key];
       var card = document.createElement('div');
       card.className = 'batch-card';
@@ -144,7 +160,6 @@
   function renderQuestion() {
     var q = currentQuestion();
     var total = state.questions.length;
-    var isMulti = q.correctIndexes.length > 1;
     var selected = state.answers[state.current];
 
     progressLabel.textContent = 'Question ' + (state.current + 1) + '/' + total;
@@ -156,18 +171,24 @@
       html += '<p class="q-image-hint">Tap the image to zoom</p>';
     }
     html += '<p class="q-text">' + renderRichText(q.question) + '</p>';
-    if (isMulti) {
-      html += '<p class="q-multi-hint">Select ' + q.correctIndexes.length + ' answers.</p>';
+
+    if (q.type === 'dragdrop') {
+      html += renderDragdropBody(q, selected);
+    } else {
+      var isMulti = q.correctIndexes.length > 1;
+      if (isMulti) {
+        html += '<p class="q-multi-hint">Select ' + q.correctIndexes.length + ' answers.</p>';
+      }
+      html += '<div class="options-list" role="group">';
+      q.options.forEach(function (opt, idx) {
+        var isSelected = selected.indexOf(idx) !== -1;
+        html += '<button type="button" class="option ' + (isMulti ? '' : 'option--radio') + (isSelected ? ' is-selected' : '') + '" data-idx="' + idx + '">' +
+          '<span class="option__marker">' + (isSelected ? '&#10003;' : letters(q.options.length)[idx]) + '</span>' +
+          '<span class="option__text">' + renderRichText(opt) + '</span>' +
+          '</button>';
+      });
+      html += '</div>';
     }
-    html += '<div class="options-list" role="group">';
-    q.options.forEach(function (opt, idx) {
-      var isSelected = selected.indexOf(idx) !== -1;
-      html += '<button type="button" class="option ' + (isMulti ? '' : 'option--radio') + (isSelected ? ' is-selected' : '') + '" data-idx="' + idx + '">' +
-        '<span class="option__marker">' + (isSelected ? '&#10003;' : letters(q.options.length)[idx]) + '</span>' +
-        '<span class="option__text">' + renderRichText(opt) + '</span>' +
-        '</button>';
-    });
-    html += '</div>';
 
     questionCard.innerHTML = html;
 
@@ -177,20 +198,154 @@
       });
     }
 
-    Array.prototype.forEach.call(questionCard.querySelectorAll('.option'), function (btn) {
-      btn.addEventListener('click', function () {
-        var idx = parseInt(btn.getAttribute('data-idx'), 10);
-        toggleAnswer(idx, isMulti);
+    if (q.type === 'dragdrop') {
+      wireDragdropEvents(q, selected);
+    } else {
+      var isMultiWire = q.correctIndexes.length > 1;
+      Array.prototype.forEach.call(questionCard.querySelectorAll('.option'), function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = parseInt(btn.getAttribute('data-idx'), 10);
+          toggleAnswer(idx, isMultiWire);
+        });
       });
-    });
+    }
 
     btnPrev.disabled = state.current === 0;
     btnNext.textContent = state.current === total - 1 ? 'Submit' : 'Next';
     updateAnsweredHint();
   }
 
+  // ---------- DRAG AND DROP QUESTION TYPE ----------
+  function renderDragdropBody(q, assign) {
+    var placedIds = Object.keys(assign);
+    var html = '';
+    html += '<p class="dragdrop-hint">Drag each item onto its matching target — or tap an item, then tap a target. Tap a placed item to pull it back.</p>';
+    html += '<div class="dragdrop-wrap">';
+
+    html += '<div class="dragdrop-side">';
+    html += '<p class="dragdrop-side__label">Items</p>';
+    html += '<div class="dragdrop-pool" data-role="pool">';
+    var anyUnplaced = false;
+    q.items.forEach(function (item) {
+      if (placedIds.indexOf(item.id) !== -1) return;
+      anyUnplaced = true;
+      var isSelected = state.selectedDragItem === item.id;
+      html += '<div class="dragdrop-chip' + (isSelected ? ' is-selected' : '') + '" draggable="true" data-item-id="' + item.id + '">' +
+        renderRichText(item.text) + '</div>';
+    });
+    if (!anyUnplaced) {
+      html += '<div class="dragdrop-pool-empty">All items placed</div>';
+    }
+    html += '</div></div>';
+
+    html += '<div class="dragdrop-side">';
+    html += '<p class="dragdrop-side__label">Targets</p>';
+    html += '<div class="dragdrop-targets">';
+    q.targets.forEach(function (target) {
+      var itemsHere = q.items.filter(function (it) { return assign[it.id] === target.id; });
+      html += '<div class="dragdrop-target" data-target-id="' + target.id + '">';
+      html += '<div class="dragdrop-target__label">' + renderRichText(target.text) + '</div>';
+      html += '<div class="dragdrop-target__body">';
+      if (itemsHere.length === 0) {
+        html += '<div class="dragdrop-target__placeholder">Drop here</div>';
+      } else {
+        itemsHere.forEach(function (it) {
+          html += '<div class="dragdrop-chip dragdrop-chip--placed" draggable="true" data-item-id="' + it.id + '">' +
+            renderRichText(it.text) + '</div>';
+        });
+      }
+      html += '</div></div>';
+    });
+    html += '</div></div>';
+
+    html += '</div>';
+    return html;
+  }
+
+  function wireDragdropEvents(q, assign) {
+    function assignItem(itemId, targetId) {
+      state.answers[state.current][itemId] = targetId;
+      state.selectedDragItem = null;
+      renderQuestion();
+    }
+    function unassignItem(itemId) {
+      delete state.answers[state.current][itemId];
+      state.selectedDragItem = null;
+      renderQuestion();
+    }
+
+    var pool = questionCard.querySelector('.dragdrop-pool');
+    if (pool) {
+      pool.addEventListener('dragover', function (e) { e.preventDefault(); });
+      pool.addEventListener('drop', function (e) {
+        e.preventDefault();
+        var itemId = e.dataTransfer.getData('text/plain');
+        if (itemId && assign[itemId]) unassignItem(itemId);
+      });
+    }
+
+    Array.prototype.forEach.call(questionCard.querySelectorAll('.dragdrop-chip'), function (chip) {
+      var itemId = chip.getAttribute('data-item-id');
+
+      chip.addEventListener('dragstart', function (e) {
+        e.dataTransfer.setData('text/plain', itemId);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      chip.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isPlaced = !!assign[itemId];
+        if (isPlaced) {
+          unassignItem(itemId);
+        } else {
+          state.selectedDragItem = (state.selectedDragItem === itemId) ? null : itemId;
+          renderQuestion();
+        }
+      });
+    });
+
+    Array.prototype.forEach.call(questionCard.querySelectorAll('.dragdrop-target'), function (targetEl) {
+      var targetId = targetEl.getAttribute('data-target-id');
+
+      targetEl.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        targetEl.classList.add('is-dragover');
+      });
+      targetEl.addEventListener('dragleave', function () {
+        targetEl.classList.remove('is-dragover');
+      });
+      targetEl.addEventListener('drop', function (e) {
+        e.preventDefault();
+        targetEl.classList.remove('is-dragover');
+        var itemId = e.dataTransfer.getData('text/plain');
+        if (itemId) assignItem(itemId, targetId);
+      });
+
+      targetEl.addEventListener('click', function (e) {
+        if (e.target.closest('.dragdrop-chip')) return;
+        if (state.selectedDragItem) {
+          assignItem(state.selectedDragItem, targetId);
+        } else {
+          var itemsHere = q.items.filter(function (it) { return assign[it.id] === targetId; });
+          if (itemsHere.length === 1) unassignItem(itemsHere[0].id);
+        }
+      });
+    });
+  }
+
+  function isDragdropCorrect(q, assign) {
+    return q.items.every(function (it) {
+      var expected = q.correctMapping[it.id] || null;
+      var actual = assign[it.id] || null;
+      return expected === actual;
+    });
+  }
+
   function updateAnsweredHint() {
-    var answeredCount = state.answers.filter(function (a) { return a.length > 0; }).length;
+    var answeredCount = state.answers.filter(function (a) {
+      return Array.isArray(a) ? a.length > 0 : Object.keys(a).length > 0;
+    }).length;
     answeredHint.textContent = answeredCount + '/' + state.questions.length + ' answered';
   }
 
@@ -206,10 +361,11 @@
   }
 
   btnPrev.addEventListener('click', function () {
-    if (state.current > 0) { state.current--; renderQuestion(); }
+    if (state.current > 0) { state.current--; state.selectedDragItem = null; renderQuestion(); }
   });
 
   btnNext.addEventListener('click', function () {
+    state.selectedDragItem = null;
     if (state.current < state.questions.length - 1) {
       state.current++;
       renderQuestion();
@@ -250,8 +406,15 @@
     var missed = [];
 
     state.questions.forEach(function (q, i) {
-      var selected = state.answers[i] || [];
-      var isCorrect = arraysEqualAsSets(selected, q.correctIndexes);
+      var selected = state.answers[i];
+      var isCorrect;
+      if (q.type === 'dragdrop') {
+        selected = selected || {};
+        isCorrect = isDragdropCorrect(q, selected);
+      } else {
+        selected = selected || [];
+        isCorrect = arraysEqualAsSets(selected, q.correctIndexes);
+      }
       if (isCorrect) {
         correctCount++;
       } else {
@@ -294,12 +457,6 @@
     missed.forEach(function (item) {
       var q = item.q;
       var selected = item.selected;
-      var letterList = letters(q.options.length);
-
-      var selectedText = selected.length
-        ? selected.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ')
-        : '(no answer selected)';
-      var correctText = q.correctIndexes.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ');
 
       var el = document.createElement('div');
       el.className = 'review-item';
@@ -308,8 +465,19 @@
         html += '<div class="q-image-wrap" data-img="assets/' + q.image + '"><img src="assets/' + q.image + '" alt="Exhibit for question ' + q.number + '" loading="lazy" /></div>';
       }
       html += '<p class="review-item__q">' + renderRichText(q.question) + '</p>';
-      html += '<div class="review-answer-row"><span class="tag tag--wrong">Your answer</span><span class="val is-wrong">' + escapeHtml(selectedText) + '</span></div>';
-      html += '<div class="review-answer-row"><span class="tag tag--right">Correct answer</span><span class="val is-right">' + escapeHtml(correctText) + '</span></div>';
+
+      if (q.type === 'dragdrop') {
+        html += renderDragdropReview(q, selected);
+      } else {
+        var letterList = letters(q.options.length);
+        var selectedText = selected.length
+          ? selected.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ')
+          : '(no answer selected)';
+        var correctText = q.correctIndexes.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ');
+        html += '<div class="review-answer-row"><span class="tag tag--wrong">Your answer</span><span class="val is-wrong">' + escapeHtml(selectedText) + '</span></div>';
+        html += '<div class="review-answer-row"><span class="tag tag--right">Correct answer</span><span class="val is-right">' + escapeHtml(correctText) + '</span></div>';
+      }
+
       if (q.explanation) {
         html += '<div class="review-explanation"><strong>Explanation: </strong>' + renderRichText(q.explanation) + '</div>';
       }
@@ -321,6 +489,30 @@
       }
       reviewList.appendChild(el);
     });
+  }
+
+  function renderDragdropReview(q, assign) {
+    function targetText(id) {
+      if (!id) return '(left unplaced)';
+      var match = q.targets.filter(function (t) { return t.id === id; })[0];
+      return match ? match.text : '(left unplaced)';
+    }
+    var html = '<div class="dragdrop-review">';
+    q.items.forEach(function (it) {
+      var yourId = assign[it.id] || null;
+      var correctId = q.correctMapping[it.id] || null;
+      var isRight = yourId === correctId;
+      html += '<div class="dragdrop-review-row ' + (isRight ? 'is-right' : 'is-wrong') + '">';
+      html += '<span class="dragdrop-review-item">' + renderRichText(it.text) + '</span>';
+      html += '<span class="dragdrop-review-arrow">&rarr;</span>';
+      html += '<span class="dragdrop-review-your">' + escapeHtml(targetText(yourId)) + '</span>';
+      if (!isRight) {
+        html += '<span class="dragdrop-review-correct">Correct: ' + escapeHtml(targetText(correctId)) + '</span>';
+      }
+      html += '</div>';
+    });
+    html += '</div>';
+    return html;
   }
 
   btnRetake.addEventListener('click', function () {

@@ -1,4 +1,5 @@
-// Auto-generated from Part_9_.pdf and Part_12.pdf. Do not hand-edit; see build_data.py.
+// Auto-generated from Part_9_.pdf and Part_12.pdf. Do not hand-edit.
+// BATCH_A / BATCH_B built by build_data.py. BATCH_C (leftover + drag-and-drop questions) built by build_batch_c.py.
 var BATCH_A = [
   {
     "id": "p9_q001",
@@ -2994,5 +2995,1309 @@ var BATCH_B = [
       3
     ],
     "explanation": "This question asks about \"metric\", not Administrative Distance, so we have to compare the second parameter in the square brackets. In this case \"100\" is the least desirable (highest) metric and it belongs to the route via 10.10.10.3 (R3)."
+  }
+];
+
+var BATCH_C = [
+  {
+    "id": "p9_q046",
+    "type": "dragdrop",
+    "question": "Drag and drop the facts about wireless architectures from the left onto the types of access point on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "configured and managed by a WLC"
+      },
+      {
+        "id": "i2",
+        "text": "requires a management IP address"
+      },
+      {
+        "id": "i3",
+        "text": "managed from a web-based dashboard"
+      },
+      {
+        "id": "i4",
+        "text": "supports automatic deployment"
+      },
+      {
+        "id": "i5",
+        "text": "accessible for management via Telnet, SSH, or a web GUI"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Autonomous Access Point"
+      },
+      {
+        "id": "t2",
+        "text": "Cloud-Based Access Point"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i5": "t1",
+      "i3": "t2",
+      "i4": "t2"
+    },
+    "explanation": "An autonomous AP is a self-contained device with both wired and wireless hardware so that it can bridge to the wired VLAN infrastructure wireless clients that belong to SSIDs. Each autonomous AP must be configured with a management IP address so that it can be remotely accessed using Telnet, SSH, or a web interface. Each AP must be individually managed and maintained unless you use a management platform such as Cisco DNA Center.\n\nCloud-based AP management is an alternative to purchasing a management platform. The AP management function is pushed into the Internet cloud. For example, Cisco Meraki is a cloud-based AP management service that allows you to automatically deploy Cisco Meraki APs. These APs can then be managed from the Meraki cloud web interface (dashboard).\n\nFrom the above paragraph, we can see autonomous AP is not managed by a WLC."
+  },
+  {
+    "id": "p9_q058",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about device management from the left onto the corresponding device-management types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It uses multiple tools and applications to analyze and troubleshoot different types of data"
+      },
+      {
+        "id": "i2",
+        "text": "It manages device configurations on a per-device basis"
+      },
+      {
+        "id": "i3",
+        "text": "It provides a single interface for network security and analytics."
+      },
+      {
+        "id": "i4",
+        "text": "It supports CLI templates to apply a consistent configuration to multiple devices"
+      },
+      {
+        "id": "i5",
+        "text": "Security is managed near the perimeter of the network with firewalls, VPNs, and IPS"
+      },
+      {
+        "id": "i6",
+        "text": "It uses NetFlow to analyze potential security threats and take appropriate action on that traffic"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Cisco DNA Center Device Management"
+      },
+      {
+        "id": "t2",
+        "text": "Traditional Device Management"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i4": "t1",
+      "i6": "t1",
+      "i1": "t2",
+      "i2": "t2",
+      "i5": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p9_q063",
+    "type": "dragdrop",
+    "question": "Drag and drop the IPv6 address details from the left onto the corresponding types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "used exclusively by a non-host device"
+      },
+      {
+        "id": "i2",
+        "text": "includes link-local and loopback addresses"
+      },
+      {
+        "id": "i3",
+        "text": "identifies an interface on an IPv6 device"
+      },
+      {
+        "id": "i4",
+        "text": "assigned to more than one interface"
+      },
+      {
+        "id": "i5",
+        "text": "derived from the FF00::/8 address range"
+      },
+      {
+        "id": "i6",
+        "text": "provides one-to-many communications"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Anycast"
+      },
+      {
+        "id": "t2",
+        "text": "Multicast"
+      },
+      {
+        "id": "t3",
+        "text": "Unicast"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i4": "t1",
+      "i5": "t2",
+      "i6": "t2",
+      "i2": "t3",
+      "i3": "t3"
+    },
+    "explanation": "An anycast address must be assigned to a router not a host and cannot be used as a source address."
+  },
+  {
+    "id": "p9_q064",
+    "type": "dragdrop",
+    "question": "Drag and drop the elements of a security program from the left onto the corresponding descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "awareness"
+      },
+      {
+        "id": "i2",
+        "text": "education"
+      },
+      {
+        "id": "i3",
+        "text": "security policy"
+      },
+      {
+        "id": "i4",
+        "text": "security standard"
+      },
+      {
+        "id": "i5",
+        "text": "training"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "tactical document that sets out specific tasks and methods to maintain security"
+      },
+      {
+        "id": "t2",
+        "text": "user-awareness learning level that focuses on security practice that all employees must understand and enforce"
+      },
+      {
+        "id": "t3",
+        "text": "user-awareness learning level that focuses on teaching employees how to perform tasks specifically required by their jobs"
+      },
+      {
+        "id": "t4",
+        "text": "document that outlines an organization's security goals and practices and the roles and responsibilities of the organization's personnel"
+      },
+      {
+        "id": "t5",
+        "text": "user-awareness learning level that focuses on learning about topics and practices beyond what is typically required by the user's job"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t2",
+      "i2": "t5",
+      "i3": "t4",
+      "i4": "t1",
+      "i5": "t3"
+    },
+    "explanation": "As per Cisco, an effective security program has three basic elements. First, user awareness. Second, user training. And last, physical access control.\n\nUser awareness: All users should be made aware of the need for data confidentiality to protect corporate information, as well as their own credentials and personal information.\nUser training: All users should be required to participate in periodic formal training so that they become familiar with all corporate security policies."
+  },
+  {
+    "id": "p9_q070",
+    "type": "dragdrop",
+    "question": "Drag and drop the QoS terms from the left onto the descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "Categorizes packets based on the value of traffic descriptor"
+      },
+      {
+        "id": "i2",
+        "text": "Outcome of overutilization"
+      },
+      {
+        "id": "i3",
+        "text": "Guarantees minimum bandwidth to specific traffic classes when an interface is congested"
+      },
+      {
+        "id": "i4",
+        "text": "Uses defined criteria to limit the transmission of one or more classes of traffic"
+      },
+      {
+        "id": "i5",
+        "text": "Prevents congestion by reducing the flow of the outbound traffic"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Class-based weighted fair queuing"
+      },
+      {
+        "id": "t2",
+        "text": "Classification"
+      },
+      {
+        "id": "t3",
+        "text": "Congestion"
+      },
+      {
+        "id": "t4",
+        "text": "Policing"
+      },
+      {
+        "id": "t5",
+        "text": "Shaping"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i1": "t2",
+      "i2": "t3",
+      "i4": "t4",
+      "i5": "t5"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p9_q080",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit. The IP address configurations must be completed on the DC-1 and HQ-1 routers based on these requirements.\n\nDC-1 Gi1/0 must be the last usable address on a /30\nDC-1 Gi1/1 must be the first usable address on a /29\nDC-1 Gi1/2 must be the last usable address on a /28\nHQ-1 Gi1/3 must be the last usable address on a /29\n\nDrag and drop the commands from the left onto the destination interfaces on the right. Not all commands are used.",
+    "image": "p9_q080.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "ip address 192.168.4.13 255.255.255.240"
+      },
+      {
+        "id": "i2",
+        "text": "ip address 209.165.202.129 255.255.255.252"
+      },
+      {
+        "id": "i3",
+        "text": "ip address 209.165.202.130 255.255.255.252"
+      },
+      {
+        "id": "i4",
+        "text": "ip address 209.165.202.131 255.255.255.252"
+      },
+      {
+        "id": "i5",
+        "text": "ip address 192.168.3.14 255.255.255.240"
+      },
+      {
+        "id": "i6",
+        "text": "ip address 192.168.4.9 255.255.255.248"
+      },
+      {
+        "id": "i7",
+        "text": "ip address 192.168.3.14 255.255.255.248"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "DC-1 Gi1/0"
+      },
+      {
+        "id": "t2",
+        "text": "DC-1 Gi1/1"
+      },
+      {
+        "id": "t3",
+        "text": "DC-1 Gi1/2"
+      },
+      {
+        "id": "t4",
+        "text": "HQ-1 Gi1/3"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i6": "t2",
+      "i5": "t3",
+      "i7": "t4"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p9_q083",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about networking from the left onto the corresponding networking types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "This type implements changes individually at each device"
+      },
+      {
+        "id": "i2",
+        "text": "This type provides a centralized view of the network"
+      },
+      {
+        "id": "i3",
+        "text": "This type leverages controllers to handle network management"
+      },
+      {
+        "id": "i4",
+        "text": "Maintenance costs are higher than with other networking options"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Traditional Networking"
+      },
+      {
+        "id": "t2",
+        "text": "Controller-Based Networking"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i4": "t1",
+      "i2": "t2",
+      "i3": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p9_q099",
+    "type": "dragdrop",
+    "question": "Drag and drop the traffic types from the left onto the QoS delivery mechanisms on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "database synchronization traffic"
+      },
+      {
+        "id": "i2",
+        "text": "VoIP traffic"
+      },
+      {
+        "id": "i3",
+        "text": "standard Web browsing traffic"
+      },
+      {
+        "id": "i4",
+        "text": "video traffic"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "best effort"
+      },
+      {
+        "id": "t2",
+        "text": "priority queue"
+      },
+      {
+        "id": "t3",
+        "text": "policing"
+      },
+      {
+        "id": "t4",
+        "text": "shaping"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i2": "t2",
+      "i4": "t3",
+      "i1": "t4"
+    },
+    "explanation": "best effort: standard Web browsing traffic (Regular Web traffic is considered a low priority, TCP or UDP)\npriority queue: VoIP traffic (VoIP is time sensitive and it uses UDP to speed up the delivery of packets. But it should have priority to guarantee quality)\npolicing: video traffic (Video stream is time sensitive and it uses UDP to speed up the delivery of packets. But the bandwidth for video is much higher than voice so we can drop some packets if there is not enough bandwidth. The quality is still acceptable for most viewers)\nshaping: database synchronization traffic (DB communications use TCP to warranties the delivery of the packets, queuing the packets don't affect the transmission)"
+  },
+  {
+    "id": "p9_q101",
+    "type": "dragdrop",
+    "question": "Drag and drop the functions of AAA supporting protocols from the left onto the protocols on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "separates all three AAA operations"
+      },
+      {
+        "id": "i2",
+        "text": "encrypts the entire body of the access-request packet"
+      },
+      {
+        "id": "i3",
+        "text": "encrypts only the password when it sends an access request"
+      },
+      {
+        "id": "i4",
+        "text": "Combines authentication and authorization"
+      },
+      {
+        "id": "i5",
+        "text": "uses UDP"
+      },
+      {
+        "id": "i6",
+        "text": "uses TCP"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "RADIUS"
+      },
+      {
+        "id": "t2",
+        "text": "TACACS+"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i4": "t1",
+      "i5": "t1",
+      "i1": "t2",
+      "i2": "t2",
+      "i6": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q001",
+    "type": "dragdrop",
+    "question": "Drag and drop the SNMP components from the left onto descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "agent"
+      },
+      {
+        "id": "i2",
+        "text": "managed device"
+      },
+      {
+        "id": "i3",
+        "text": "MIB"
+      },
+      {
+        "id": "i4",
+        "text": "NMS"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "network node controlled by SNMP"
+      },
+      {
+        "id": "t2",
+        "text": "collection of uniquely identifiable objects whose state can be interrogated over SNMP"
+      },
+      {
+        "id": "t3",
+        "text": "system that runs monitoring applications and controls network nodes"
+      },
+      {
+        "id": "t4",
+        "text": "SNMP component that captures and translates device and network data"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t2",
+      "i4": "t3",
+      "i1": "t4"
+    },
+    "explanation": "The SNMP agent is the software component within the managed device that maintains the data for the device and reports these data, as needed, to managing systems. The agent and MIB reside on the routing device (router, access server, or switch). To enable the SNMP agent on a Cisco routing device, you must define the relationship between the manager and the agent."
+  },
+  {
+    "id": "p12_q003",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about device management from the left onto the corresponding types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "requires manual configuration of complex protocols"
+      },
+      {
+        "id": "i2",
+        "text": "leverages Cisco Prime Infrastructure"
+      },
+      {
+        "id": "i3",
+        "text": "reduces the workload for enterprise customers"
+      },
+      {
+        "id": "i4",
+        "text": "lacks support for SDA"
+      },
+      {
+        "id": "i5",
+        "text": "uses algorithms to detect security threats"
+      },
+      {
+        "id": "i6",
+        "text": "uses northbound APIs"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Traditional Campus Device Management"
+      },
+      {
+        "id": "t2",
+        "text": "Cisco DNA Center"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t1",
+      "i4": "t1",
+      "i3": "t2",
+      "i5": "t2",
+      "i6": "t2"
+    },
+    "explanation": "One example of traditional network management, Cisco Prime Infrastructure (PI) Management, has been used to manage enterprise networks. Cisco DNA Center reduces the workload for enterprise customers, uses algorithms to detect security threats, and uses northbound APIs, while traditional campus device management requires manual configuration of complex protocols, leverages Cisco Prime Infrastructure, and lacks support for SDA."
+  },
+  {
+    "id": "p12_q010",
+    "type": "dragdrop",
+    "question": "Drag and drop the IPv6 address type characteristics from the left to the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "addresses with prefix FC00::/7"
+      },
+      {
+        "id": "i2",
+        "text": "routable and reachable via the Internet"
+      },
+      {
+        "id": "i3",
+        "text": "addressing for exclusive use internally without Internet routing"
+      },
+      {
+        "id": "i4",
+        "text": "equivalent to public IPv4 addresses"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Global Unicast Address"
+      },
+      {
+        "id": "t2",
+        "text": "Unique Local Address"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i4": "t1",
+      "i1": "t2",
+      "i3": "t2"
+    },
+    "explanation": "An IPv6 Unique Local Address is an IPv6 address in the block FC00::/7. It is the approximate IPv6 counterpart of the IPv4 private address. It is not routable on the global Internet. Note: In the past, Site-local addresses (FEC0::/10) are equivalent to private IP addresses in IPv4 but now they are deprecated."
+  },
+  {
+    "id": "p12_q020",
+    "type": "dragdrop",
+    "question": "Drag and drop the virtualization concepts from the left onto the matching statements on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "hypervisor"
+      },
+      {
+        "id": "i2",
+        "text": "guest operating system"
+      },
+      {
+        "id": "i3",
+        "text": "multithreading"
+      },
+      {
+        "id": "i4",
+        "text": "virtual machine"
+      },
+      {
+        "id": "i5",
+        "text": "host operating system"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "An operating system instance that is decoupled from the server hardware"
+      },
+      {
+        "id": "t2",
+        "text": "Each core can run more than one process simultaneously"
+      },
+      {
+        "id": "t3",
+        "text": "Runs on a physical server, manages, and allocates the physical resources"
+      },
+      {
+        "id": "t4",
+        "text": "The software that manages the basic functions of the physical hardware"
+      },
+      {
+        "id": "t5",
+        "text": "The software that manages the basic functions of the virtual machine"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i3": "t2",
+      "i1": "t3",
+      "i5": "t4",
+      "i2": "t5"
+    },
+    "explanation": "A virtual machine (VM) is an operating system (OS) or application environment installed on software that imitates dedicated hardware. The host operating system executes directly on the hardware while a guest operating system executes on a virtual machine. Therefore the best matches are: virtual machine = an operating system instance decoupled from the server hardware; host operating system = manages the basic functions of the physical hardware; guest operating system = manages the basic functions of the virtual machine."
+  },
+  {
+    "id": "p12_q023",
+    "type": "dragdrop",
+    "question": "Drag and drop the TCP or UDP details from the left onto their corresponding protocols on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "provides best-effort service"
+      },
+      {
+        "id": "i2",
+        "text": "used to reliably share files between devices"
+      },
+      {
+        "id": "i3",
+        "text": "appropriate for streaming operations with minimal latency"
+      },
+      {
+        "id": "i4",
+        "text": "supports reliable data transmission"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "TCP"
+      },
+      {
+        "id": "t2",
+        "text": "UDP"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i4": "t1",
+      "i1": "t2",
+      "i3": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q031",
+    "type": "dragdrop",
+    "question": "Drag and drop the configuration management terms from the left onto the descriptions on the right. Not all terms are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "agentless"
+      },
+      {
+        "id": "i2",
+        "text": "agent"
+      },
+      {
+        "id": "i3",
+        "text": "provision"
+      },
+      {
+        "id": "i4",
+        "text": "pull"
+      },
+      {
+        "id": "i5",
+        "text": "push"
+      },
+      {
+        "id": "i6",
+        "text": "post"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "easy-to-manage deployment option that may lack scalability"
+      },
+      {
+        "id": "t2",
+        "text": "device hardware that runs without embedded management features"
+      },
+      {
+        "id": "t3",
+        "text": "to automatically install or deploy a configuration or update"
+      },
+      {
+        "id": "t4",
+        "text": "daemon that determines when the central authority has updates available"
+      },
+      {
+        "id": "t5",
+        "text": "model in which the central server sends updates to nodes on an as-needed basis"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i1": "t2",
+      "i4": "t3",
+      "i3": "t4",
+      "i5": "t5"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q045",
+    "type": "dragdrop",
+    "question": "Drag and drop the AAA features from the left onto the corresponding AAA security services on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It leverages a RADIUS server to grant user access to a reverse Telnet session"
+      },
+      {
+        "id": "i2",
+        "text": "It enables the device to allow user- or group-based access"
+      },
+      {
+        "id": "i3",
+        "text": "It restricts the CLI commands that a user is able to perform"
+      },
+      {
+        "id": "i4",
+        "text": "It records the amount of time for which a user accesses the network on a remote server"
+      },
+      {
+        "id": "i5",
+        "text": "It uses TACACS+ to log the configuration commands entered by a network administrator"
+      },
+      {
+        "id": "i6",
+        "text": "It verifies the user before granting access to the device"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Authentication"
+      },
+      {
+        "id": "t2",
+        "text": "Authorization"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i6": "t1",
+      "i2": "t2",
+      "i3": "t2"
+    },
+    "explanation": "The two unused options 'It records the amount of time for which a user accesses the network on a remote server' and 'It uses TACACS+ to log the configuration commands entered by a network administrator' are Accounting features. To use a RADIUS server to allow a reverse Telnet session we have to use the command 'aaa authentication login reverse-access group radius'. Therefore the option 'It leverages a RADIUS server to grant user access to a reverse Telnet session' belongs to Authentication, not Authorization. Note: Reverse telnet allows you to telnet to a device then from that device connect to the console of another device."
+  },
+  {
+    "id": "p12_q063",
+    "type": "dragdrop",
+    "question": "Drag and drop the DNS lookup commands from the left onto the functions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "ip dns server"
+      },
+      {
+        "id": "i2",
+        "text": "ip domain list"
+      },
+      {
+        "id": "i3",
+        "text": "ip domain lookup source-interface"
+      },
+      {
+        "id": "i4",
+        "text": "ip domain name"
+      },
+      {
+        "id": "i5",
+        "text": "ip host"
+      },
+      {
+        "id": "i6",
+        "text": "ip name-server"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "enables DNS lookup on an individual interface"
+      },
+      {
+        "id": "t2",
+        "text": "enables the DNS server on the device"
+      },
+      {
+        "id": "t3",
+        "text": "identifies a DNS server to provide lookup services"
+      },
+      {
+        "id": "t4",
+        "text": "specifies a sequence of domain names"
+      },
+      {
+        "id": "t5",
+        "text": "specifies the default domain to append to unqualified host names"
+      },
+      {
+        "id": "t6",
+        "text": "statically maps an IP address to a hostname"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i1": "t2",
+      "i6": "t3",
+      "i2": "t4",
+      "i4": "t5",
+      "i5": "t6"
+    },
+    "explanation": "The command 'ip domain-lookup' enables DNS-based host name-to-address translation. This command is enabled by default. The ip domain name command defines a list of default domain names to complete unqualified hostnames. The ip domain list command is similar to the ip domain name command, except that with the ip domain list command you can define a list of domains, each to be tried in turn until the system finds a match. The ip host command defines a static hostname-to-address mapping in the hostname cache. For example: Device(config)# ip host cisco-rtp 192.168.0.148"
+  },
+  {
+    "id": "p12_q064",
+    "type": "dragdrop",
+    "question": "Drag and drop the TCP or UDP details from the left onto their corresponding protocols on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "provides best-effort service"
+      },
+      {
+        "id": "i2",
+        "text": "requires the client and the server to establish a connection before sending the packet"
+      },
+      {
+        "id": "i3",
+        "text": "transmitted based on data contained in the packet without the need for a data channel"
+      },
+      {
+        "id": "i4",
+        "text": "supports reliable data transmission"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "TCP"
+      },
+      {
+        "id": "t2",
+        "text": "UDP"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i4": "t1",
+      "i1": "t2",
+      "i3": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q066",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit. OSPF is running between site A and site B. Drag and drop the destination IPs from the left onto the network segments used to reach the destination on the right.",
+    "image": "p12_q066.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "10.10.10.16"
+      },
+      {
+        "id": "i2",
+        "text": "10.10.13.1"
+      },
+      {
+        "id": "i3",
+        "text": "10.10.13.129"
+      },
+      {
+        "id": "i4",
+        "text": "10.10.13.150"
+      },
+      {
+        "id": "i5",
+        "text": "10.10.100.128"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Internet"
+      },
+      {
+        "id": "t2",
+        "text": "Router1"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i3": "t1",
+      "i5": "t1",
+      "i2": "t2",
+      "i4": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q069",
+    "type": "dragdrop",
+    "question": "Drag and drop the statement about AAA services from the left to the corresponding AAA services on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It grants access to network assets, such as FTP servers."
+      },
+      {
+        "id": "i2",
+        "text": "It limits the services available to a user."
+      },
+      {
+        "id": "i3",
+        "text": "It performs user validation via TACACS+."
+      },
+      {
+        "id": "i4",
+        "text": "It records the duration of each connection."
+      },
+      {
+        "id": "i5",
+        "text": "It supports User Access Reporting."
+      },
+      {
+        "id": "i6",
+        "text": "It verifies \"who you are\"."
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Accounting"
+      },
+      {
+        "id": "t2",
+        "text": "Authentication"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i5": "t1",
+      "i3": "t2",
+      "i6": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q101",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about AAA from the left onto the corresponding AAA services on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It records the amount of network resources consumed by the user"
+      },
+      {
+        "id": "i2",
+        "text": "It tracks the services that a user is using"
+      },
+      {
+        "id": "i3",
+        "text": "It assigns per-user attributes"
+      },
+      {
+        "id": "i4",
+        "text": "It permits and denies login attempts"
+      },
+      {
+        "id": "i5",
+        "text": "It supports local, PPP, RADIUS, and TACACS+ options"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Accounting"
+      },
+      {
+        "id": "t2",
+        "text": "Authentication"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t1",
+      "i4": "t2",
+      "i5": "t2"
+    },
+    "explanation": "Accounting tracks the services that a user is using. For example, it can log what commands were issued by a user. Authentication also supports PPP via the 'aaa authentication ppp ...' command. Authorization assigns per-user attributes."
+  },
+  {
+    "id": "p12_q104",
+    "type": "dragdrop",
+    "question": "Drag and drop the characteristics of northbound APIs from the left onto any position on the right. Not all characteristics are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "supports automation"
+      },
+      {
+        "id": "i2",
+        "text": "communicates between the SDN controller and the application plane"
+      },
+      {
+        "id": "i3",
+        "text": "communicates between the SDN controller and the data plane"
+      },
+      {
+        "id": "i4",
+        "text": "supports data sharing between systems"
+      },
+      {
+        "id": "i5",
+        "text": "supports network virtualization protocols"
+      },
+      {
+        "id": "i6",
+        "text": "supports REST-based requirements"
+      },
+      {
+        "id": "i7",
+        "text": "uses OpenFlow to interface between the data and control planes"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Position 1"
+      },
+      {
+        "id": "t2",
+        "text": "Position 2"
+      },
+      {
+        "id": "t3",
+        "text": "Position 3"
+      },
+      {
+        "id": "t4",
+        "text": "Position 4"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t2",
+      "i5": "t3",
+      "i6": "t4"
+    },
+    "explanation": "SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. The networking administrators and SDN applications want to control the controller, so the controller needs a northbound interface (NBI) to communicate with them. The NBI applications include various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control. (Communicating with the data plane and using OpenFlow are southbound API characteristics, not northbound.)"
+  },
+  {
+    "id": "p12_q106",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about access-point modes from the left onto the corresponding modes on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It captures and forwards packets on a specific wireless channel"
+      },
+      {
+        "id": "i2",
+        "text": "It enables enhanced RFID-tag location tracking"
+      },
+      {
+        "id": "i3",
+        "text": "It provides air-quality data and interference detection across all enabled channels"
+      },
+      {
+        "id": "i4",
+        "text": "It supports analytics for wireless performance testing"
+      },
+      {
+        "id": "i5",
+        "text": "It supports real-time Wi-Fi client troubleshooting when network engineers are offsite"
+      },
+      {
+        "id": "i6",
+        "text": "It supports software that analyzes wireless frames on a remote device"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Monitor"
+      },
+      {
+        "id": "t2",
+        "text": "Sensor"
+      },
+      {
+        "id": "t3",
+        "text": "Sniffer"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t1",
+      "i5": "t2",
+      "i4": "t2",
+      "i1": "t3",
+      "i6": "t3"
+    },
+    "explanation": "Monitor mode: does not transmit at all. It acts like a dedicated sensor for location-based services (LBS), rogue AP detection, and Checks Intrusion Detection System (IDS). In this mode, the AP will not broadcast an SSID so clients are unable to connect to it. Sniffer mode: runs as a sniffer and captures and forwards all the packets on a particular channel to a remote machine where you can use a protocol analysis tool (Wireshark, Airopeek, etc) to review the packets and diagnose issues. Strictly used for troubleshooting purposes. Sensor mode: this is a special mode which is not listed in the books but you need to know. In this mode, the device can actually function much like a WLAN client would, associating and identifying client connectivity issues within the network in real time without requiring an IT technician to be on site."
+  },
+  {
+    "id": "p12_q107",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit. Drag and drop the destination IPs from the left onto the paths to reach those destinations on the right.",
+    "image": "p12_q107.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "1.1.1.1"
+      },
+      {
+        "id": "i2",
+        "text": "10.10.13.126"
+      },
+      {
+        "id": "i3",
+        "text": "10.10.13.129"
+      },
+      {
+        "id": "i4",
+        "text": "10.10.13.150"
+      },
+      {
+        "id": "i5",
+        "text": "10.10.13.209"
+      },
+      {
+        "id": "i6",
+        "text": "209.165.200.30"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Router2"
+      },
+      {
+        "id": "t2",
+        "text": "Router3"
+      },
+      {
+        "id": "t3",
+        "text": "Router4"
+      },
+      {
+        "id": "t4",
+        "text": "Router5"
+      },
+      {
+        "id": "t5",
+        "text": "Internet cloud"
+      },
+      {
+        "id": "t6",
+        "text": "MPLS cloud"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t2",
+      "i4": "t3",
+      "i5": "t4",
+      "i1": "t5",
+      "i6": "t6"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p12_q108",
+    "type": "dragdrop",
+    "question": "Drag and drop the IPv6 address descriptions from the left onto the IPv6 address types on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "IPv6 addresses in the format FF02::5"
+      },
+      {
+        "id": "i2",
+        "text": "IPv6 addresses that begin with FD"
+      },
+      {
+        "id": "i3",
+        "text": "may be used by multiple organizations at the same time"
+      },
+      {
+        "id": "i4",
+        "text": "private IPv6 addresses"
+      },
+      {
+        "id": "i5",
+        "text": "serve as next-hop addresses"
+      },
+      {
+        "id": "i6",
+        "text": "unable to serve as destination addresses"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Unique Local Addresses"
+      },
+      {
+        "id": "t2",
+        "text": "Link-Local Addresses"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t1",
+      "i4": "t1",
+      "i5": "t2",
+      "i6": "t2"
+    },
+    "explanation": "Unique local addresses (or site-local addresses) are analogous to IPv4's private address classes. They start with FC00::/7 (for use in private networks) - the first octet can be FC or FD. However, when you implement this you have to set the L-bit (the right-most bit of the first octet) to 1, which means the first two digits will be FD. FF02::5 is a multicast address (not a link-local address). It only has a link-local scope (an IPv6 router never forwards this type of traffic beyond the local link) so this IPv6 address does not belong to 'link-local addresses'. You can use either a Global Unicast IPv6 address or a Link-Local IPv6 address as the next hop address. However, if you provide the Link-Local IPv6 address as the next hop address, you need to provide the interface number also."
   }
 ];

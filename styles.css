@@ -148,11 +148,14 @@ button {
 
 .batch-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
 }
-@media (max-width: 620px) {
+@media (max-width: 780px) {
+  .batch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
   .batch-grid { grid-template-columns: 1fr; }
 }
 
@@ -392,6 +395,144 @@ button {
   color: var(--text-faint);
   margin: -0.9rem 0 1rem;
 }
+
+/* ===================== DRAG-AND-DROP QUESTIONS ===================== */
+.dragdrop-hint {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin: -0.9rem 0 1.1rem;
+}
+
+.dragdrop-wrap {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dragdrop-side {
+  flex: 1 1 260px;
+  min-width: 240px;
+}
+
+.dragdrop-side__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.6rem;
+}
+
+.dragdrop-pool {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 64px;
+  padding: 0.75rem;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+}
+
+.dragdrop-pool-empty {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  text-align: center;
+  padding: 0.6rem;
+}
+
+.dragdrop-chip {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  cursor: grab;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.dragdrop-chip:hover { border-color: var(--border-soft); background: var(--bg-card-hover); }
+.dragdrop-chip:active { transform: scale(0.98); cursor: grabbing; }
+.dragdrop-chip.is-selected {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent-soft), transparent 70%), var(--bg-card);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+.dragdrop-chip--placed { margin-bottom: 0.5rem; }
+.dragdrop-chip--placed:last-child { margin-bottom: 0; }
+
+.dragdrop-targets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dragdrop-target {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  padding: 0.8rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.dragdrop-target.is-dragover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent-soft), transparent 70%), var(--bg-card);
+}
+
+.dragdrop-target__label {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.55rem;
+}
+
+.dragdrop-target__body {
+  min-height: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dragdrop-target__placeholder {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  border: 1px dashed var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .dragdrop-wrap { flex-direction: column; gap: 1.1rem; }
+}
+
+/* dragdrop review (missed-question screen) */
+.dragdrop-review {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+}
+.dragdrop-review-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  box-shadow: inset 3px 0 0 var(--border);
+}
+.dragdrop-review-row.is-right { box-shadow: inset 3px 0 0 var(--good); }
+.dragdrop-review-row.is-wrong { box-shadow: inset 3px 0 0 var(--bad); }
+.dragdrop-review-item { font-weight: 600; }
+.dragdrop-review-arrow { color: var(--text-faint); }
+.dragdrop-review-your { color: var(--text-dim); }
+.dragdrop-review-row.is-wrong .dragdrop-review-your { color: var(--bad); }
+.dragdrop-review-row.is-right .dragdrop-review-your { color: var(--good); }
+.dragdrop-review-correct { color: var(--good); font-weight: 600; }
 
 .quiz-footer {
   position: sticky;
