@@ -4,7 +4,10 @@
   var BATCHES = {
     A: { key: 'A', label: 'Batch A', data: (window.BATCH_A || []) },
     B: { key: 'B', label: 'Batch B', data: (window.BATCH_B || []) },
-    C: { key: 'C', label: 'Batch C', data: (window.BATCH_C || []) }
+    C: { key: 'C', label: 'Batch C', data: (window.BATCH_C || []) },
+    D: { key: 'D', label: 'Batch D', data: (window.BATCH_D || []) },
+    E: { key: 'E', label: 'Batch E', data: (window.BATCH_E || []) },
+    F: { key: 'F', label: 'Batch F', data: (window.BATCH_F || []) }
   };
 
   var state = {
@@ -103,7 +106,7 @@
 
   function renderBatchGrid() {
     batchGrid.innerHTML = '';
-    ['A', 'B', 'C'].forEach(function (key) {
+    ['A', 'B', 'C', 'D', 'E', 'F'].forEach(function (key) {
       var b = BATCHES[key];
       var card = document.createElement('div');
       card.className = 'batch-card';
@@ -361,7 +364,7 @@
   }
 
   btnPrev.addEventListener('click', function () {
-    if (state.current > 0) { state.current--; state.selectedDragItem = null; renderQuestion(); }
+    if (state.current > 0) { state.current--; state.selectedDragItem = null; renderQuestion(); window.scrollTo(0, 0); }
   });
 
   btnNext.addEventListener('click', function () {
@@ -369,6 +372,7 @@
     if (state.current < state.questions.length - 1) {
       state.current++;
       renderQuestion();
+      window.scrollTo(0, 0);
     } else {
       submitQuiz();
     }
@@ -403,7 +407,8 @@
   function submitQuiz() {
     var total = state.questions.length;
     var correctCount = 0;
-    var missed = [];
+    var correctList = [];
+    var missedList = [];
 
     state.questions.forEach(function (q, i) {
       var selected = state.answers[i];
@@ -415,10 +420,12 @@
         selected = selected || [];
         isCorrect = arraysEqualAsSets(selected, q.correctIndexes);
       }
+      var entry = { q: q, selected: selected, isCorrect: isCorrect };
       if (isCorrect) {
         correctCount++;
+        correctList.push(entry);
       } else {
-        missed.push({ q: q, selected: selected });
+        missedList.push(entry);
       }
     });
 
@@ -438,7 +445,7 @@
       });
     });
 
-    renderReview(missed);
+    renderReview(correctList.concat(missedList), correctCount === total);
     showScreen('results');
   }
 
@@ -450,13 +457,14 @@
     return "Let's review and try again.";
   }
 
-  function renderReview(missed) {
+  function renderReview(all, isPerfectScore) {
     reviewList.innerHTML = '';
-    reviewEmpty.hidden = missed.length > 0;
+    reviewEmpty.hidden = !isPerfectScore;
 
-    missed.forEach(function (item) {
+    all.forEach(function (item) {
       var q = item.q;
       var selected = item.selected;
+      var isCorrect = item.isCorrect;
 
       var el = document.createElement('div');
       el.className = 'review-item';
@@ -464,7 +472,8 @@
       if (q.image) {
         html += '<div class="q-image-wrap" data-img="assets/' + q.image + '"><img src="assets/' + q.image + '" alt="Exhibit for question ' + q.number + '" loading="lazy" /></div>';
       }
-      html += '<p class="review-item__q">' + renderRichText(q.question) + '</p>';
+      html += '<p class="review-item__q"><span class="review-badge ' + (isCorrect ? 'review-badge--right' : 'review-badge--wrong') + '">' +
+        (isCorrect ? '&#10003;' : '&#10007;') + '</span>' + renderRichText(q.question) + '</p>';
 
       if (q.type === 'dragdrop') {
         html += renderDragdropReview(q, selected);
@@ -474,7 +483,7 @@
           ? selected.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ')
           : '(no answer selected)';
         var correctText = q.correctIndexes.map(function (i) { return letterList[i] + '. ' + q.options[i]; }).join('  •  ');
-        html += '<div class="review-answer-row"><span class="tag tag--wrong">Your answer</span><span class="val is-wrong">' + escapeHtml(selectedText) + '</span></div>';
+        html += '<div class="review-answer-row"><span class="tag ' + (isCorrect ? 'tag--right' : 'tag--wrong') + '">Your answer</span><span class="val ' + (isCorrect ? 'is-right' : 'is-wrong') + '">' + escapeHtml(selectedText) + '</span></div>';
         html += '<div class="review-answer-row"><span class="tag tag--right">Correct answer</span><span class="val is-right">' + escapeHtml(correctText) + '</span></div>';
       }
 

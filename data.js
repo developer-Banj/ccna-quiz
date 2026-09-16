@@ -1,5 +1,6 @@
-// Auto-generated from Part_9_.pdf and Part_12.pdf. Do not hand-edit.
-// BATCH_A / BATCH_B built by build_data.py. BATCH_C (leftover + drag-and-drop questions) built by build_batch_c.py.
+// Auto-generated from Part_9_.pdf, Part_12.pdf, Part 10.pdf, and Part 11.pdf. Do not hand-edit.
+// BATCH_A / BATCH_B built by build_data.py. BATCH_C (leftover + drag-and-drop questions from Part_9_/Part_12) built by build_batch_c.py.
+// BATCH_D / BATCH_E / BATCH_F built by build_batch_def.py from Part 10.pdf / Part 11.pdf.
 var BATCH_A = [
   {
     "id": "p9_q001",
@@ -4299,5 +4300,3875 @@ var BATCH_C = [
       "i6": "t2"
     },
     "explanation": "Unique local addresses (or site-local addresses) are analogous to IPv4's private address classes. They start with FC00::/7 (for use in private networks) - the first octet can be FC or FD. However, when you implement this you have to set the L-bit (the right-most bit of the first octet) to 1, which means the first two digits will be FD. FF02::5 is a multicast address (not a link-local address). It only has a link-local scope (an IPv6 router never forwards this type of traffic beyond the local link) so this IPv6 address does not belong to 'link-local addresses'. You can use either a Global Unicast IPv6 address or a Link-Local IPv6 address as the next hop address. However, if you provide the Link-Local IPv6 address as the next hop address, you need to provide the interface number also."
+  }
+];
+
+var BATCH_D = [
+  {
+    "id": "p10_q001",
+    "type": "mcq",
+    "question": "Refer to the exhibit. An engineer is asked to configure router R1 so that it forms an OSPF single-area neighbor relationship with R2. Which command sequence must be implemented to configure the router?",
+    "image": "p10_q001.png",
+    "options": [
+      "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 0.0.0.255 area 0",
+      "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0",
+      "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 255.255.255.0 area 0",
+      "router ospf 10\nnetwork 10.0.0.0 0.0.0.252 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q002",
+    "type": "dragdrop",
+    "question": "Drag and drop the HTTP methods used with REST-Based APIs from the left onto the descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "GET"
+      },
+      {
+        "id": "i2",
+        "text": "DELETE"
+      },
+      {
+        "id": "i3",
+        "text": "PATCH"
+      },
+      {
+        "id": "i4",
+        "text": "PUT"
+      },
+      {
+        "id": "i5",
+        "text": "POST"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "creates a resource and returns to URI in the response header"
+      },
+      {
+        "id": "t2",
+        "text": "creates or replaces a previously modified resource using information in the request body"
+      },
+      {
+        "id": "t3",
+        "text": "removes a resource"
+      },
+      {
+        "id": "t4",
+        "text": "retrieves a list of a resource's URIs"
+      },
+      {
+        "id": "t5",
+        "text": "updates a resource using instructions included in the request body"
+      }
+    ],
+    "correctMapping": {
+      "i5": "t1",
+      "i4": "t2",
+      "i2": "t3",
+      "i1": "t4",
+      "i3": "t5"
+    },
+    "explanation": "GET: retrieve data. POST: create data. PUT: fully update (i.e. replace) an existing record. PATCH: update part of an existing record. DELETE: delete records. PUT is similar to POST in that it can create resources, but it does so when there is a defined URL wherein PUT replaces the entire resource if it exists or creates new if it does not exist. Unlike PUT Request, PATCH does partial update. Fields that need to be updated by the client, only that field is updated without modifying the other field."
+  },
+  {
+    "id": "p10_q003",
+    "type": "mcq",
+    "question": "What is the collapsed layer in collapsed core architectures?",
+    "image": null,
+    "options": [
+      "core and WAN",
+      "access and WAN",
+      "distribution and access",
+      "core and distribution"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Collapsed core networks can save the company money by reducing the amount of hardware needed to build and run the network. By combining the core and distribution layers, this model eliminates the need for separate devices. This offers companies the chance to utilize most of the benefits offered by the three-tiered model in a budget-friendly option."
+  },
+  {
+    "id": "p10_q004",
+    "type": "mcq",
+    "question": "What is the MAC address used with VRRP as a virtual address?",
+    "image": null,
+    "options": [
+      "00-00-0C-07-AD-89",
+      "00-00-5E-00-01-0a",
+      "00-07-C0-70-AB-01",
+      "00-C6-41-93-90-91"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "With VRRP, the virtual router's MAC address is 0000.5E00.01xx, in which xx is the VRRP group. Note: We are not sure why there is a VRRP question here as it is not in the syllabus of the exam."
+  },
+  {
+    "id": "p10_q005",
+    "type": "dragdrop",
+    "question": "Drag and drop the IPv6 addresses from the left onto the corresponding address types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "fcba:926a:e8e:7a25:b1:c6d2:1a76:8fdc"
+      },
+      {
+        "id": "i2",
+        "text": "2001:db8:600d:cafe::123"
+      },
+      {
+        "id": "i3",
+        "text": "fe80:a00:27ff:feeb:8eaa"
+      },
+      {
+        "id": "i4",
+        "text": "ff05::1:3"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Global Unicast"
+      },
+      {
+        "id": "t2",
+        "text": "Link-Local Unicast"
+      },
+      {
+        "id": "t3",
+        "text": "Multicast"
+      },
+      {
+        "id": "t4",
+        "text": "Unique Local"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t2",
+      "i4": "t3",
+      "i1": "t4"
+    },
+    "explanation": "Link-local addresses are allocated with the FE80::/64 prefix -> can be easily recognized by the prefix FE80. All IPv6 multicast addresses share the prefix of FF00::/8 -> The first octet is FF (1111 1111). This way you can tell at a glance if an IPv6 address is intended for multicast or not. Unique local IPv6 addresses have the similar function as IPv4 private addresses. They are not allocated by an address registry and are not meant to be routed outside their domain. Unique local IPv6 addresses start with FC00::/7 -> The first octet can be FC or FD. However when you implement this you have to set the L-bit (the right-most bit of the first octet) to 1 which means that the first two digits will be FD."
+  },
+  {
+    "id": "p10_q006",
+    "type": "mcq",
+    "question": "Refer to the exhibit. All routers in the network are configured. R2 must be the DR. After the engineer connected the devices, R1 was elected as the DR. Which command sequence must be configure on R2 to be elected as the DR in the network?",
+    "image": "p10_q006.png",
+    "options": [
+      "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 1",
+      "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 100",
+      "R2(config)#router ospf 1\nR2(config-router)#router-id 10.100.100.100",
+      "R2(config)#router ospf 1\nR2(config-router)#router-id 192.168.2.7"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q007",
+    "type": "mcq",
+    "question": "Which set of 2.4 GHz nonoverlapping wireless channels is standard in the United States?",
+    "image": null,
+    "options": [
+      "channels 2, 7, 9, and 11",
+      "channels 1, 6, 11, and 14",
+      "channels 2, 7, and 11",
+      "channels 1, 6, and 11"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth and separated from the next channel by 5 MHz. -> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-overlapping channels such as 1, 6, and 11."
+  },
+  {
+    "id": "p10_q008",
+    "type": "mcq",
+    "question": "Which command entered on a switch configured with Rapid-PVST+ listens and learns for a specific time period?",
+    "image": null,
+    "options": [
+      "switch(config)#spanning-tree vlan 1 max-age 6",
+      "switch(config)#spanning-tree vlan 1 hello-time 10",
+      "switch(config)#spanning-tree vlan 1 priority 4096",
+      "switch(config)#spanning-tree vlan 1 forward-time 20"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The command spanning-tree vlan 1 forward-time ...\" controls how fast a port changes its spanning tree state from blocking to forwarding."
+  },
+  {
+    "id": "p10_q009",
+    "type": "dragdrop",
+    "question": "Drag and drop the Wi-Fi terms from the left onto the descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "extended service set"
+      },
+      {
+        "id": "i2",
+        "text": "distribution system"
+      },
+      {
+        "id": "i3",
+        "text": "infrastructure mode"
+      },
+      {
+        "id": "i4",
+        "text": "SSID"
+      },
+      {
+        "id": "i5",
+        "text": "independent basic service set"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Wi-Fi option based around one or more access points"
+      },
+      {
+        "id": "t2",
+        "text": "Wi-Fi option in which cells from different access points are linked together"
+      },
+      {
+        "id": "t3",
+        "text": "alphanumeric text string that identifies a wireless network"
+      },
+      {
+        "id": "t4",
+        "text": "Wi-Fi option that enables two or more clients to communicate directly without a central access point"
+      },
+      {
+        "id": "t5",
+        "text": "entire wireless cell of an access point and the linkage to the wired network"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i1": "t2",
+      "i4": "t3",
+      "i5": "t4",
+      "i3": "t5"
+    },
+    "explanation": "A Wireless Distribution System (WDS) lets you connect multiple access points together. WDS allows the connected access points to communicate with each other via wireless connection. Access Points are limited devices; combining more Access Points in a switched network is called Extended Service Set (ESS). Independent Basic Service Set (IBSS) is a service set that allows wireless devices to communicate with each other without any central device (ad hoc/peer to peer). Infrastructure mode is an 802.11 networking framework in which devices communicate with each other by first going through an Access Point (AP)."
+  },
+  {
+    "id": "p10_q010",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\ninterface g2/0/0\n channel-group 1 mode active\ninterface g4/0/0\n channel-group 1 mode active\ninterface Port-channel1\n ip address 203.0.113.65 255.255.255.252\n\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down\n\nAn engineer is configuring a Layer 3 port-channel interface with LACP. The configuration on the first device is complete, and it is verified that both interfaces have registered the neighbor device in the CDP table. Which task on the neighbor device enables the new port channel to come up without negotiating the channel?",
+    "image": null,
+    "options": [
+      "Bring up the neighboring interfaces using the no shutdown command.",
+      "Change the EtherChannel mode on the neighboring interfaces to auto",
+      "Modify the static EtherChannel configuration of the device to passive mode",
+      "Configure the IP address of the neighboring device"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Our switch can see neighbor switch in the CDP table which means the interfaces of both ends have been turned on (with no shutdown command) -> Answer A is not correct. Our switch is using LACP (active/passive mode) so we cannot use PAgP (auto/desirable mode) on the neighboring interface -> Answer B is not correct. The error is at Layer 2 (\"changed state to down\") so it is not about \"configuring the IP address\" of the neighboring device which is at Layer 3 -> Answer D is not correct. Therefore only answer C is left. We have to change the Etherchannel mode of neighboring device from static to passive for LACP."
+  },
+  {
+    "id": "p10_q011",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2\n       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\n       ia - IS-IS inter area, * - candidate default, U - per-user static route\n       o - ODR, P - periodic downloaded static route\n\nGateway of last resort is not set\n\n      10.0.0.0/24 is subnetted, 5 subnets\nD     10.1.2.0/24 [90/2170112] via 10.145.20.226, 00:01:33, Serial0/0\nD     10.1.3.0/24 [90/2170112] via 10.145.20.226, 00:01:33, Serial0/0\nD     10.1.2.0/25 [90/2170112] via 10.145.20.126, 00:01:33, Serial0/0\nD     10.1.3.0/25 [90/2170112] via 10.145.20.146, 00:01:33, Serial0/0\nD     10.1.4.0/25 [90/2170112] via 10.145.20.156, 00:01:33, Serial0/0\n      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks\nC     192.168.10.0/24 is directly connected, GigabitEthernet0/0\n      192.168.21.0/24 is variably subnetted, 2 subnets, 2 masks\nC     192.168.11.0/24 is directly connected, GigabitEthernet0/1\n      10.165.20.0/24 is variably subnetted, 2 subnets, 2 masks\nC     192.168.20.224/24 is directly connected, Serial0/0\nS     10.1.2.112/28 [1/0] via 10.165.20.166\n\nWhat is the next hop for traffic entering R1 with a destination of 10.1.2.126?",
+    "image": null,
+    "options": [
+      "10.165.20.126",
+      "10.165.20.146",
+      "10.165.20.166",
+      "10.165.20.226"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "The static route destined to subnet 10.1.2.112/28 which ranges from 10.1.2.112 to 10.1.2.127 (increment: 16) so it also covers the destination of 10.1.2.126. The static route also has the lowest AD (of 1) so the router will choose this path."
+  },
+  {
+    "id": "p10_q012",
+    "type": "mcq",
+    "question": "Refer to the exhibit. A network engineer must configure R1 so that it sends all packets destined to the 10.0.0.0/24 network to R3, and all packets destined to PC1 to R2. Which configuration must the engineer implement?",
+    "image": "p10_q012.png",
+    "options": [
+      "R1(config)#ip route 10.0.0.0 255.255.0.0 172.16.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+      "R1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+      "R1(config)#ip route 10.0.0.0 255.255.0.0 192.168.0.2\nR1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2",
+      "R1(config)#ip route 10.0.0.0 255.255.255.0 192.168.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 172.16.0.2"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q013",
+    "type": "dragdrop",
+    "question": "Drag and drop the facts about wireless architectures from the left onto the types of access point on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "configured and managed by a WLC"
+      },
+      {
+        "id": "i2",
+        "text": "accessible for management via Tenet SSH, or a Web GUI"
+      },
+      {
+        "id": "i3",
+        "text": "supports different operational modes"
+      },
+      {
+        "id": "i4",
+        "text": "requires a management IP address"
+      },
+      {
+        "id": "i5",
+        "text": "supports automatic deployment"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Autonomous Access Point"
+      },
+      {
+        "id": "t2",
+        "text": "Lightweight Access Point"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i4": "t1",
+      "i1": "t2",
+      "i3": "t2"
+    },
+    "explanation": "An autonomous AP is a self-contained device with both wired and wireless hardware so that it can bridge to the wired VLAN infrastructure wireless clients that belong to SSIDs. Each autonomous AP must be configured with a management IP address so that it can be remotely accessed using Telnet, SSH, or a web interface. Each AP must be individually managed and maintained unless you use a management platform such as Cisco DNA Center."
+  },
+  {
+    "id": "p10_q014",
+    "type": "dragdrop",
+    "question": "Drag and drop the functions of SNMP fault-management from the left onto the definitions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "fault detection"
+      },
+      {
+        "id": "i2",
+        "text": "event correlation and aggregation"
+      },
+      {
+        "id": "i3",
+        "text": "problem resolution"
+      },
+      {
+        "id": "i4",
+        "text": "restoration of service"
+      },
+      {
+        "id": "i5",
+        "text": "fault diagnosis and isolation"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "The network management system launches a preconfigured script to restore functionality"
+      },
+      {
+        "id": "t2",
+        "text": "The administrator can manually intervene at the source of the fault"
+      },
+      {
+        "id": "t3",
+        "text": "The system identifies performance degradation or service interruption"
+      },
+      {
+        "id": "t4",
+        "text": "The system groups alarms from related issues"
+      },
+      {
+        "id": "t5",
+        "text": "The system reports on the source of the issue"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i3": "t2",
+      "i1": "t3",
+      "i2": "t4",
+      "i5": "t5"
+    },
+    "explanation": "Fault management is the component of network management concerned with detecting, isolating and resolving problems. Fault detection: The system discovers that service delivery has been interrupted or its performance has degraded. Fault diagnosis and isolation: The source of the fault and its location in the network topology are identified. Event correlation and aggregation: fault management systems often group related events for administrators and provide a root cause analysis. Restoration of service: The network management system automatically executes any preconfigured scripts or programs to get services up and running as soon as possible. Problem resolution: The source of the fault is corrected, repaired or replaced. Depending on the cause, manual intervention may be required."
+  },
+  {
+    "id": "p10_q015",
+    "type": "mcq",
+    "question": "What is the purpose of the Cisco DNA Center controller?",
+    "image": null,
+    "options": [
+      "to securely manage and deploy network devices",
+      "to scan a network and generate a layer 2 network diagram",
+      "to provide Layer 3 services to autonomous access points",
+      "to secure physical access to a data center"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q016",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nRouter R1 Configuration\nInterface GigabitEthernet0/0\nip ospf priority 99\n!\nrouter ospf 100\n network 10.0.0.0 0.0.0.31 area 0\n network 10.0.1.0 0.0.0.255 area 0\n\nAn engineer must configure router R2 so it is elected as the DR on the WAN subnet. Which command sequence must be configured?",
+    "image": "p10_q016.png",
+    "options": [
+      "interface gigabitethernet0/0\nip address 10.0.1.1 255.255.255.224\nip ospf priority 98",
+      "interface gigabitethernet0/0\nip address 10.0.1.1 255.255.255.0\nip ospf priority 255",
+      "interface gigabitethernet0/0\nip address 10.0.0.34 255.255.255.248\nip ospf priority 0",
+      "interface gigabitethernet0/0\nip address 10.0.0.34 255.255.255.224\nip ospf priority 100"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The OSPF priority of R1 is 99 so we have to set the OSPF priority to a higher value. Also the IP address must be 10.0.0.34/27."
+  },
+  {
+    "id": "p10_q017",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nR1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.2\nR1(config)#ip route 10.10.13.0 255.255.255.128 10.10.10.2 111\nR1(config)#ip route 10.10.13.0 255.255.255.128 10.10.10.6 112\nR1(config)#ip route 10.10.13.0 255.255.255.128 10.10.10.10 108\nR1(config-router)#router ospf 1\nR1(config-router)#router-id 1.1.1.1\nR1(config-router)#network 10.10.10.5 0.0.0.0 area 0\nR1(config-router)#network 10.10.10.1 0.0.0.0 area 0\nR1(config-router)#network 10.10.14.1 0.0.0.0 area 0\n\nR1 has just received a packet from host A that is destined to host B. Which route in the routing table is used by R1 to reach host B?",
+    "image": "p10_q017.png",
+    "options": [
+      "10.10.13.0/25[1/0] via 10.10.10.2",
+      "10.10.13.0/25[110/2] via 10.10.10.6",
+      "10.10.13.0/25[110/2] via 10.10.10.2",
+      "10.10.13.0/25[108/0] via 10.10.10.10"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The \"10.10.13.0/25[1/0] via 10.10.10.2\" entry is from default route (ip route 0.0.0.0 0.0.0.0 10.10.10.2) so it is only used when no other routes to 10.10.13.0/25 is found. In three static routes, the best match for host B should be \"ip route 10.10.13.0 255.255.255.128 10.10.10.10 108\" with lowest AD of 108 so R1 would choose this path. This AD is also lower than the AD of OSPF so it is preferred over OSPF learned routes."
+  },
+  {
+    "id": "p10_q018",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nC:\\Users\\ciscoadmin>ipconfig/all\nWindows IP Configuration\n   Host Name . . . . . . . . . . . . : DESKTOP-480JBBT\n   Primary Dns Suffix . . . . . . . :\n   Node Type . . . . . . . . . . . . : Hybrid\n   IP Routing Enabled. . . . . . . . : No\n   WINS Proxy Enabled. . . . . . . . : No\n   DNS Suffix Search List. . . . . . : arcap.se\n\nEthernet adapter Ethernet:\n   Media State . . . . . . . . . . . : Media disconnected\n   Connection-specific DNS Suffix . :\n   Description . . . . . . . . . . . : Realtek PCIe GBE Family Controller\n   Physical Address. . . . . . . . . : 3C-52-82-33-F3-8F\n   DHCP Enabled . . . . . . . . . . : Yes\n   Autoconfiguration Enabled . . . . : Yes\n\nWireless LAN adapter Wi-Fi:\n   Connection-specific DNS Suffix . : arcap.se\n   Description . . . . . . . . . . . : Intel(R) Dual Band Wireless-AC 7265\n   Physical Address. . . . . . . . . : C821-5B-84-F3-EF\n   DHCP Enabled. . . . . . . . . . . : Yes\n   Autoconfiguration Enabled . . . . : Yes\n   Link-local IPv6 Address . . . . . : fe80::45a1:b3fa:2f37:bf37%2(Preferred)\n   IPv4 Address. . . . . . . . . . . : 192.168.1.226(Preferred)\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\n   Lease Obtained. . . . . . . . . . : October 3, 2019 12:28:08 PM\n   Lease Expired . . . . . . . . . . : October 3, 2019 7:18:38 PM\n   Default Gateway . . . . . . . . . : 192.168.1.100\n   DHCP Server . . . . . . . . . . . : 192.168.1.254\n   DHCPv6 IAID . . . . . . . . . . . : 4667016B\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-20-FF-05-55-3C-F3-34-29-20-DF\n   DNS Servers . . . . . . . . . . . : 192.168.1.253\n   NetBIOS over Tcpip. . . . . . . . : Enabled\n   Connection-specific DNS Suffix Search List:\n                                       arcap.se\n\nThe given Windows PC is requesting the IP address of the host at www.cisco.com. To which IP address is the request sent?",
+    "image": null,
+    "options": [
+      "192.168.1.226",
+      "192.168.1.253",
+      "192.168.1.100",
+      "192.168.1.254"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "In this question, the Windows PC is trying to resolve the domain name www.cisco.com to an IP address so it will need a DNS server. From the output we see the line \"DNS Servers ...: 192.168.1.253\" so this is the IP address the request is sent. Notice that the \"Default Gateway\" IP address is in the same subnet of DNS Server so the PC can directly send request to the DNS Server."
+  },
+  {
+    "id": "p10_q019",
+    "type": "mcq",
+    "question": "What is a feature of TFTP?",
+    "image": null,
+    "options": [
+      "provides secure data transfer",
+      "relies on the well-known TCP port 20 to transmit data",
+      "uses two separate connections for control and data traffic",
+      "offers anonymous user login ability"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "TFTP is a simple protocol for transferring files, implemented on top of the UDP/IP protocols using well-known port number 69 -> Answer A and answer B are not correct. TFTP has no session control -> Answer C is not correct."
+  },
+  {
+    "id": "p10_q020",
+    "type": "mcq",
+    "question": "Which access point mode relies on a centralized controller for management, roaming, and SSID configuration?",
+    "image": null,
+    "options": [
+      "repeater mode",
+      "bridge mode",
+      "lightweight mode",
+      "autonomous mode"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Lightweight: The term 'lightweight' refers to the fact that these devices cannot work independently. A Cisco lightweight AP (LAP) has to join a Wireless LAN Controller (WLC) to function."
+  },
+  {
+    "id": "p10_q021",
+    "type": "mcq",
+    "question": "Which command creates a static NAT binding for a PC address of 10.1.1.1 to the public routable address 209.165.200.225 assigned to the PC?",
+    "image": null,
+    "options": [
+      "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+      "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+      "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+      "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q022",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nRIP   10.1.1.16/28[120/5] via F0/0\nOSPF  10.1.1.0/24[110/30] via F0/1\nOSPF  10.1.1.0/24[110/40] via F0/2\nEIGRP 10.1.0.0/26[90/20]  via F0/3\nEIGRP 10.0.0.0/8[90/133]  via F0/4\n\nPackets received by the router from BGP enter via a serial interface at 209.165.201.1. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.1.1.19?",
+    "image": null,
+    "options": [
+      "F0/0",
+      "F0/1",
+      "F0/3",
+      "F0/4"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q023",
+    "type": "mcq",
+    "question": "Which two REST API status-code classes represent errors? (Choose two)",
+    "image": null,
+    "options": [
+      "1XX",
+      "2XX",
+      "3XX",
+      "4XX",
+      "5XX"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": "HTTP defines these standard status codes that can be used to convey the results of a client's request. The status codes are divided into five categories. 1xx: Informational. 2xx: Success. 3xx: Redirection. 4xx: Client Error - This category of error status codes points the finger at clients. 5xx: Server Error - The server takes responsibility for these error status codes."
+  },
+  {
+    "id": "p10_q024",
+    "type": "mcq",
+    "question": "An engineer has configured the domain name, user name, and password on the local router. What is the next step to complete the configuration for a Secure Shell access RSA key?",
+    "image": null,
+    "options": [
+      "crypto key generate rsa",
+      "crypto key pubkey-chain rsa",
+      "crypto key import rsa pem",
+      "crypto key zeroize rsa"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Steps to configure SSH: 1. Configure the router hostname using command \"hostname\". 2. Configure the domain name using command \"ip domain-name\". 3. Generate public and private keys using command \"crypto key generate rsa\". 4. Create a user in the local database using command \"username...secret\". 5. Allow only SSH access on VTY lines using command \"transport input ssh\"."
+  },
+  {
+    "id": "p10_q025",
+    "type": "mcq",
+    "question": "Which encryption method is used by WPA3?",
+    "image": null,
+    "options": [
+      "TKIP",
+      "SAE",
+      "PSK",
+      "AES"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "SAE is only the authentication method. WPA3 uses AES for encryption method both for WPA3-Personal and WPA3-Enterprise."
+  },
+  {
+    "id": "p10_q026",
+    "type": "mcq",
+    "question": "An engineer is configuring remote access to a router from IP subnet 10.139.58.0/28. The domain name, crypto keys, and SSH have been configured. Which configuration enables the traffic on the destination router?",
+    "image": null,
+    "options": [
+      "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.248\nip access-group 10 in\n\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+      "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252\nip access-group 105 in\n\nip access-list standard 105\npermit tcp 10.139.58.0 0.0.0.7 eq 22 host 10.122.49.1",
+      "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252\nip access-group 110 in\n\nip access-list extended 110\npermit tcp 10.139.58.0 0.0.0.15 host 10.122.49.1 eq 22",
+      "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.240\naccess-group 120 in\n\nip access-list extended 120\npermit tcp 10.139.58.0 255.255.255.248 any eq 22"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q027",
+    "type": "mcq",
+    "question": "What is a function of spine-and-leaf architecture?",
+    "image": null,
+    "options": [
+      "mitigates oversubscription by adding a layer of leaf switches",
+      "limits payload size of traffic within the leaf layer",
+      "offers predictable latency of the traffic path between end devices",
+      "exclusively sends multicast traffic between servers that are directly connected to the spine"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "A spine-leaf architecture aids this by ensuring traffic is always the same number of hops from its next destination, so latency is lower and predictable."
+  },
+  {
+    "id": "p10_q028",
+    "type": "mcq",
+    "question": "What differentiates device management enabled by Cisco DNA Center from traditional campus device management?",
+    "image": null,
+    "options": [
+      "CLI-oriented device",
+      "centralized",
+      "per-device",
+      "device-by-device hands-on"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q029",
+    "type": "mcq",
+    "question": "Refer to the exhibit. Router R1 is added to the network and configured with the 10.0.0.64/26 and 10.0.20.0/24 subnets. However, traffic destined for the LAN on R3 is not accessible. Which command when executed on R1 defines a static route to reach the R3 LAN?",
+    "image": "p10_q029.png",
+    "options": [
+      "ip route 10.0.15.0 255.255.255.0 10.0.20.1",
+      "ip route 10.0.15.0 255.255.255.192 10.0.20.1",
+      "ip route 10.0.0.64 255.255.255.192 10.0.20.3",
+      "ip route 10.0.15.0 255.255.255.0 10.0.20.3"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q030",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit.\n\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n\n    209.165.200.0/27 is subnetted, 1 subnets\nB      209.165.200.224 [20/0] via 10.10.12.2, 03:03:03\n    209.165.201.0/27 is subnetted, 1 subnets\nB      209.165.201.0 [20/0] via 10.10.12.2, 03:03:03\n    209.165.202.0/27 is subnetted, 1 subnets\nB      209.165.202.128 [20/0] via 10.10.12.2, 03:03:03\n    10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC      10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC      10.10.11.0/30 is directly connected, FastEthernet2/0\nC      10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO      10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO      10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO      10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO      10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO      10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nS*  0.0.0.0/0 [1/0] via 10.10.11.2\n\nDrag and drop the prefix lengths from the left onto the corresponding prefixes on the right. Not all prefixes are used.",
+    "image": "p10_q030.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "255.255.255.128"
+      },
+      {
+        "id": "i2",
+        "text": "255.255.255.224"
+      },
+      {
+        "id": "i3",
+        "text": "255.255.255.240"
+      },
+      {
+        "id": "i4",
+        "text": "255.255.255.248"
+      },
+      {
+        "id": "i5",
+        "text": "255.255.255.252"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "10.10.13.0"
+      },
+      {
+        "id": "t2",
+        "text": "10.10.13.144"
+      },
+      {
+        "id": "t3",
+        "text": "10.10.13.160"
+      },
+      {
+        "id": "t4",
+        "text": "209.165.202.128"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i3": "t2",
+      "i4": "t3",
+      "i2": "t4"
+    },
+    "explanation": "10.10.13.0 - 255.255.255.128; 10.10.13.144 - 255.255.255.240; 10.10.13.160 - 255.255.255.248; 209.165.202.128 - 255.255.255.224."
+  },
+  {
+    "id": "p10_q031",
+    "type": "mcq",
+    "question": "What is a zero-day exploit?",
+    "image": null,
+    "options": [
+      "It is when an attacker inserts malicious code into a SQL server.",
+      "It is when a new network vulnerability is discovered before a fix is available.",
+      "It is when the perpetrator inserts itself in a conversation between two parties and captures or alters data.",
+      "It is when the network is saturated with malicious traffic that overloads resources and bandwidth."
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q032",
+    "type": "mcq",
+    "question": "After a recent security breach and a RADIUS failure, an engineer must secure the console port of each enterprise router with a local username and password. Which configuration must the engineer apply to accomplish this task?",
+    "image": null,
+    "options": [
+      "Option A:\naaa new-model\naaa authorization exec default local\naaa authentication login default radius\nusername localuser privilege 15 secret plaintextpassword",
+      "Option B:\nusername localuser secret plaintextpassword\nline con 0\nlogin authentication default\nprivilege level 15",
+      "Option C:\nusername localuser secret plaintextpassword\nline con 0\nno login local\nprivilege level 15",
+      "Option D:\naaa new-model\nline con 0\npassword plaintextpassword\nprivilege level 15"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Option A is not correct as in fact the command \"aaa authentication login default\" should be \"aaa authentication login default group radius\" which will authenticate only via RADIUS server. Option C is not correct as the command \"no login local\" removes the requirement for local authentication on the console line. Option D is not correct as with the command \"password plaintextpassword\", the device only asks for the password, not username. Option B is not correct as the command \"login authentication default\" specifies the default login authentication method but we need to define that \"default\" method is to use local username and password with two additional commands \"aaa new-model\" and \"aaa authentication login default local\". -> This is the best choice although it is not totally correct."
+  },
+  {
+    "id": "p11_q001",
+    "type": "mcq",
+    "question": "What is the function of northbound API?",
+    "image": null,
+    "options": [
+      "It upgrades software and restores files.",
+      "It relies on global provisioning and configuration.",
+      "It supports distributed processing for configuration.",
+      "It provides a path between an SDN controller and network applications."
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Now, in turn, the networking administrators and SDN applications want to control the controller! So the controller need a northbound interface (NBI) to communicate with us. The NBI applications included various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control."
+  },
+  {
+    "id": "p11_q002",
+    "type": "dragdrop",
+    "question": "Drag and drop the wireless architecture benefits from the left onto the architecture types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "Appropriate for a small-business environment"
+      },
+      {
+        "id": "i2",
+        "text": "Work is divided between the access point and the controller"
+      },
+      {
+        "id": "i3",
+        "text": "The access points transmit beacon frames"
+      },
+      {
+        "id": "i4",
+        "text": "Supports per device configuration and management"
+      },
+      {
+        "id": "i5",
+        "text": "Uses the CAPWAP tunneling protocol"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Split-MAC"
+      },
+      {
+        "id": "t2",
+        "text": "Autonomous"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t1",
+      "i5": "t1",
+      "i1": "t2",
+      "i4": "t2"
+    },
+    "explanation": "An autonomous AP is a self-contained device with both wired and wireless hardware so that it can bridge to the wired VLAN infrastructure wireless clients that belong to SSIDs. Each autonomous AP must be configured with a management IP address so that it can be remotely accessed using Telnet, SSH, or a web interface. Each AP must be individually managed and maintained unless you use a management platform such as Cisco DNA Center.\n\nThe division of labor between the WLC and LAPs is known as split-MAC architecture. The LAP must interact with wireless clients on some low level, known as the Media Access Control (MAC) layer. These functions must stay with the LAP hardware, closest to the clients. The management functions are not integral to handling frames but are things that should be centrally administered. Therefore, those functions can be moved to a centrally located platform away from the AP."
+  },
+  {
+    "id": "p11_q003",
+    "type": "dragdrop",
+    "question": "Drag and drop the Ansible terms from the left onto the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "control node"
+      },
+      {
+        "id": "i2",
+        "text": "inventory"
+      },
+      {
+        "id": "i3",
+        "text": "managed node"
+      },
+      {
+        "id": "i4",
+        "text": "module"
+      },
+      {
+        "id": "i5",
+        "text": "playbook"
+      },
+      {
+        "id": "i6",
+        "text": "task"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "collection of actions to perform on target devices, expressed in YAML format"
+      },
+      {
+        "id": "t2",
+        "text": "device with Ansible installed that manages target devices"
+      },
+      {
+        "id": "t3",
+        "text": "network device, without Ansible installed, upon which commands can be executed"
+      },
+      {
+        "id": "t4",
+        "text": "specific action to be performed on one or more target devices"
+      },
+      {
+        "id": "t5",
+        "text": "unit of Python code to be executed"
+      },
+      {
+        "id": "t6",
+        "text": "Ansible file that defines the target devices upon which commands and tasks can be executed"
+      }
+    ],
+    "correctMapping": {
+      "i5": "t1",
+      "i1": "t2",
+      "i3": "t3",
+      "i6": "t4",
+      "i4": "t5",
+      "i2": "t6"
+    },
+    "explanation": "Once Ansible is installed, it creates several text files:\n\nPlaybooks: These files provide actions and logic about what Ansible should do. Ansible playbooks are files that contain tasks to configure hosts. Ansible playbooks are written in YAML format. Inside Playbooks, we have:\nModules (also referred to as \"task plugins\" or \"library plugins\") are discrete units of code that can be used from the command line or in a playbook task. Ansible executes each module, usually on the remote managed node, and collects return values.\nTasks: Tasks are Ansible's smallest unit of work. They are a series of actions on the target hosts, using modules to provide functionalities.\n\nA task defines an action that needs to be performed, while a module executes the action on a managed host.\n\nInventory: a file contains a list of the hosts (usually their IP addresses, ports) which you want to configure or manage. Hosts in an inventory can be divided into smaller groups for easier management and configuration. Each group can run different tasks. An example of a task is to ping all hosts in group [routers].\n\nThe control node is a computer that runs Ansible. A managed node is any device being managed by the control node."
+  },
+  {
+    "id": "p11_q004",
+    "type": "mcq",
+    "question": "What is a purpose of traffic shaping?",
+    "image": null,
+    "options": [
+      "It enables dynamic flow identification.",
+      "It enables policy-based routing.",
+      "It provides best-effort service.",
+      "It limits bandwidth usage."
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Shaping: retains excess packets in a queue and then schedules the excess for later transmission over increments of time. When traffic reaches the maximum configured rate, additional packets are queued instead of being dropped to proceed later. Traffic shaping is applicable only on outbound interfaces as buffering and queuing happens only on outbound interfaces. Shaping is configured in bits per second.\n\nBest Effort Service means a service on a shared network in which the network does not provide any guarantee that data is delivered or that delivery meets any quality of service, meaning that the services obtain unspecified variable bit rate, latency and packet loss, depending on the current traffic load -> Traffic shaping does not drop packets so it does not offer best effort service -> Answer C is not correct.\n\nThe primary reasons you would use traffic shaping are to control access to available bandwidth, to ensure that traffic conforms to the policies established for it, and to regulate the flow of traffic in order to avoid congestion that can occur when the sent traffic exceeds the access speed of its remote, target interface -> Answer D is correct."
+  },
+  {
+    "id": "p11_q005",
+    "type": "dragdrop",
+    "question": "Drag and drop the characteristics of device-management technologies from the left onto the corresponding deployment types on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "orchestrates background device configuration"
+      },
+      {
+        "id": "i2",
+        "text": "relies on per-device management"
+      },
+      {
+        "id": "i3",
+        "text": "supports centralized software management"
+      },
+      {
+        "id": "i4",
+        "text": "provides greater flexibility for custom and non-standard configurations"
+      },
+      {
+        "id": "i5",
+        "text": "supports open APIs"
+      },
+      {
+        "id": "i6",
+        "text": "uses individual software management"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Cisco DNA Center"
+      },
+      {
+        "id": "t2",
+        "text": "Traditional"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i3": "t1",
+      "i5": "t1",
+      "i2": "t2",
+      "i4": "t2",
+      "i6": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p11_q006",
+    "type": "mcq",
+    "question": "Which type of port is used to connect to the wired network when an autonomous AP maps two VLANs to its WLANs?",
+    "image": null,
+    "options": [
+      "LAG",
+      "EtherChannel",
+      "trunk",
+      "access"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "In this example, we will configure the switch in our Autonomous AP deployment. First, we need to create Vlan 21, which is assigned to Corporate users, and Vlan 22, which is assigned to Guess users. Then we will configure the trunk interface between the AP and the switch to allow multiple Vlans to traverse the link."
+  },
+  {
+    "id": "p11_q007",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\n  Internet address is 192.168.1.2/24, Area 0\n  Process ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\n  Transmit Delay is 1 sec, State POINT-TO-POINT,\n  Timer intervals configured, Hello 15, Dead 20, Wait 20, Retransmit 5\n    Hello due in 00:00:08\n  Index 1/1, flood queue length 0\n  Next 0x0(0) /0x0(0)\n  Last flood scan length is 1, maximum is 1\n  Last flood scan time is 0 msec, maximum is 0 msec\n  Suppress hello for 0 neighbor(s)\n\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\n  Internet address is 192.168.1.1/24, Area 0\n  Process ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\n  Transmit Delay is 1 sec, State POINT-TO-POINT,\n  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\n    Hello due in 00:00:11\n  Index 1/1, flood queue length 0\n  Next 0x0(0)/0x0(0)\n  Last flood scan length is 1, maximum is 1\n  Last flood scan time is 0 msec, maximum is 0 msec\n  Suppress hello for 0 neighbor(s)\n```\n\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
+    "image": null,
+    "options": [
+      "Option A:\nR2(config)#interface g0/0/0\nR2(config-if)#ip ospf hello-interval 15\nR2(config-if)#ip ospf dead-interval 20",
+      "Option B:\nR2(config)#router ospf 1\nR2(config-router)#router-id 192.168.1.2",
+      "Option C:\nR2(config)#router ospf 1\nR2(config-router)#network 192.168.1.0 255.255.255.0 area 2\nR2(config-router)#network 10.1.1.0 255.255.255.255 area 2",
+      "Option D:\nR2(config)#interface g0/0/0\nR2(config-if)#ip ospf dead-interval 20"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "In order to become OSPF neighbor, the following values must be matched on both routers:\n\n+ Area ID\n+ Authentication\n+ Hello and Dead Intervals\n+ Stub area Flag\n+ MTU Size"
+  },
+  {
+    "id": "p11_q008",
+    "type": "mcq",
+    "question": "What is a characteristics of a collapsed-core network topology?",
+    "image": null,
+    "options": [
+      "It allows the core and distribution layers to run as a single combined layer.",
+      "It enables the core and access layers to connect to one logical distribution device over an EtherChannel.",
+      "It enables all workstations in a SOHO environment to connect on a single switch with internet access.",
+      "It allows wireless devices to connect directly to the core layer, which enables faster data transmission."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to scale the network design. Most small enterprise campus' do not grow significantly larger over time, and most small enterprise campus are small enough to be well served by a two-tier hierarchical design, where the core and distribution layers are collapsed into one layer. The primary motivation for the collapsed core design is reducing network cost, while maintaining most of the benefits of the three-tier hierarchical model."
+  },
+  {
+    "id": "p11_q009",
+    "type": "mcq",
+    "question": "What is the purpose of configuring different levels of syslog for different devices on the network?",
+    "image": null,
+    "options": [
+      "to rate-limit messages for different severity levels from each device",
+      "to set the severity of syslog messages from each device",
+      "to identify the source from which each syslog message originated",
+      "to control the number of syslog messages from different devices that are stored locally"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "This question is a bit unclear to understand. But this question wanted to ask about the severity (levels) of syslog messages. Level = severity level.\n\nTo rate-limit messages (limit the number of syslog packets sent to the syslog server), we use the command \"logging rate-limit ...\" instead so answer A is not the best answer for this question (although it is not totally wrong)."
+  },
+  {
+    "id": "p11_q010",
+    "type": "mcq",
+    "question": "Which interface enables communication between a program on the controller and a program on the networking devices?",
+    "image": null,
+    "options": [
+      "northbound interface",
+      "software virtual interface",
+      "southbound interface",
+      "tunnel interface"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "We use Southbound API to communicate between the Controllers and Network Elements."
+  },
+  {
+    "id": "p11_q011",
+    "type": "dragdrop",
+    "question": "Drag and drop the REST API call method for HTTP from the left onto the action they perform on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "POST"
+      },
+      {
+        "id": "i2",
+        "text": "DELETE"
+      },
+      {
+        "id": "i3",
+        "text": "GET"
+      },
+      {
+        "id": "i4",
+        "text": "PUT"
+      },
+      {
+        "id": "i5",
+        "text": "PATCH"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "creates a resource on the server"
+      },
+      {
+        "id": "t2",
+        "text": "reads data from the server"
+      },
+      {
+        "id": "t3",
+        "text": "removes a resource from the server"
+      },
+      {
+        "id": "t4",
+        "text": "updates an entry in the database"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i3": "t2",
+      "i2": "t3",
+      "i4": "t4"
+    },
+    "explanation": "GET: retrieve data\nPOST: create data\nPUT: fully update (i.e. replace) an existing record\nPATCH: update part of an existing record\nDELETE: delete records\n\nPUT is similar to POST in that it can create resources, but it does so when there is a defined URL wherein PUT replaces the entire resource if it exists or creates new if it does not exist.\n\nUnlike PUT Request, PATCH does partial update. Fields that need to be updated by the client, only that field is updated without modifying the other field."
+  },
+  {
+    "id": "p11_q012",
+    "type": "mcq",
+    "question": "What is the primary purpose of private address space?",
+    "image": null,
+    "options": [
+      "conserve globally unique address space",
+      "simplify the addressing in the network",
+      "limit the number of nodes reachable via the Internet",
+      "reduce network complexity"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q013",
+    "type": "mcq",
+    "question": "What is a reason to configure a trunk port that connects to a WLC distribution port?",
+    "image": null,
+    "options": [
+      "Eliminate redundancy with a link failure in the data path.",
+      "Allow multiple VLAN to be used in the data path.",
+      "Provide redundancy if there is a link failure for out-of-band management.",
+      "Permit multiple VLANs to provide out-of-band management."
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q014",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nR1#show ip route 10.10.2.1\nRouting entry for 10.10.2.0/24\nKnown via \"osp 1\", disatnce 110, metric 2, type intra area\n  Last update from 192.168.1.2 on GigabitEthernet0/0, 01:33:22 ago\n  Routing Descriptor Blocks:\n  * 192.168.1.2, from 192.168.1.2, 01:33:15 ago, via GigabitEthernet0/0\n    Route metric is 2, traffic share count is 1\n```\n\nTraffic from R1 to the 10.10.2.0/24 subnet uses 192.168.1.2 as its next hop. An network engineer wants to update the R1 configuration so that traffic with destination 10.10.2.1 passes through router R3, and all other traffic to the 10.10.2.0/24 subnet passes through R2. Which command must be used?",
+    "image": "p11_q014.png",
+    "options": [
+      "ip route 10.10.2.1 255.255.255.255 192.168.1.4 115",
+      "ip route 10.10.2.0 255.255.255.0 192.168.1.4 100",
+      "ip route 10.10.2.0 255.255.255.0 192.168.1.4 115",
+      "ip route 10.10.2.1 255.255.255.255 192.168.1.4 100"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q015",
+    "type": "mcq",
+    "question": "Which cipher is supported for wireless encryption only with the WPA2 standard?",
+    "image": null,
+    "options": [
+      "AES256",
+      "AES",
+      "RC4",
+      "SHA"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Unlike WEP and WPA, WPA2 uses the AES standard instead of the Rivest Cipher 4 (RC4) stream cipher.\n\nWPA3-Enterprice mode uses AES-256 in GCM mode.\n\nSHA stands for Secure Hash Algorithm while AES stands for Advanced Encryption Standard. So SHA is a suite of hashing algorithms. It is not a cipher which is used to encrypt."
+  },
+  {
+    "id": "p11_q016",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nEntry #\n1      192.168.10.0 255.255.254.0\n2      192.168.10.0 255.255.255.192\n3      192.168.10.0 255.255.0.0\n4      192.168.10.0 255.255.224.0\n```\n\nWhich entry is the longest prefix match for host IP address 192.168.10.5?",
+    "image": null,
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q017",
+    "type": "mcq",
+    "question": "Which two features introduced in SNMPv2 provides the ability to retrieve large amounts of data in one request? (Choose two)",
+    "image": null,
+    "options": [
+      "Get",
+      "GetNext",
+      "Set",
+      "GetBulk",
+      "Inform"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": "The two additional messages are added in SNMP2 (compared to SNMPv1)\n\nGetBulkRequest: The GetBulkRequest message enables an SNMP manager to access large chunks of data. GetBulkRequest allows an agent to respond with as much information as will fit in the response PDU. Agents that cannot provide values for all variables in a list will send partial information.\n\nInformRequest: The InformRequest message allows NMS stations to share trap information. (Traps are issued by SNMP agents when a device change occurs.) InformRequest messages are generally used between NMS stations, not between NMS stations and agents."
+  },
+  {
+    "id": "p11_q018",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nrouter# show ip route\n...\nD  172.18.32.0/26 [90/25789217] via 10.1.1.1\nR  172.18.32.0/24 [120/4] via 10.1.1.2\nO  172.18.32.0/19 [110/229840] via 10.1.1.3\nC  172.18.32.32/32 is directly connected, Loopback0\nC  172.18.32.36/30 directly connected, GigabitEthernet0/0\nL  172.18.32.37/32 is directly connected, GigabitEthernet0/0\n```\n\nA packet sourced from 172.18.33.2 is destined for 172.18.32.38. Where does the router forward the packet?",
+    "image": null,
+    "options": [
+      "GigabitEthernet0/0",
+      "Loopback0",
+      "10.1.1.1",
+      "10.1.1.3"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "The best entry for destination 172.18.32.38 is \"C 172.18.32.36/30 ..., GigabitEthernet0/0\" so the router will forward the packet to Gi0/0 interface."
+  },
+  {
+    "id": "p11_q019",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit. The Router1 routing table has multiple methods to reach 10.10.10.0/24 as shown. The default Administrative Distance is used. Drag and drop the network conditions from the left onto the routing methods that Router1 uses on the right.",
+    "image": "p11_q019.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "All protocols are up"
+      },
+      {
+        "id": "i2",
+        "text": "OSPF and eBGP are down"
+      },
+      {
+        "id": "i3",
+        "text": "The static route and eBGP are down"
+      },
+      {
+        "id": "i4",
+        "text": "The static route and EIGRP are down"
+      },
+      {
+        "id": "i5",
+        "text": "The static route and OSPF are down"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "eBGP"
+      },
+      {
+        "id": "t2",
+        "text": "EIGRP"
+      },
+      {
+        "id": "t3",
+        "text": "Static"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i5": "t1",
+      "i3": "t2",
+      "i1": "t3",
+      "i2": "t3"
+    },
+    "explanation": "The Administrative Distance (AD) of popular routing protocols: Directly Connected 0, Static 1, EIGRP 90, EIGRP Summary route 5, OSPF 110, RIP 120. The AD of eBGP is 20 and iBGP is 200.\n\nThe smaller the AD is, the better it is. The router will choose the routing protocol with smallest AD.\n\nIn this case the router will choose in this order: Static (1) -> eBGP (20) -> EIGRP (90) -> OSPF (110) -> iBGP (200)."
+  },
+  {
+    "id": "p11_q020",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nC:\\>ipconfig /all\nEthernet adapter Ethernet:\n  Connection-specific DNS Suffix  . :\n  Physical Address.........: F8-75-A4-3B-AB-4F\n  Link-local IPv6 Address.....: fe80::644a:b01:3e5f:ae6%14(Preferred)\n  IPv4 Address..........: 10.2.2.2(Preferred)\n  Subnet Mask...........: 255.255.255.192\n  Default Gateway.........: 10.2.2.1\n  DHCP Server...........: 192.168.1.15\n  DNS Servers...........: 8.8.8.8\n  NetBIOS over Tcpip........: Enabled\n```\n\nA newly configured PC fails to connect to the internet using TCP port 80 to www.cisco.com. Which setting must be modified for the connection to work?",
+    "image": "p11_q020.png",
+    "options": [
+      "Subnet Mask",
+      "DNS Servers",
+      "Default Gateway",
+      "DHCP Server"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "We see this PC has been assigned an IP address 10.2.2.2, Default Gateway 10.2.2.1, DNS Server 8.8.8.8 but its subnet mask is 255.255.255.192 (or /26) which is different from the subnet mask of its default gateway (10.2.2.1/27) so this is the issue."
+  },
+  {
+    "id": "p11_q021",
+    "type": "mcq",
+    "question": "What does a switch do when it receives a frame whose destination MAC address is missing from the MAC address table?",
+    "image": null,
+    "options": [
+      "It floods the frame unchanged across all remaining ports in the incoming VLAN.",
+      "It appends the table with a static entry for the MAC and shuts down the port.",
+      "It updates the CAM table with the destination MAC address of the frame.",
+      "It changes the checksum of the frame to a value that indicates an invalid frame."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q022",
+    "type": "mcq",
+    "question": "Which enhancement is implemented in WPA3?",
+    "image": null,
+    "options": [
+      "applies 802.1x authentication",
+      "uses TKIP",
+      "employs PKI to identify access points",
+      "protects against brute force attacks"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Another security enhancement that has been made in WP3 reduces potential for password cracking attacks such as the WPA2 KRACK Attack. WPA2 is vulnerable to brute force and dictionary-based attacks. That is because security relies on the AP provider setting a secure password and many establishments don't. With WPA3, the Pre-Shared Key (PSK) exchange protocol is replaced with Simultaneous Authentication of Equals (SAE) or the Dragonfly Key Exchange, which improves security of the initial key exchange and offers better protection against offline dictionary-based attacks."
+  },
+  {
+    "id": "p11_q023",
+    "type": "mcq",
+    "question": "Which type of address is shared by routers in a HSRP implementation and used by hosts on the subnet as their default gateway address?",
+    "image": null,
+    "options": [
+      "multicast address",
+      "loopback IP address",
+      "virtual IP address",
+      "broadcast address"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q024",
+    "type": "mcq",
+    "question": "What are two reasons a switch experiences frame flooding? (Choose two)",
+    "image": null,
+    "options": [
+      "A defective patch cable is connected to the switch port",
+      "Topology changes are occurring within spanning-tree",
+      "An aged MAC table entry is causing excessive updates",
+      "Port-security is configured globally",
+      "The forwarding table has overflowed"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "explanation": "However, other events in the network might cause the switch MAC address table to be flushed more frequently than the configured aging time. One such event is due to spanning-tree topology changes in the network.\n\nTopology changes reduce the MAC address table aging time from the default time of 300 seconds to 15 seconds in the case of 802.1D Spanning Tree Protocol (STP) to freshen stale MAC address table entries -> Answer B is correct.\n\nIf the Layer 2 forwarding table or the MAC address table is full and it can not save any more MAC address, its enters into a fail-open mode and start behaving like a network Hub. Frames are flooded to all ports, similar to broadcast type of communication. The MAC flooding attack uses this feature of the switch to steal information -> Answer E is correct."
+  },
+  {
+    "id": "p11_q025",
+    "type": "mcq",
+    "question": "Why is TCP desired over UDP for application that require extensive error checking, such as HTTPS?",
+    "image": null,
+    "options": [
+      "UDP operates without acknowledgments, and TCP sends an acknowledgment for every packet received.",
+      "UDP reliably guarantees delivery of all packets, and TCP drops packets under heavy load.",
+      "UDP uses flow control mechanisms for the delivery of packets, and TCP uses congestion control for efficient packet delivery.",
+      "UDP uses sequencing data for packets to arrive in order, and TCP offers the capability to receive packets in random order."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Note: The flow control mechanism tells the sender the maximum speed at which the data can be sent to the receiver device. One of the popular flow control mechanisms in TCP is the sliding window protocol -> Answer C is not correct."
+  },
+  {
+    "id": "p11_q026",
+    "type": "mcq",
+    "question": "To improve corporate security, an organization is planning to implement badge authentication to limit access to the data center. Which element of a security program is being deployed?",
+    "image": null,
+    "options": [
+      "user training",
+      "user awareness",
+      "vulnerability verification",
+      "physical access control"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Physical access control: Infrastructure locations, such as network closets and data centers, should remain securely locked. Badge access to sensitive locations is a scalable solution, offering an audit trail of identities and timestamps when access is granted. Administrators can control access on a granular basis and quickly remove access when an employee is dismissed."
+  },
+  {
+    "id": "p11_q027",
+    "type": "dragdrop",
+    "question": "Drag and drop the statement about AAA services from the left to the corresponding AAA services on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It grants access to network assets, such as FTP servers"
+      },
+      {
+        "id": "i2",
+        "text": "It restricts the CLI commands that a user is able to perform"
+      },
+      {
+        "id": "i3",
+        "text": "It performs user validation via TACACS+"
+      },
+      {
+        "id": "i4",
+        "text": "It records the duration of each connection"
+      },
+      {
+        "id": "i5",
+        "text": "It supports User Access Reporting"
+      },
+      {
+        "id": "i6",
+        "text": "It verifies \"who you are\""
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Accounting"
+      },
+      {
+        "id": "t2",
+        "text": "Authorization"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i5": "t1",
+      "i1": "t2",
+      "i2": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p11_q028",
+    "type": "mcq",
+    "question": "The address block 192.168.32.0/24 must be subnetted into smaller networks. The engineer must meet these requirements:\n* Create 8 new subnets\n* Each subnet must accommodate 30 hosts\n* Interface VLAN 10 must use the last usable IP in the first new subnet\n* A Layer 3 interface is used\n\nWhich configuration must be applied to the interface?",
+    "image": null,
+    "options": [
+      "no switchport mode access\nip address 192.168.32.62 255.255.255.240",
+      "switchport\nip address 192.168.32.65 255.255.255.240",
+      "no switchport mode trunk\nip address 192.168.32.97 255.255.255.224",
+      "no switchport\nip address 192.168.32.30 255.255.255.224"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "8 new subnets -> 8 = 2^3. Therefore the subnet mask is 255.255.255.224 (224 in decimal = 1110 0000 in binary) and each new subnet consists of 2^5 - 2 = 30 hosts.\n\n\"Interface VLAN 10 must use the last usable IP in the first new subnet\" -> The first new subnet is 192.168.32.0/27 (increment: 32) so it ranges from 192.168.32.0 to 192.168.32.31) so the last usable IP is 192.168.32.30. Therefore we must assign IP address 192.168.32.30/27 to interface VLAN 10."
+  }
+];
+
+var BATCH_E = [
+  {
+    "id": "p10_q033",
+    "type": "mcq",
+    "question": "Which command implies the use of SNMPv3?",
+    "image": null,
+    "options": [
+      "snmp-server community",
+      "snmp-server host",
+      "snmp-server enable traps",
+      "snmp-server user"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Only SNMPv3 requires to add a SNMP user to a group to work. Note: \"community\" string is the password which is used in SNMPv1 & v2. \"snmp-server host\" command can be used by both SNMPv2 & v3."
+  },
+  {
+    "id": "p10_q034",
+    "type": "mcq",
+    "question": "Refer to the exhibit. Clients on the WLAN are required to use 802.11r. What action must be taken to meet the requirement?",
+    "image": "p10_q034.png",
+    "options": [
+      "Enable CCKM under Authentication Key Management",
+      "Under Protected Management Frames, set the PMF option to Required",
+      "Set the Fast Transition option to Enable and enable FT 802.1X under Authentication Key Management",
+      "Set the Fast Transition option and the WPA gtk-randomize State to disable"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Fast BSS Transition (802.11r, often abbreviated to Fast Transition or FT) describes mechanisms by which a mobile device can reestablish existing security and/or QoS parameters prior to reassociating to a new AP. Under Authentication Key Management, choose FT 802.1X or FT PSK."
+  },
+  {
+    "id": "p10_q035",
+    "type": "mcq",
+    "question": "When a switch receives a frame for an unknown destination MAC address, how is the frame handled?",
+    "image": null,
+    "options": [
+      "broadcast to all ports on the switch",
+      "flooded to all ports except the origination port",
+      "forwarded to the first available port",
+      "inspected and dropped by the switch"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q036",
+    "type": "mcq",
+    "question": "What is the default port-security behavior on a trunk link?",
+    "image": null,
+    "options": [
+      "It causes a network loop when a violation occurs.",
+      "It disables the native VLAN configuration as soon as port security is enabled.",
+      "It places the port in the err-disabled state if it learns more than one MAC address.",
+      "It places the port in the err-disabled state after 10 MAC addresses are statically configured."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "We tested it with IOS v15.2 and the \"Maximum MAC Addresses\" is 1 by default so this port will be put in the err-disabled state if it learns more than one MAC address."
+  },
+  {
+    "id": "p10_q037",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n{\n  \"aaaUser\": {\n    \"attributes\": {\n      \"pwd\": \"password1\",\n      \"firstName\": \"Abraham\",\n      \"lastName\": \"Lincoln\",\n      \"phone\": \"5555551212\",\n      \"email\": \"test@cisco.com\"\n    },\n    \"children\": [{\n      \"aaaUserRole\": {\n        \"attributes\": {\n          \"name\": \"ExampleCisco\"\n        },\n        \"children\": [{\n          \"aaaUserRole\": {\n            \"attributes\": {\n              \"name\": \"admin\"\n            }\n          }\n        }]\n      }\n    }]\n  }\n}\n\nHow many objects are present in the given JSON-encoded data?",
+    "image": null,
+    "options": [
+      "one",
+      "four",
+      "seven",
+      "nine"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Objects are enclosed in braces \"{}\" so we only need to count the number of \"}\" to specify how many objects in the JSON-encoded data. And there are 9 closing brackets \"}\" so there are 9 objects."
+  },
+  {
+    "id": "p10_q038",
+    "type": "mcq",
+    "question": "What are two examples of multifactor authentication? (Choose two)",
+    "image": null,
+    "options": [
+      "single sign-on",
+      "unique user knowledge",
+      "passwords that expire",
+      "soft tokens",
+      "shared password responsibility"
+    ],
+    "correctIndexes": [
+      1,
+      3
+    ],
+    "explanation": "A multi-factor authentication example of something the user knows could include: Passwords, PIN (or personal identification numbers), Answers to supposedly secret questions (such as \"Where were you born?\" or \"The name of your first-grade teacher.\")"
+  },
+  {
+    "id": "p10_q039",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n\n    209.165.200.0/27 is subnetted, 1 subnets\nB      209.165.200.224 [20/0] via 10.10.12.2,03:22:14\n    209.165.201.0/27 is subnetted, 1 subnets\nB      209.165.201.0 [20/0] via 10.10.12.2, 02:26:33\n    209.165.202.0/27 is subnetted, 1 subnets\nB      209.165.202.128 [20/0] via 10.10.12.2,02:26:03\n    10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC      10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC      10.10.11.0/30 is directly connected, FastEthernet2/0\nC      10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO      10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO      10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO      10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO      10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO      10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nS*  0.0.0.0/0 [1/0] via 10.10.11.2\n\nWhat is the subnet mask of the route to the 10.10.13.160 prefix?",
+    "image": null,
+    "options": [
+      "255.255.255.240",
+      "255.255.255.128",
+      "255.255.248.0",
+      "255.255.255.248"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The 10.10.13.160 prefix has subnet mask of /29 which is 255.255.255.248."
+  },
+  {
+    "id": "p10_q040",
+    "type": "mcq",
+    "question": "Refer to the exhibit. Routers R1, R2, and R3 use a protocol to identify their neighbors' IP addresses, hardware platforms, and software versions. A network engineer must configure R2 to avoid sharing any neighbor information with R3, and maintain its relationship with R1. What action meets this requirement?",
+    "image": "p10_q040.png",
+    "options": [
+      "Configure the no lldp run command globally",
+      "Configure the no lldp receive command on g0/1",
+      "Configure the no cdp run command globally",
+      "Configure the no cdp enable command on g0/2"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "In order to disable CDP on an interface, we have to use the \"no cdp enable\" under interface mode. If we want to disable sending LLDP on g0/2 only then we have to use the command \"no lldp transmit\"."
+  },
+  {
+    "id": "p10_q041",
+    "type": "mcq",
+    "question": "What is a function of an endpoint?",
+    "image": null,
+    "options": [
+      "It passes unicast communication between hosts in a network",
+      "It is used directly by an individual user to access network services",
+      "It provides security between trusted and untrusted sections of the network",
+      "It transmits broadcast traffic between devices in the same VLAN"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q042",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nSW# conf t\nSW(config)#interface gigabitEthernet0/1\nSW(config-if)#switchport mode access\nSW(config-if)#switchport port-security\nSW(config-if)#\n\nA network engineer started to configure port security on a new switch. These requirements must be met:\n- MAC addresses must be learned dynamically.\n- Log messages must be generated without disabling the interface when unwanted traffic is seen.\n\nWhich two commands must be configured to complete this task? (Choose two)",
+    "image": "p10_q042.png",
+    "options": [
+      "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+      "SW(config-if)#switchport port-security maximum 2",
+      "SW(config-if)#switchport port-security mac-address sticky",
+      "SW(config-if)#switchport port-security violation shutdown",
+      "SW(config-if)#switchport port-security violation restrict"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "explanation": "The requirement said MAC addresses must be learned dynamically so we cannot assign a specific MAC address or use the \"sticky\" keyword -> Answer A and answer C are not correct. Also the requirement said \"MAC addresses\" in plural so we set the maximum to 2 -> Answer B is correct. \"Log messages must be generated without disabling the interface\" -> use \"restrict\" keyword for violation, not \"shutdown\" keyword -> Answer E is correct."
+  },
+  {
+    "id": "p10_q043",
+    "type": "mcq",
+    "question": "What are two features of the DHCP relay agent? (Choose two)",
+    "image": null,
+    "options": [
+      "minimizes the necessary number of DHCP servers",
+      "assigns DNS locally and then forwards request to DHCP server",
+      "is configured under the Layer 3 interface of a router on the client subnet",
+      "allows only MAC-to-IP reservations to determine the local subnet of a client",
+      "permits one IP helper command under an individual Layer 3 interface"
+    ],
+    "correctIndexes": [
+      0,
+      2
+    ],
+    "explanation": "With the DHCP relay agent, we can configure DHCP servers in different subnet of the DHCP client. Otherwise we have to place one DHCP server in the same subnet of DHCP clients -> Answer A is correct. To make a router a DHCP Relay Agent, simply put the \"ip helper-address <IP-address-of-DHCP-Server>\" command under the interface that receives the DHCP messages from the DHCP Client -> Answer C is correct. Note: We can configure more than one ip helper command under one Layer 3 interface."
+  },
+  {
+    "id": "p10_q044",
+    "type": "mcq",
+    "question": "Refer to the exhibit. A network engineer must configure router R1 with a host route to the server. Which command must the engineer configure?",
+    "image": "p10_q044.png",
+    "options": [
+      "R1(config)#ip route 10.10.10.10 255.255.255.255 192.168.0.2",
+      "R1(config)#ip route 10.10.10.0 255.255.255.0 192.168.0.2",
+      "R1(config)#ip route 0.0.0.0 0.0.0.0 192.168.0.2",
+      "R1(config)#ip route 192.168.0.2 255.255.255.255 10.10.10.10"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "A host route is an IPv4 address with a 32-bit mask (255.255.255.255)."
+  },
+  {
+    "id": "p10_q045",
+    "type": "mcq",
+    "question": "In a cloud-computing environment, what is rapid elasticity?",
+    "image": null,
+    "options": [
+      "automatic adjustment of capacity based on need",
+      "control and monitoring of resource consumption by the tenant",
+      "pooling resources in a multitenant model based on need",
+      "self-service of computing resources by the tenant"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Rapid elasticity allows users to automatically request additional space in the cloud or other types of services. Because of the setup of cloud computing services, provisioning can be seamless for the client or user."
+  },
+  {
+    "id": "p10_q046",
+    "type": "dragdrop",
+    "question": "Drag and drop the steps in a standard DNS lookup operation from the left into the order on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "An endpoint submits a request for the IP address of a domain name"
+      },
+      {
+        "id": "i2",
+        "text": "The DNS submits a request to a root DNS server"
+      },
+      {
+        "id": "i3",
+        "text": "The DNS submits a request to the domain DNS server"
+      },
+      {
+        "id": "i4",
+        "text": "The DNS receives a reply from the domain DNS server"
+      },
+      {
+        "id": "i5",
+        "text": "The DNS responds to the endpoint"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Step 1"
+      },
+      {
+        "id": "t2",
+        "text": "Step 2"
+      },
+      {
+        "id": "t3",
+        "text": "Step 3"
+      },
+      {
+        "id": "t4",
+        "text": "Step 4"
+      },
+      {
+        "id": "t5",
+        "text": "Step 5"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t2",
+      "i3": "t3",
+      "i4": "t4",
+      "i5": "t5"
+    },
+    "explanation": "Step 1: An endpoint submits a request for the IP address of a domain name. Step 2: The DNS submits a request to a root DNS server. Step 3: The DNS submits a request to the domain DNS server. Step 4: The DNS receives a reply from the domain DNS server. Step 5: The DNS responds to the endpoint."
+  },
+  {
+    "id": "p10_q047",
+    "type": "mcq",
+    "question": "What must be considered for a locally switched FlexConnect AP if the VLANs that are used by the AP and client access are different?",
+    "image": null,
+    "options": [
+      "The APs must be connected to the switch with multiple links in LAG mode.",
+      "The native VLAN must match the management VLAN of the AP.",
+      "The switch port mode must be set to trunk.",
+      "IEEE 802.1Q trunking must be disabled on the switch port."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "You can configure the LAN uplink interface of a FlexConnect AP as either an access port or as a trunk. For security and reliability reasons, it is recommended to segregate the client traffic from the management VLAN, and so to configure the AP's switchport as a trunk, with separately tagged VLANs for locally switched client traffic. Answer B is not correct as it should be \"The native VLAN must match the native VLAN of the AP\" (not the management VLAN)."
+  },
+  {
+    "id": "p10_q048",
+    "type": "mcq",
+    "question": "Which command configures the Cisco WLC to prevent a serial session with the WLC CLI from being automatically logged out?",
+    "image": null,
+    "options": [
+      "config sessions maxsessions 0",
+      "config serial timeout 9600",
+      "config serial timeout 0",
+      "config sessions timeout 0"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "The CLI automatically logs you out without saving any changes after 5 minutes of inactivity. You can set the automatic logout from 0 (never log out) to 160 minutes using the config serial timeout command. To prevent SSH or Telnet sessions from timing out, run the config sessions timeout 0 command. This question asks about the serial session so the first command is the correct answer."
+  },
+  {
+    "id": "p10_q049",
+    "type": "mcq",
+    "question": "Which two IPv6 addresses are used to provide connectivity between two routers on a shared link? (Choose two)",
+    "image": null,
+    "options": [
+      "2002::512:1204b:1111::1/64",
+      "ff06:bb43:cc13:dd16:1bb:ff14:7545:234d",
+      "FF02::0001:FF00:0000/104",
+      "2001:701:104b:1111::1/64",
+      "::ffff:10.14.101.1/96"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": "To provide connectivity between two routers on a shared link, global unicast addresses or link-local addresses are typically used. Answer D is correct as this is a global unicast address, valid for router-to-router communication on a shared link. Answer A is not correct as it has two double colons \"::\". This answer also has another error in \"1204b\" which has 5 hexadecimal numbers in an octet (an IPv6 octet only has a maximum of 4 hexadecimal numbers). FF02::0001:FF00:0000 is an IPv6 multicast address that is part of the solicited-node multicast group. The address ff06:bb43:cc13:dd16:1bb:ff14:7545:234d is a site-local IPv6 multicast address. Multicast addresses are used for group communication, not direct connectivity between two routers so answer B and answer C are not correct."
+  },
+  {
+    "id": "p10_q050",
+    "type": "mcq",
+    "question": "Refer to the exhibit. An architect is managing a wireless network with APs from several branch offices connecting to the WLC in the data center. There is a new requirement for a single WLAN to process the client data traffic without sending it to the WLC. Which action must be taken to complete the request?",
+    "image": "p10_q050.png",
+    "options": [
+      "Enable local HTTP profiling",
+      "Enable FlexConnect Local Switching",
+      "Enable local DHCP Profiling",
+      "Enable Disassociation Imminent"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "FlexConnect AP can perform standalone client authentication and switch VLAN traffic locally even when it's disconnected to the WLC (Local Switching)"
+  },
+  {
+    "id": "p10_q051",
+    "type": "mcq",
+    "question": "What is a function of MAC address learning?",
+    "image": null,
+    "options": [
+      "It is disabled by default on all interfaces connected to trunks",
+      "It increases security on the management VLAN",
+      "It is enabled by default on all VLANs and interfaces",
+      "It increases the potential for MAC address flooding"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q052",
+    "type": "mcq",
+    "question": "A Cisco engineer at a new branch office is configuring a wireless network with access points that connect to a controller that is based at corporate headquarters. Wireless client traffic must terminate at the branch office and access-point survivability is required in the event of a WAN outage. Which access point mode must be selected?",
+    "image": null,
+    "options": [
+      "Lightweight with local switching disabled",
+      "Local with AP fallback enabled",
+      "OfficeExtend with high availability disabled",
+      "FlexConnect with local switching enabled"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q053",
+    "type": "mcq",
+    "question": "What is an advantage of using auto mode versus static mode for power allocation when an access point is connected to a PoE switch port?",
+    "image": null,
+    "options": [
+      "The default level is used for the access point",
+      "It detects the device is a powered device",
+      "All four pairs of the cable are used",
+      "Power policing is enabled at the same time"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "The switch supports these PoE modes: auto - The switch automatically detects if the connected device requires power. If the switch discovers a powered device connected to the port and if the switch has enough power, it grants power, updates the power budget, turns on power to the port on a first-come, first-served basis, and updates the LEDs. static - The switch pre-allocates power to the port (even when no powered device is connected) and guarantees that power will be available for the port."
+  },
+  {
+    "id": "p10_q054",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit.\n\nR1# show ip route | begin gateway\nGateway of last resort is not set\n    172.16.0.0/16 is variably subnetted, 5 subnets, 5 masks\nO   172.16.2.128/25 [110/3184437] via 207.165.200.250, 00:00:24, Serial0/0/0\nO   172.16.3.64/27 [110/3184437] via 207.165.200.250, 00:00:24, Serial0/0/0\nO   172.16.3.128/28 [110/3184437] via 207.165.200.250, 00:00:24, Serial0/0/0\nO   172.16.3.192/29 [110/3184437] via 207.165.200.250, 00:00:24, Serial0/0/0\nO   172.16.4.0/23 [110/3184437] via 207.165.200.250, 00:00:24, Serial0/0/0\n    207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC   207.165.200.248/30 is directly connected, Serial0/0/0\nL   207.165.200.249/32 is directly connected, Serial0/0/0\nC   207.165.200.252/30 is directly connected, Serial0/0/1\nL   207.165.200.253/32 is directly connected, Serial0/0/1\n\nDrag and drop the learned prefixes from the left onto the subnet masks on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "172.16.3.128"
+      },
+      {
+        "id": "i2",
+        "text": "172.16.3.64"
+      },
+      {
+        "id": "i3",
+        "text": "172.16.2.128"
+      },
+      {
+        "id": "i4",
+        "text": "172.16.3.192"
+      },
+      {
+        "id": "i5",
+        "text": "172.16.4.0"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "255.255.254.0"
+      },
+      {
+        "id": "t2",
+        "text": "255.255.255.128"
+      },
+      {
+        "id": "t3",
+        "text": "255.255.255.224"
+      },
+      {
+        "id": "t4",
+        "text": "255.255.255.240"
+      },
+      {
+        "id": "t5",
+        "text": "255.255.255.248"
+      }
+    ],
+    "correctMapping": {
+      "i5": "t1",
+      "i3": "t2",
+      "i2": "t3",
+      "i1": "t4",
+      "i4": "t5"
+    },
+    "explanation": "172.16.4.0 - 255.255.254.0; 172.16.2.128 - 255.255.255.128; 172.16.3.64 - 255.255.255.224; 172.16.3.128 - 255.255.255.240; 172.16.3.192 - 255.255.255.248."
+  },
+  {
+    "id": "p10_q055",
+    "type": "dragdrop",
+    "question": "Drag and drop the Ansible features from the left to the right. Not all features are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "uses the YAML language"
+      },
+      {
+        "id": "i2",
+        "text": "executes modules via SSH by default"
+      },
+      {
+        "id": "i3",
+        "text": "pushes configurations to the client"
+      },
+      {
+        "id": "i4",
+        "text": "uses agents to manage hosts"
+      },
+      {
+        "id": "i5",
+        "text": "requires clients to pull configurations from the server"
+      },
+      {
+        "id": "i6",
+        "text": "operates without agents"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "feature"
+      },
+      {
+        "id": "t2",
+        "text": "feature"
+      },
+      {
+        "id": "t3",
+        "text": "feature"
+      },
+      {
+        "id": "t4",
+        "text": "feature"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t2",
+      "i3": "t3",
+      "i6": "t4"
+    },
+    "explanation": "Ansible: Configuration Language YAML/Python, Architecture Agentless (Client only), Deployment Method Push Model, Transport Mechanism SSH/NETCONF, Port used TCP port 22. So Ansible uses the YAML language, executes modules via SSH by default, pushes configurations to the client, and operates without agents. It does not use agents to manage hosts, and it does not require clients to pull configurations from the server (that is Puppet/Chef, which use a Pull Model)."
+  },
+  {
+    "id": "p10_q056",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\n--Some output missing--\nRouting Descriptor Blocks:\n* directly connected, via Ethernet0/1\n    Route metric is 0, traffic share count is 1\n\nCPE# ping 203.0.113.1\nType escape sequence to abort.\nSending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:\n!!!!!\nSuccess rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms\n\nCPE# show ip route\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\nB*  0.0.0.0/0 [20/0] via 198.51.100.1, 00:02:07\n    198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC        198.51.100.0/30 is directly connected, Ethernet0/0\nL        198.51.100.2/32 is directly connected, Ethernet0/0\n    203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC        203.0.113.0/30 is directly connected, Ethernet0/1\nL        203.0.113.2/32 is directly connected, Etheraet0/1\n```\n\nAfter configuring a new static route on the CPE, the engineer entered this series of commands to verify that the new configuration is operating normally. When is the static default route installed into the routing table?",
+    "image": null,
+    "options": [
+      "when the default route learned over external BGP becomes invalid",
+      "when 203.0.113.1 is no longer reachable as a next hop",
+      "when the default route learned over external BGP changes its next hop",
+      "when a route to 203.0.113.1 is learned via BGP"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Maybe in the missing output at the top of the exhibit is about configuring a static default route (with command \"ip route 0.0.0.0 0.0.0.0 ...\"). But in the routing table of CPE router we only see a default route learned via BGP. We did not see the static default route because it was configured with a higher AD than that of the default route learned via BGP. Therefore only when the current default route becomes invalid then the default static route would be installed into the routing table."
+  },
+  {
+    "id": "p10_q057",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nWireless LAN access must be set up to force all clients from the NA WLAN to authenticate against the local database. The WLAN is configured for local EAP authentication. The time that users access the network must not be limited. Which action completes this configuration?",
+    "image": "p10_q057.png",
+    "options": [
+      "Check the Guest User Role check box",
+      "Clear the Lifetime (seconds) value",
+      "Set the Lifetime (seconds) value to 0",
+      "Uncheck the Guest User check box"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The users created in the \"Local Net Users\" are stored in the local database. With the \"Guest User\" check box enabled, we have to set the time for that user. The \"Lifetime\" is the amount of time that the guest user account is to remain active. The valid range is 60 to 2,592,000 seconds (30 days) inclusive, and the default setting is 86,400 seconds.\n\nIf we don't want to limit the time for that user, uncheck the \"Guest User\" check box."
+  },
+  {
+    "id": "p10_q058",
+    "type": "mcq",
+    "question": "Which remote access protocol provides unsecured remote CLI access?",
+    "image": null,
+    "options": [
+      "Telnet",
+      "SSH",
+      "console",
+      "Bash"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q059",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nAn engineer must configure the interface that connects to PC1 and secure it in a way that only PC1 is allowed to use the port. No VLAN tagging can be used except for a voice VLAN. Which command sequence must be entered to configure the switch?",
+    "image": "p10_q059.png",
+    "options": [
+      "SW1(config-if)#switchport mode nonegotiate\nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security maximum 1",
+      "SW1(config-if)#switchport mode access\nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800",
+      "SW1(config-if)#switchport mode dynamic desirable\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800\nSW1(config-if)#switchport port-security mac-address sticky",
+      "SW1(config-if)#switchport mode dynamic auto\nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security violation restrict"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q060",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA public IPv6 address must be configured for internet access. Which command must be configured on the R2 WAN interface to the service provider?",
+    "image": "p10_q060.png",
+    "options": [
+      "ipv6 address fe80::260:3EFF:FE11:6770 link-local",
+      "ipv6 address fe80: :/10",
+      "ipv6 address 2001:db8:433:47:4620:ffff:ffff:ffff/64 anycast",
+      "ipv6 address 2001:db8:123:45::4/64"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q061",
+    "type": "dragdrop",
+    "question": "Drag and drop the device behaviors from the left onto the matching HSRP state on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "has heard from the neighbor device and is receiving hello packets"
+      },
+      {
+        "id": "i2",
+        "text": "is forwarding packets"
+      },
+      {
+        "id": "i3",
+        "text": "is ready to forward packets if the device that is currently forwarding packets fails"
+      },
+      {
+        "id": "i4",
+        "text": "is transmitting and receiving hello packets"
+      },
+      {
+        "id": "i5",
+        "text": "is waiting to hear from the neighbor device"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Learn"
+      },
+      {
+        "id": "t2",
+        "text": "Active"
+      },
+      {
+        "id": "t3",
+        "text": "Listen"
+      },
+      {
+        "id": "t4",
+        "text": "Speak"
+      },
+      {
+        "id": "t5",
+        "text": "Standby"
+      }
+    ],
+    "correctMapping": {
+      "i5": "t1",
+      "i2": "t2",
+      "i1": "t3",
+      "i4": "t4",
+      "i3": "t5"
+    },
+    "explanation": "When in operation, HSRP devices are configured into one of many states:\nActive - This is the state of the device that is actively forwarding traffic.\nInit or Disabled - This is the state of a device that is not yet ready or able to participate in HSRP.\nLearn - This is the state of a device that has not yet determined the virtual IP address and has not yet seen a hello message from an active device.\nListen - This is the state of a device that is receiving hello messages.\nSpeak - This is the state of a device that is sending and receiving hello messages.\nStandby - This is the state of a device that is prepared to take over the traffic forwarding duties from the active device."
+  },
+  {
+    "id": "p10_q062",
+    "type": "mcq",
+    "question": "Which two functions does a WLC perform in the lightweight access-point architecture that an AP performs independently in an autonomous architecture? (Choose two)",
+    "image": null,
+    "options": [
+      "handling the association, authentication, and roaming of wireless clients",
+      "encrypting and decrypting traffic that uses the WAP protocol family",
+      "preventing collisions between wireless clients on the same RF channel",
+      "managing RF channels, including transmission power",
+      "sending and processing beacon frames"
+    ],
+    "correctIndexes": [
+      0,
+      3
+    ],
+    "explanation": "This question asks what the WLC can do for the AP or which functions are moved from AP to WLC in lightweight access-point architecture.\n\nThe wireless clients encrypt and decrypt the traffic, not the AP -> Answer B is not correct.\n\nThe wireless clients also run CSMA/CA to prevent collisions between them, not the AP -> Answer C is not correct.\n\nWith wireless networking, we have real-time and management functions. The AP should handle real-time functions, but everything that is not delay-sensitive can do from a central location. We separate the following management and real-time functions of the AP:\n\n+ Management functions:\n++ Client authentication (-> Answer A is correct)\n++ Security management\n++ Association and reassociation (roaming)\n++ Quality of Service (QoS)\n\n+ Real-time functions:\n++ Transmission of 802.11 frames\n++ MAC management\n++ Encryption\n\nSince these functions are not real-time, we can move them to a central point, the WLC. We take away some of the intelligence of the AP, which is why we call them lightweight APs (LAP). We move this intelligence to the WLC.\n\nRadio Resource Management (RRM) allows the controller to dynamically control power and channel assignment of APs -> Answer D is correct."
+  },
+  {
+    "id": "p10_q063",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nCurrent Neighbor Relationship\nNeighbor ID     Pri   State     Dead Time   Address        Interface\n192.168.1.1     1     FULL/DR   00:00:33    192.168.1.1    GigabitEthernet0/0\n\nDesired Neighbor Relationship\nNeighbor ID     Pri   State     Dead Time   Address        Interface\n192.168.1.1     0     FULL/ -   00:00:31    192.168.1.1    GigabitEthernet0/0\n\nHow must OSPF be configured on the GigabitEthernet0/0 interface of the neighbor device to achieve the desired neighbor relationship?",
+    "image": null,
+    "options": [
+      "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf cost 5",
+      "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf 1 area 2",
+      "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf network point-to-point",
+      "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf priority 1"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "We see the desired neighbor relationship does not have DR/BDR so we have to set the network type to \"point-to-point\"."
+  },
+  {
+    "id": "p10_q064",
+    "type": "mcq",
+    "question": "What causes a port to be placed in the err-disabled state?",
+    "image": null,
+    "options": [
+      "latency",
+      "nothing plugged into the port",
+      "shutdown command issued on the port",
+      "link flapping"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Link flap means that the interface continually goes up and down in a Cisco Switch. The interface is put into the errdisabled state if it flaps more than five times in 10 seconds. The common cause of link flap is a Layer 1 issue such as a bad cable, duplex mismatch, or bad Gigabit Interface Converter (GBIC) card. Look at the console messages or the messages that were sent to the syslog server that state the reason for the port shutdown.\n\n13w0d: %PM-4-ERR_DISABLE: link-flap error detected on Fa0/28, putting Fa0/28 in err-disable state"
+  },
+  {
+    "id": "p11_q029",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\n{\n  \"SW1\" : [\"Ten-GigabitEthernet0/0\", \"Ten-GigabitEthernet0/1\"],\n  \"SW2\" : [\"Ten-GigabitEthernet0/0\", \"Ten-GigabitEthernet0/1\"],\n  \"SW3\" : [\"Ten-GigabitEthernet0/0\", \"Ten-GigabitEthernet0/1\"],\n  \"SW4\" : [\"Ten-GigabitEthernet0/0\", \"Ten-GigabitEthernet0/1\"]\n}\n```\n\nHow many JSON objects are presented?",
+    "image": null,
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "A JSON object contains zero, one, or more key-value pairs, also called properties. The object is surrounded by curly braces {} so there is only one object in this question."
+  },
+  {
+    "id": "p11_q030",
+    "type": "mcq",
+    "question": "Refer to the exhibit. PC1 regularly sends 1800 Mbps of traffic to the server. A network engineer needs to configure the EtherChannel to disable Port Channel 1 between SW1 and SW2 when the Ge0/0 and Ge0/1 ports on SW2 go down. Which configuration must the engineer apply to the switch?",
+    "image": "p11_q030.png",
+    "options": [
+      "SW2#configure terminal\nSW2(config)# interface port-channel 1\nSW2(config-if)#lacp port-priority 32000",
+      "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#lacp max-bundle 2",
+      "SW2#configure terminal\nSW2(config)#lacp system-priority 32000",
+      "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#port-channel min-links 2"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The port-channel min-links command specifies the minimum number of interfaces that the configuration mode LAG requires to be active. If there are fewer ports than specified by this command, the port channel interface does not become active."
+  },
+  {
+    "id": "p11_q031",
+    "type": "mcq",
+    "question": "Which IPv6 address range is suitable for anycast addresses for distributed services such DHCP or DNS?",
+    "image": null,
+    "options": [
+      "FF00:1/12",
+      "2001:db8:0234:ca3e::1/128",
+      "2002:db84:3f37:ca98:be05:8/64",
+      "FE80::1/10"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "FF00::/8 range is used for IPv6 multicast -> The first octet is FF (1111 1111) -> Answer A is not correct.\n\nFE80::/10 is link-local address -> Answer D is not correct.\n\nThe 2002::/16 prefix is used for 6to4, which requires the next 32 bits (after the 16 bit prefix) to be a global unicast IPv4 address -> Answer C is not correct.\n\nNote: Anycast addresses are syntactically indistinguishable from unicast addresses, because anycast addresses are allocated from the unicast address space. Assigning a unicast address to more than one interface makes a unicast address an anycast address. Nodes to which the anycast address is assigned must be explicitly configured to recognize that the address is an anycast address."
+  },
+  {
+    "id": "p11_q032",
+    "type": "mcq",
+    "question": "Refer the exhibit.\n\n```\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\n```\n\nWhat is the cause of poor performance on router R19?",
+    "image": null,
+    "options": [
+      "excessive collisions",
+      "speed and duplex mismatch",
+      "port oversubscription",
+      "excessive CRC errors"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "We see the \"Total output drops: 135298429\" is high.\n\nTypically, the output drops can occur if QoS is configured and does not provide enough bandwidth to certain class of packets. It also occurs when the hardware hits an oversubscription.\n\nNote: Total output drops: The number of packets dropped because the output queue is full. A common cause of this might be traffic from a high bandwidth link being switched to a lower bandwidth link or traffic from multiple inbound links being switched to a single outbound link."
+  },
+  {
+    "id": "p11_q033",
+    "type": "mcq",
+    "question": "An engineer is configuring a switch port that is connected to a VoIP handset. Which command must the engineer configure to enable port security with a manually assigned MAC address of abcd.abcd.abcd on voice VLAN 4?",
+    "image": null,
+    "options": [
+      "switchport port-security mac-address abcd.abcd.abcd",
+      "switchport port-security mac-address abcd.abcd.abcd vlan 4",
+      "switchport port-security mac-address sticky abcd.abcd.abcd vlan 4",
+      "switchport port-security mac-address abcd.abcd.abcd vlan voice"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "We tested the port-security configuration under Web-IOU with IOSv15.2 but there is no \"vlan voice\" keyword. But in a Cisco reference, we can find such command:\n\nDevice(config-if)# switchport port-security mac-address 0000.0000.0004 vlan voice\n\nSo we believe answer D is the best choice."
+  },
+  {
+    "id": "p11_q034",
+    "type": "dragdrop",
+    "question": "Drag and drop the DNS commands from the left onto their effects on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "ip domain-name"
+      },
+      {
+        "id": "i2",
+        "text": "ip domain-lookup"
+      },
+      {
+        "id": "i3",
+        "text": "ip name-server"
+      },
+      {
+        "id": "i4",
+        "text": "show hosts"
+      },
+      {
+        "id": "i5",
+        "text": "ip host switch_1 192.168.0.1"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "enables host-to-IP-address translation"
+      },
+      {
+        "id": "t2",
+        "text": "adds an entry to the host table"
+      },
+      {
+        "id": "t3",
+        "text": "displays address-mapping information"
+      },
+      {
+        "id": "t4",
+        "text": "specifies the IP address of the DNS server"
+      },
+      {
+        "id": "t5",
+        "text": "completes the FQDN of the DNS server"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i5": "t2",
+      "i4": "t3",
+      "i3": "t4",
+      "i1": "t5"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p11_q035",
+    "type": "mcq",
+    "question": "How does encryption protect the wireless network?",
+    "image": null,
+    "options": [
+      "via integrity checks to identify wireless forgery attacks in the frame",
+      "via specific ciphers to detect and prevent zero-day network attacks",
+      "via an algorithm to change wireless data so that only the access point and client understand it",
+      "via a policy to prevent unauthorized users from communicating on the wireless network"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q036",
+    "type": "mcq",
+    "question": "Which device segregates a network into separate zones that have their own security policies?",
+    "image": null,
+    "options": [
+      "IPS",
+      "firewall",
+      "access point",
+      "switch"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q037",
+    "type": "mcq",
+    "question": "What is a specification for SSIDS?",
+    "image": null,
+    "options": [
+      "They are a Cisco proprietary security feature.",
+      "They must include one number and one letter.",
+      "They define the VLAN on a switch.",
+      "They are case sensitive."
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The SSID is limited to a maximum length of 32 bytes. When represented in ASCII form, the characters of the SSID are case-sensitive. This means that \"9tut\" is a different network than \"9TUT\"."
+  },
+  {
+    "id": "p11_q038",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nSW1#show interface\ninterface FastEthernet0/0\n  switchport access vlan 2\n  switchport mode access\n```\n\nAn engineer is configuring a new Cisco switch NewSW, to replace SW2. The details have been provided:\n* Switches SW1 and SW2 are third-party devices without support for trunk ports\n* The existing connections must be maintained between PC1 PC2 and PC3\n* Allow the switch to pass traffic from future VLAN 10. Which configuration must be applied?",
+    "image": "p11_q038.png",
+    "options": [
+      "Option A:\nNewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode trunk\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 2",
+      "Option B:\nNewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode trunk\nNewSW(config-if)#switchport trunk allowed vlan 10\nNewSW(config-if)#switchport trunk native vlan 10",
+      "Option C:\nNewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode access\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 10",
+      "Option D:\nNewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode access\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 2"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "We can configure trunking on the NewSW and set the native VLAN to the access VLAN 2 of SW1 so that untagged frames received from SW1 will be placed into VLAN 2."
+  },
+  {
+    "id": "p11_q039",
+    "type": "mcq",
+    "question": "What is a reason to implement IPv4 private addressing?",
+    "image": null,
+    "options": [
+      "Reduce the risk of a network security breach",
+      "Comply with PCI regulations",
+      "Comply with local law",
+      "Reduce the size of the forwarding table on network routers"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q040",
+    "type": "mcq",
+    "question": "Which is a fact related to FTP?",
+    "image": null,
+    "options": [
+      "It uses block numbers to identify and mitigate data-transfer errors",
+      "It always operates without user authentication",
+      "It relies on the well-known UDP port 69.",
+      "It uses two separate connections for control and data traffic"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "FTP communicates using two TCP connections. Control traffic is exchanged over TCP/21, and data transmission is performed over TCP/20."
+  },
+  {
+    "id": "p11_q041",
+    "type": "mcq",
+    "question": "Which two protocols are used by an administrator for authentication and configuration on access points? (Choose two)",
+    "image": null,
+    "options": [
+      "Kerberos",
+      "802.1Q",
+      "802.1x",
+      "TACACS+",
+      "RADIUS"
+    ],
+    "correctIndexes": [
+      2,
+      4
+    ],
+    "explanation": "You can configure 802.1X authentication between a lightweight access point and a Cisco switch."
+  },
+  {
+    "id": "p11_q042",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nCPE1# show protocols e0/1\nEthernet0/1 is up, line protocol is up\n  Internet address is 10.0.12.2/24\n\nCPE1#show ip access-list LAN\nStandard IF access list LAN\n 10 permit 10.0.12.0, wildcard bits 0.0.0.255\n\nCPE1# show ip nat translations\n\nCPE1# show ip net statistics\n\nTotal active translations: 0 (0 static, 0 dynamic, 0 extended)\nPeak translations: 0\nOutside interfaces:\nInside interfaces:\n Ethernet0/1\nHits: 0 Misses: 0\nCEF Translated packets: 0, CEF Funted packets: 0\nExpired translations: 0\nDynamic mappings:\n-- Inside Source\n[Id: 1] access-list LAN pool NATPOOL refcount 0\n  pool NATPOOL: netmask 255.255.255.0\n    start 198.51.100.11 end 198.51.100.20\n    type generic, total addresses 10, allocated 0 (0%), misses 0\n\nTotal doors: 0\nAppl doors: 0\nNormal doors: 0\nQueued Packets: 0\n```\n\nWhat is the next step to complete the implementation for the partial NAT configuration shown?",
+    "image": null,
+    "options": [
+      "Reconfigure the static NAT entries that overlap the NAT pool",
+      "Configure the NAT outside interface",
+      "Modify the access list for the internal network on e0/1",
+      "Apply the ACL to the pool configuration"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "We see the line \"Outside interfaces: \" is still empty which means we have not configured an outside interface yet."
+  },
+  {
+    "id": "p11_q043",
+    "type": "mcq",
+    "question": "Which type of IPv4 address type helps to conserve the globally unique address classes?",
+    "image": null,
+    "options": [
+      "multicast",
+      "private",
+      "loopback",
+      "public"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q044",
+    "type": "dragdrop",
+    "question": "Drag and drop the IPv6 address types from the left onto their description on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "2001:DB8::bced:1234:456d:aacc"
+      },
+      {
+        "id": "i2",
+        "text": "FD00:0000:0000:1a2d:a153:3992:a19d:ccca"
+      },
+      {
+        "id": "i3",
+        "text": "FE80::abcf:ffff:12de:3992"
+      },
+      {
+        "id": "i4",
+        "text": "FF05::23:becf:22:1111"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "multicast address used only locally within the site"
+      },
+      {
+        "id": "t2",
+        "text": "address that is automatically created on a link when IPv6 is enabled on an interface"
+      },
+      {
+        "id": "t3",
+        "text": "address that is prohibited from routing to the Internet"
+      },
+      {
+        "id": "t4",
+        "text": "address that is unique and reserved for documentation purposes"
+      }
+    ],
+    "correctMapping": {
+      "i4": "t1",
+      "i3": "t2",
+      "i2": "t3",
+      "i1": "t4"
+    },
+    "explanation": "FF00::/8 range is used for IPv6 multicast -> The first octet is FF which indicates a multicast address.\n\nAddress that is automatically created on a link when IPv6 is enabled on an interface -> Link-local address in the range of FE80::/10\n\nAddress that is prohibited from routing to the Internet -> Site-local address (or Unique local address). They are analogous to IPv4's private address classes. They start with FC00::/7 (for used in private networks) -> The first octet can be FC or FD. However when you implement this you have to set the L-bit (the right-most bit of the first octet) to 1 which means that the first two digits will be FD."
+  },
+  {
+    "id": "p11_q045",
+    "type": "dragdrop",
+    "question": "Drag and drop the wireless standards from the left onto the number of nonoverlapping channels they support on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "802.11a"
+      },
+      {
+        "id": "i2",
+        "text": "802.11b"
+      },
+      {
+        "id": "i3",
+        "text": "802.11g"
+      },
+      {
+        "id": "i4",
+        "text": "802.11n 2.4 GHz"
+      },
+      {
+        "id": "i5",
+        "text": "802.11n 5 GHz"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "3 Non-Overlapping Channels"
+      },
+      {
+        "id": "t2",
+        "text": "23 Non-Overlapping Channels"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i3": "t1",
+      "i4": "t1",
+      "i1": "t2",
+      "i5": "t2"
+    },
+    "explanation": "For 802.11n, in the 2.4 GHz band, there are three non-overlapping 20 MHz channels or one 40 MHz channel. In the 5 GHz band, twenty four non-overlapping 20 MHz or up to twelve 40 MHz channels exist.\n\nAlso in the table \"Comparison of 802.11 LAN Standards\" of the reference below, we can see the \"Maximum Non-Overlapping Channels (Americas)\" of 802.11b & 802.11g are 3."
+  },
+  {
+    "id": "p11_q046",
+    "type": "dragdrop",
+    "question": "Drag and drop the statements about AAA from the left onto the corresponding AAA services on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "It permits and denies login attempts"
+      },
+      {
+        "id": "i2",
+        "text": "It records the amount of network resources consumed by the user"
+      },
+      {
+        "id": "i3",
+        "text": "It assigns per-user attributes"
+      },
+      {
+        "id": "i4",
+        "text": "It supports local, PPP, RADIUS, and TACACS+ options"
+      },
+      {
+        "id": "i5",
+        "text": "It restricts the CLI commands that a user is able to perform"
+      },
+      {
+        "id": "i6",
+        "text": "It tracks the services that a user is using"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Authentication"
+      },
+      {
+        "id": "t2",
+        "text": "Authorization"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i4": "t1",
+      "i3": "t2",
+      "i5": "t2"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p11_q047",
+    "type": "dragdrop",
+    "question": "Drag and drop the cloud-computing components from the left onto the correct descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "measured service"
+      },
+      {
+        "id": "i2",
+        "text": "broad network access"
+      },
+      {
+        "id": "i3",
+        "text": "rapid elasticity"
+      },
+      {
+        "id": "i4",
+        "text": "resource pooling"
+      },
+      {
+        "id": "i5",
+        "text": "on-demand self-service"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "The resource pool can expand quickly to meet demand"
+      },
+      {
+        "id": "t2",
+        "text": "The consumer can choose when to start or stop using the service"
+      },
+      {
+        "id": "t3",
+        "text": "The provider allocates CPU, memory, and disk from its shared compute resources to multiple customers"
+      },
+      {
+        "id": "t4",
+        "text": "The provider can bill the consumer in accordance with the level of usage"
+      },
+      {
+        "id": "t5",
+        "text": "The service is available from many types of devices and networks"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i5": "t2",
+      "i4": "t3",
+      "i1": "t4",
+      "i2": "t5"
+    },
+    "explanation": "On-demand self-service: A consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed automatically without requiring human interaction with each service provider.\n\nBroad network access: Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous thin or thick client platforms (e.g., mobile phones, tablets, laptops, and workstations).\n\nResource pooling: The provider's computing resources are pooled to serve multiple consumers using a multi-tenant model, with different physical and virtual resources dynamically assigned and reassigned according to consumer demand. There is a sense of location independence in that the customer generally has no control or knowledge over the exact location of the provided resources but may be able to specify location at a higher level of abstraction (e.g., country, state, or datacenter). Examples of resources include storage, processing, memory, and network bandwidth.\n\nRapid elasticity: Capabilities can be elastically provisioned and released, in some cases automatically, to scale rapidly outward and inward commensurate with demand. To the consumer, the capabilities available for provisioning often appear to be unlimited and can be appropriated in any quantity at any time.\n\nMeasured service: Cloud systems automatically control and optimize resource use by leveraging a metering capability at some level of abstraction appropriate to the type of service (e.g., storage, processing, bandwidth, and active user accounts). Resource usage can be monitored, controlled, and reported, providing transparency for both the provider and consumer of the utilized service."
+  },
+  {
+    "id": "p11_q048",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nEIGRP: 192.168.12.0/24\nRIP: 192.168.12.0/27\nOSPF: 192.168.12.0/28\n```\n\nHow does the router manage traffic to 192.168.12.16?",
+    "image": null,
+    "options": [
+      "It selects the RIP route because it has the longest prefix inclusive of the destination address.",
+      "It load-balances traffic between all three routes.",
+      "It chooses the OSPF route because it has the longest prefix inclusive of the destination address.",
+      "It chooses the EIGRP route because it has the lowest administrative distance."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "The IP address 192.168.12.16 does not belong to OSPF subnet 192.168.12.0/28 (this subnet only ranges from 192.168.12.0 to 192.168.12.15) so RIP route will be selected as the longest prefix match."
+  },
+  {
+    "id": "p11_q049",
+    "type": "dragdrop",
+    "question": "Drag and drop the VLAN port modes from the left onto the descriptions on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "dynamic access"
+      },
+      {
+        "id": "i2",
+        "text": "tunnel"
+      },
+      {
+        "id": "i3",
+        "text": "static access"
+      },
+      {
+        "id": "i4",
+        "text": "private"
+      },
+      {
+        "id": "i5",
+        "text": "trunk"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "allows the port to belong to one VLAN when manually configured"
+      },
+      {
+        "id": "t2",
+        "text": "allows the port to be assigned automatically to one VLAN"
+      },
+      {
+        "id": "t3",
+        "text": "allows the port to belong to one or more VLANs"
+      },
+      {
+        "id": "t4",
+        "text": "allows the port to support a single VLAN across a service-provider network"
+      },
+      {
+        "id": "t5",
+        "text": "allows the port to communicate with others within the same community VLAN"
+      }
+    ],
+    "correctMapping": {
+      "i3": "t1",
+      "i1": "t2",
+      "i5": "t3",
+      "i2": "t4",
+      "i4": "t5"
+    },
+    "explanation": ""
+  },
+  {
+    "id": "p11_q050",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nCPE# show ipv6 route\nIPv6 Routing Table - default - 6 entries\nCodes: C - Connected, L - Local, S - Static, U - Per-user Static route\n       B - BGP, R - RIP, H - NHRP, II - ISIS L1\n       I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary, D - EIGRP\n       EX - EIGRP external, ND - ND Default, NDp - ND Prefix, DCE - Destination\n       NDr - Redirect, O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1\n       OE2 - OSPF ext 2, ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2\n       la - LISP alt, lr - LISP site-registrations, ld - LISP dyn-eid\n       lA - LISP away, le - LISP extranet-policy, lp - LISP publications\nND ::/0 [2/0]\n     via FE80::A8BB:CCFF:FE00:200, Ethernet0/0\nNDp 2001:DB8:1234:1::/64 [2/0]\n     via Ethernet0/0, directly connected\nL 2001:DB8:1234:1:A8BB:CCFF:FE00:100/128 [0/0]\n     via Ethernet0/0, receive\nC 2001:DB8:1234:2::/64 [0/0]\n     via Ethernet0/1, directly connected\nL 2001:DB8:1234:2:A8BB:CCFF:FE00:110/128 [0/0]\n     via Ethernet0/1, receive\nL FF00::/8 [0/0]\nvia Null0, receive\n```\n\nThe administrator must configure a floating static default route that points to 2001:db8:1234:2::1 and replaces the current default route only if it fails. Which command must the engineer configure on the CPE?",
+    "image": null,
+    "options": [
+      "ipv6 route ::/0 2001:db8:1234:2::1 2",
+      "ipv6 route ::/0 2001:db8:1234:2::1 3",
+      "ipv6 route ::/128 2001:db8:1234:2::1 3",
+      "ipv6 route ::/0 2001:db8:1234:2::1 1"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "From the output line \"ND ::/0 [2/0]\" we learn that the current static default route has the AD of 2 so we have to configure the floating static default route with AD of 3 or greater so that it acts as a backup route."
+  },
+  {
+    "id": "p11_q051",
+    "type": "mcq",
+    "question": "What is the benefit of using private IPv4 addressing?",
+    "image": null,
+    "options": [
+      "to provide reliable connectivity between like devices",
+      "to enable secure connectivity over the Internet",
+      "to shield internal network devices from external access",
+      "to be routable over an external network"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q052",
+    "type": "mcq",
+    "question": "Which QoS feature drops traffic that exceeds the committed access rate?",
+    "image": null,
+    "options": [
+      "weighted fair queuing",
+      "FIFO",
+      "shaping",
+      "policing"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed (crossed the maximum configured rate), the excess traffic is generally dropped or remarked."
+  },
+  {
+    "id": "p11_q053",
+    "type": "mcq",
+    "question": "Two switches have been implemented and all interfaces are at the default configuration level. A trunk link must be implemented between two switches with these requirements:\n+ using an industry-standard trunking protocol\n+ permitting VLANs 1-10 and denying other VLANs\n\nHow must the interconnecting ports be configured?",
+    "image": null,
+    "options": [
+      "switchport mode trunk\nswitchport trunk allowed vlans 1-10\nswitchport trunk native vlan 11",
+      "switchport mode trunk\nswitchport trunk encapsulation dot1q\nswitchport trunk allowed vlans 1-10",
+      "switchport mode dynamic desirable\nchannel-group 1 mode desirable\nswitchport trunk encapsulation isl\nswitchport trunk allowed vlan except 11-4094",
+      "switchport mode dynamic\nchannel-protocol lacp\nswitchport trunk allowed vlans 1-10"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "\"Using an industry-standard trunking protocol\" so we have to use 802.1Q, not ISL."
+  },
+  {
+    "id": "p11_q054",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA network engineer is configuring a WLAN to connect with the 172.16.10.0/24 network on VLAN 20. The engineer wants to limit the number of devices that connect to the WLAN on the USERWL SSID to 125. Which configuration must the engineer perform on the WLC?",
+    "image": "p11_q054.png",
+    "options": [
+      "In the WLAN configuration, set the Maximum Allowed Clients value to 125.",
+      "In the Advanced configuration, set the DTIM value to 125.",
+      "In the Controller IPv6 configuration, set the Throttle value to 125.",
+      "In the Management Software activation configuration, set the Clients value to 125."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "In the example below, we can limit the number of clients that can access in a WLAN to 50 with the \"Maximum Allowed Clients\" field.\n\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/4400-series-wireless-lan-controllers/113303-restrict-wlan-clients-00.html\n\nNote: DTIM stands for Delivery traffic indication map or message. It is basically an additional message added after the normal beacon broadcast by your router or access point."
+  },
+  {
+    "id": "p11_q055",
+    "type": "mcq",
+    "question": "Why would a network administrator choose to implement automation in a network environment?",
+    "image": null,
+    "options": [
+      "to centralize device information storage",
+      "to simplify the process of maintaining a consistent configuration state across all devices",
+      "to deploy the management plane separately from the rest of the network",
+      "to implement centralized user account management"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q056",
+    "type": "mcq",
+    "question": "When deploying a new network that includes both Cisco and third-party network devices, which redundancy protocol avoids the interruption of network traffic if the default gateway router fails?",
+    "image": null,
+    "options": [
+      "FHRP",
+      "VRRP",
+      "HSRP",
+      "GLBP"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Only VRRP is an open standard protocol."
+  }
+];
+
+var BATCH_F = [
+  {
+    "id": "p10_q065",
+    "type": "mcq",
+    "question": "Which function forwards frames to ports that have a matching destination MAC address?",
+    "image": null,
+    "options": [
+      "frame pushing",
+      "frame filtering",
+      "frame flooding",
+      "frame switching"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q066",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n\n+ Allow all PCs to communicate with each other at Layer 3.\n+ Configure untagged traffic to use VLAN 5.\n+ Disable VLAN 1 from being used.\n\nWhich configuration set meets these requirements?",
+    "image": "p10_q066.png",
+    "options": [
+      "Option A:\nSW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\n\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108\n\nSW2#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 7\n\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108",
+      "Option B:\nSW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\n\ninterface Gi0/2\nswitchport mode access\nswitchport trunk allowed vlan 7,9,108\n\nSW2#\ninterface Gi0/1\nswitchport mode access\nno switchport access vlan 1\nswitchport access vlan 7\n\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108\nswitchport trunk native vlan 5",
+      "Option C:\nSW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\n\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\n\nSW2#\ninterface Gi0/1\nswitchport mode access\nswitchport access vlan 7\n\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108",
+      "Option D:\nSW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\n\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\n\nSW2#\ninterface Gi0/1\nswitchport mode access\nswitchport access vlan 7\n\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "This question requires \"Configure untagged traffic to use VLAN 5\" so we must use the command \"switchport trunk native vlan 5\" on both Gi0/1 of Sw1 and Gi0/7 of Sw2 -> Only Option B and Option D are correct.\n\nIn order to allow all PCs to communicate with each other at Layer 3, interface Gi0/2 of SW1 must be configured as trunk, not access mode -> Only Option D is correct."
+  },
+  {
+    "id": "p10_q067",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nSW1#show ip interface brief\nInterface          IP-Address    OK? Method Status Protocol\nFastEthernet0/1     unassigned    YES manual down    down\n\nSW1#show interface fa0/1 status\nPort     Name  Status       Vlan    Duplex   Speed  Type\nFa0/1          notconnect   1       a-full   a-100  10/100BaseTX\n\nWhat is the cause of the issue?",
+    "image": null,
+    "options": [
+      "STP",
+      "shutdown command",
+      "port security",
+      "wrong cable type"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The \"Status\" of fa0/1 is \"notconnect\" so port security is not the issue or it would show the status of \"err-disabled\".\n\n\"Shutdown\" command is also not the issue as it would show \"Administratively down\" in the \"Status\" field of the \"show ip interface brief\" command.\n\nWith STP, even if the port is in \"Block\" (BLK) status but it is still in \"up/up\" state with the \"show ip interface brief\" command.\n\nWith wrong cable type, the port is in \"down/down\" state, same as there is no connected cable to the port."
+  },
+  {
+    "id": "p10_q068",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit.\n\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n    209.165.200.0/27 is subnetted, 1 subnets\nB      209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n    209.165.201.0/27 is subnetted, 1 subnets\nB      209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n    209.165.202.0/27 is subnetted, 1 subnets\nB      209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n    10.0.0.0/8 is variably subnetted, 10 subnets, 4 masks\nC      10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC      10.10.11.0/30 is directly connected, FastEthernet2/0\nC      10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO      10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO      10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:12, GigabitEthernet0/0\nO      10.10.13.144/28 [110/2] via 10.10.10.1, 00:01:57, GigabitEthernet0/0\nO      10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:12, GigabitEthernet0/0\nO      10.10.13.208/29 [110/2] via 10.10.10.1, 00:01:57, GigabitEthernet0/0\nO      10.10.13.252/30 [110/2] via 10.10.10.1, 00:01:57, GigabitEthernet0/0\nS*     0.0.0.0/0 [1/0] via 10.10.11.2\n\nDrag and drop the subnet masks from the left onto the corresponding subnets on the right. Not all subnet masks are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "255.255.248.0"
+      },
+      {
+        "id": "i2",
+        "text": "255.255.255.128"
+      },
+      {
+        "id": "i3",
+        "text": "255.255.255.224"
+      },
+      {
+        "id": "i4",
+        "text": "255.255.255.240"
+      },
+      {
+        "id": "i5",
+        "text": "255.255.255.248"
+      },
+      {
+        "id": "i6",
+        "text": "255.255.255.252"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "10.10.13.0"
+      },
+      {
+        "id": "t2",
+        "text": "10.10.13.128"
+      },
+      {
+        "id": "t3",
+        "text": "10.10.13.160"
+      },
+      {
+        "id": "t4",
+        "text": "10.10.13.252"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i4": "t2",
+      "i5": "t3",
+      "i6": "t4"
+    },
+    "explanation": "10.10.13.0 - 255.255.255.128\n10.10.13.128 - 255.255.255.240\n10.10.13.160 - 255.255.255.248\n10.10.13.252 - 255.255.255.252"
+  },
+  {
+    "id": "p10_q069",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA network engineer must configure the link with these requirements:\n• Consume as few IP addresses as possible.\n• Leave at least two additional useable IP addresses for future growth.\n\nWhich set of configurations must be applied?",
+    "image": "p10_q069.png",
+    "options": [
+      "R1(config-if)#ip address 10.10.10.1 255.255.255.248\nR2(config-if)#ip address 10.10.10.4 255.255.255.248",
+      "R1(config-if)#ip address 10.10.10.1 255.255.255.240\nR2(config-if)#ip address 10.10.10.12 255.255.255.240",
+      "R1(config-if)#ip address 10.10.10.1 255.255.255.252\nR2(config-if)#ip address 10.10.10.2 255.255.255.252",
+      "R1(config-if)#ip address 10.10.10.1 255.255.255.0\nR2(config-if)#ip address 10.10.10.5 255.255.255.0"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q070",
+    "type": "mcq",
+    "question": "What is a function of Layer 3 switches?",
+    "image": null,
+    "options": [
+      "They route traffic between devices in different VLANs.",
+      "They transmit broadcast traffic when operating in Layer 3 mode exclusively.",
+      "They forward Ethernet frames between VLANs using only MAC addresses.",
+      "They move frames between endpoints limited to IP addresses."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q071",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nIPv6 is being implemented within the enterprise. The command ipv6 unicast-routing is configured. Interface Gig0/0 on R1 must be configured to provide a dynamic assignment using the assigned IPv6 block. Which command accomplishes this task?",
+    "image": "p10_q071.png",
+    "options": [
+      "ipv6 address 2001:DB8:FFFF:FCF3::/64 eui-64",
+      "ipv6 address 2001:DB8:FFFF:FCF3::/64 link-local",
+      "ipv6 address 2001:0B8:FFFF:FCF3::1/64",
+      "ipv6 address autoconfig 2001:DB8:FFFF:FCF2::/64"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Configure the IPv6 global unicast address on an interface using the ipv6 address address/prefix-length [eui-64] command."
+  },
+  {
+    "id": "p10_q072",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nR1#show run | include ntp\nntp master 7\nntp server 209.165.200.225\n\nR2#show run | include ntp\nntp server 172.16.0.1\n\nR3#show run | include ntp\nntp master 6\nntp server 172.16.0.1\n\nR4#show run | include ntp\nntp master 7\n\nWhich router or router group are NTP clients?",
+    "image": "p10_q072.png",
+    "options": [
+      "R1, R2, and R3",
+      "R1",
+      "R2 and R3",
+      "R1, R3, and R4"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "To configure the NTP client on a Cisco device we use the ntp server {ip-address} command in global configuration."
+  },
+  {
+    "id": "p10_q073",
+    "type": "mcq",
+    "question": "A network engineer is replacing the switches that belong to a managed-services client with new Cisco Catalyst switches. The new switches will be configured for updated security standards, including replacing Telnet services with encrypted connections and doubling the modulus size from 1024. Which two commands must the engineer configure on the new switches? (Choose two)",
+    "image": null,
+    "options": [
+      "transport input ssh",
+      "transport input all",
+      "crypto key generate rsa general-keys modulus 1024",
+      "crypto key generate rsa usage-keys",
+      "crypto key generate rsa modulus 2048"
+    ],
+    "correctIndexes": [
+      0,
+      4
+    ],
+    "explanation": "The command \"crypto key generate rsa modulus 2048\" generate a 2048 bit RSA key pair (doubling the modulus size from 1024)."
+  },
+  {
+    "id": "p10_q074",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nGateway of last resort is not set\n    10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC       10.1.1.0/30 is directly connected, GigabitEthernet0/0\nL       10.1.1.2/32 is directly connected, GigabitEthernet0/0\nS    192.168.0.0/20 [1/0] via 10.1.1.1\n    192.168.1.0/30 is subnetted, 1 subnets\nS       192.168.1.0/30 [1/0] via 10.1.1.1\n    192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks\nS       192.168.2.0/28 [1/0] via 10.1.1.1\nS       192.168.2.0/29 [1/0] via 10.1.1.1\n\nAn engineer is checking the routing table in the main router to identify the path to a server on the network. Which route does the router use to reach the server at 192.168.2.2?",
+    "image": null,
+    "options": [
+      "S 192.168.2.0/28 [1/0] via 10.1.1.1",
+      "S 192.168.1.0/30 [1/0] via 10.1.1.1",
+      "S 192.168.0.0/20 [1/0] via 10.1.1.1",
+      "S 192.168.2.0/29 [1/0] via 10.1.1.1"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q075",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n{\n    \"myCar\": {\n        \"name\": \"thunder\",\n        \"wheels\": [\"good\", \"good\", \"pressureLow\", \"warning\"],\n        \"gasLight\": false\n    },\n    \"oldCar\": {\n        \"name\": \"sleepy\",\n        \"wheels\": [\"pressureLow\", \"pressureLow\", \"pressureLow\", \"pressureLow\"],\n        \"color\": \"rust\",\n        \"gasLight\": true\n    },\n    \"newCar\": {\n        \"name\": \"lightning\",\n        \"wheels\": [\"pressureLow\", \"good\", \"pressureLow\", \"good\"],\n        \"color\": \"blue\",\n        \"gasLight\": true\n    }\n}\n\nIn which structure does the word \"warning\" directly reside?",
+    "image": null,
+    "options": [
+      "array",
+      "object",
+      "Boolean",
+      "string"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q076",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nR1(config)#ip route 0.0.0.0 0.0.0.0 172.16.20.2\nR1(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.2 20\n\nAfter applying this configuration to router R1, a network engineer is verifying the implementation. If all links are operating normally, and the engineer sends a series of packets from PC1 to PC3, how are the packets routed?",
+    "image": "p10_q076.png",
+    "options": [
+      "They are routed to 172.16.20.2.",
+      "They are distributed sent round robin to interfaces S0/0/0 and S0/0/1.",
+      "They are routed to 192.168.100.2.",
+      "They are routed to 10.0.0.2."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q077",
+    "type": "mcq",
+    "question": "A network administrator plans an update to the Wi-Fi networks in multiple branch offices. Each location is configured with an SSID called \"Office\". The administrator wants every user who connects to the SSID at any location to have the same access level. What must be set the same on each network to meet the requirement?",
+    "image": null,
+    "options": [
+      "radio policy",
+      "security policies",
+      "NAS-ID configuration",
+      "profile name"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "Two identically named SSIDs with the same password will allow your device to connect to either, without having to add any extra networks on your devices. But make sure to configure them with the same security policies.\n\nNote: Four WLAN security policies are available: Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, WLAN Authentication and Privacy Infrastructure (WAPI)"
+  },
+  {
+    "id": "p10_q078",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nWhich command set configures ROUTER-1 to allow Internet access for users on the 192.168.1.0/24 subnet while using 209.165.202.129 for Port Address Translation?",
+    "image": "p10_q078.png",
+    "options": [
+      "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\n\naccess-list 10 permit 192.168.0.0 0.0.0.255\nip nat inside source list 10 pool CCNA overload",
+      "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\n\naccess-list 10 permit 192.168.1.0 255.255.255.0\nip nat inside source list 10 pool CCNA overload",
+      "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\n\naccess-list 10 permit 192.168.0.0 255.255.255.0\nip nat inside source list 10 pool CCNA overload",
+      "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\n\naccess-list 10 permit 192.168.1.0 0.0.0.255\nip nat inside source list 10 pool CCNA overload"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "By providing only one IP address in the pool CCNA, we are sure that IP address will be used for Internet with PAT."
+  },
+  {
+    "id": "p10_q079",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA multivendor network exists and the company is implementing VoIP over the network for the first time. Which configuration is needed to implement the neighbor discovery protocol on the interface and allow it to remain off for the remaining interfaces?",
+    "image": "p10_q079.png",
+    "options": [
+      "SW1(config)#no cdp enable\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#cdp run",
+      "SW1(config)#lldp enable\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
+      "SW1(config)#lldp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp enable",
+      "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "There is no totally correct answer. LLDP is disabled by default so in fact we need one additional command to enable LLDP:\n\nSW1(config)# lldp run\n\nBut this answer is still the best choice as we have to disable neighbor discovery protocol for the remaining interfaces with the \"no cdp run\" command (not \"no cdp enable\")."
+  },
+  {
+    "id": "p10_q080",
+    "type": "mcq",
+    "question": "A network architect is considering whether to implement Cisco DNA Center to deploy devices on a new network. The organization is focused on reducing the time it currently takes to deploy devices in a traditional campus design. For which reason would Cisco DNA Center be more appropriate than traditional management options?",
+    "image": null,
+    "options": [
+      "Cisco DNA Center provides zero-touch provisioning to third-party devices.",
+      "Cisco DNA Center supports deployment with a single pane of glass.",
+      "Cisco DNA Center minimizes the level of syslog output when reporting on Cisco devices.",
+      "Cisco DNA Center reduces the need for analytics on third-party access points and devices."
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "DNA Center can be the \"controller\" or single pane of glass for deploying and managing on-premises Cisco networks including routing, switching, Software Defined Wireless Area Network (SD-WAN), and security devices like Cisco Identity Services Engine (ISE) and Firepower."
+  },
+  {
+    "id": "p10_q081",
+    "type": "mcq",
+    "question": "How do TCP and UDP fit into a query-response model?",
+    "image": null,
+    "options": [
+      "TCP avoids using sequencing, and UDP avoids using acknowledgments.",
+      "TCP uses error detection for packets, and UDP uses error recovery.",
+      "TCP establishes a connection prior to sending data, and UDP sends immediately.",
+      "TCP encourages out-of-order packet delivery, and UDP prevents re-ordering."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "TCP uses sequencing -> Answer A is not correct.\n\nTCP uses error recovery while UDP uses error detection -> Answer B is not correct.\n\nTCP does not encourage out-of-order packet delivery. When TCP packets are received out of order, they are buffered for later delivery to the application program rather than being discarded -> Answer D is not correct."
+  },
+  {
+    "id": "p10_q082",
+    "type": "dragdrop",
+    "question": "Drag and drop the RF terms from the left onto the corresponding statements on the right.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "absorption"
+      },
+      {
+        "id": "i2",
+        "text": "receiver sensitivity"
+      },
+      {
+        "id": "i3",
+        "text": "noise floor"
+      },
+      {
+        "id": "i4",
+        "text": "signal-to-noise ratio"
+      },
+      {
+        "id": "i5",
+        "text": "reflection"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "measure of the minimum power required to decode a radio signal without excessive errors"
+      },
+      {
+        "id": "t2",
+        "text": "deviation from the propagation path that occurs when a signal encounters an obstacle"
+      },
+      {
+        "id": "t3",
+        "text": "reduction of energy in a signal as it travels away from the access point and encounters free space or obstacles"
+      },
+      {
+        "id": "t4",
+        "text": "measure of the total unwanted signals at the receiver"
+      },
+      {
+        "id": "t5",
+        "text": "relative power of the desired radio signal to unwanted signals at the receiver"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i5": "t2",
+      "i1": "t3",
+      "i3": "t4",
+      "i4": "t5"
+    },
+    "explanation": "The noise floor defines the amplitude of the sum of all noise sources and other unwanted signals within a system.\n\nSound absorption is the measure of the amount of energy removed from the sound wave as the wave passes through a given thickness of material."
+  },
+  {
+    "id": "p10_q083",
+    "type": "mcq",
+    "question": "Which interface type enables an application running on a client to send data over an IP network to a server?",
+    "image": null,
+    "options": [
+      "southbound interface",
+      "application programming interface",
+      "northbound interface",
+      "Representational State Transfer application programming interface"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "In this question the answer \"application programming interface\" is better than the choice \"Representational State Transfer application programming interface\" as the latter is used for web services (HTTP/HTTPS) only.\n\nNote: REpresentational State Transfer (REST) requires that a client make a request to the server in order to retrieve or modify data on the server. A request generally consists of:\n+ an HTTP verb, which defines what kind of operation to perform\n+ a header, which allows the client to pass along information about the request\n+ a path to a resource\n+ an optional message body containing data"
+  },
+  {
+    "id": "p10_q084",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\naccess-list 10 permit 10.0.0.0 0.0.0.255\ninterface Serial0\nip access-list 10 in\n\nA network administrator must permit traffic from the 10.10.0.0/24 subnet to the WAN on interface Serial0. What is the effect of the configuration as the administrator applies the command?",
+    "image": null,
+    "options": [
+      "The sourced traffic from IP range 10.0.0.0 - 10.0.0.255 is allowed on Serial0.",
+      "The permit command fails and returns an error code.",
+      "The router fails to apply the access list to the interface.",
+      "The router accepts all incoming traffic to Serial0 with the last octet of the source IP set to 0."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "The last command is not correct. We must use the \"ip access-group 10 in\" command to apply this ACL to the interface."
+  },
+  {
+    "id": "p10_q085",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n\n    10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC       10.10.8.0/28 is directly connected, GigabitEthernet0/0/2\nC       10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL       10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n    172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS       172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC       172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL       172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS*   0.0.0.0/0 [1/0] via 172.16.2.2\n\nA packet sourced from 10.10.10.1 is destined for 10.10.8.14. What is the subnet mask of the destination route?",
+    "image": null,
+    "options": [
+      "255.255.254.0",
+      "255.255.255.240",
+      "255.255.255.248",
+      "255.255.255.252"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q086",
+    "type": "mcq",
+    "question": "What are two reasons to implement IPv4 private addressing on a network? (Choose two)",
+    "image": null,
+    "options": [
+      "to expand the routing table on the router",
+      "to facilitate renumbering when merging networks",
+      "to enable internal applications to treat the private IPv4 addresses as unique",
+      "to conserve global unique IPv4 addresses",
+      "to provide protection from external denial-of-service attacks"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p10_q087",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA guest WLAN must be created that prompts the client for a username and password on the local web page of the WLC. Which two actions must be performed on the Layer 2 tab before enabling the Authentication option on the Layer 3 tab? (Choose two)",
+    "image": "p10_q087.png",
+    "options": [
+      "Uncheck the MAC Filtering option check box.",
+      "Set the Security Type option to Personal.",
+      "Change the WPA Encryption option from TKIP to CCMP128(AES).",
+      "Set the Layer 2 Security option to None.",
+      "Uncheck the WPA Policy option check box, and check the WPA2 Policy option check box."
+    ],
+    "correctIndexes": [
+      0,
+      3
+    ],
+    "explanation": "We want to use Layer 3 authentication so we should disable Layer 2 authentication (by setting it to \"None\").\n\nAlso disable \"MAC Filtering\" as it is not supported with FlexConnect Local Authentication."
+  },
+  {
+    "id": "p10_q088",
+    "type": "mcq",
+    "question": "Which script paradigm does Puppet use?",
+    "image": null,
+    "options": [
+      "manifests and modules",
+      "strings and marionettes",
+      "recipes and cookbooks",
+      "playbooks and roles"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "Puppet Master Components\n\nManifests\nManifest is the most important component in a Puppet Master so we will mention about it first. Manifest is just the file where the all Puppet scripts for configuring Puppet clients are written (in Ruby code). Manifest filenames use \".pp\" (means Puppet policy) extension.\n\nBased on the Facts received from Factor, Master compiles manifests into catalogs, then sends them to the client.\n\nModule\nModule also plays an important part in a Puppet Master. Module is a collection of manifests and other related data files organized in a predefined way to facilitate sharing and reusing. Modules tie manifests, templates, and files into a single unit.\n\nModule = Manifests + Data (Templates, Files)\n\nModules have a specific directory path which is usually \"/etc/puppet/manifests/\". They are useful for organizing our Puppet code, because they allow to split code into multiple manifests. It is considered best practice to use modules to organize all of our Puppet manifests."
+  },
+  {
+    "id": "p10_q089",
+    "type": "mcq",
+    "question": "Which IPsec transport mode encrypts the IP header and the payload?",
+    "image": null,
+    "options": [
+      "pipe",
+      "tunnel",
+      "control",
+      "transport"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "In tunnel mode, the entire original IP packet is encapsulated to become the payload of a new IP packet. Additionally, a new IP header is added on top of the original IP packet.\n\nThe main difference in transport mode is that it retains the original IP header. In other words, payload data transmitted within the original IP packet is protected, but not the IP header."
+  },
+  {
+    "id": "p10_q090",
+    "type": "mcq",
+    "question": "What does WPA3 provide in wireless networking?",
+    "image": null,
+    "options": [
+      "increased security and requirement of a complex configuration",
+      "backward compatibility with WPA and WPA2",
+      "optional Protected Management Frame negotiation",
+      "safeguards against brute force attacks with SAE"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "WPA3 only backwards compatible with WPA2 but not WPA -> Answer B is not correct.\n\nWPA3 increases security but not require a complex configuration -> Answer A is not correct.\n\nSimultaneous Authentication of Equals (SAE): SAE provides a more secure, password-based authentication and key agreement mechanism even when passwords are not following complexity requirements. It protects from brute-force attacks and makes unwanted decrypting of sessions (during or after the session) a lot harder - just knowing the passphrase isn't enough to decrypt the session -> Answer D is correct."
+  },
+  {
+    "id": "p10_q091",
+    "type": "mcq",
+    "question": "Refer to the exhibit. With which metric does router R1 learn the route to host 172.16.0.202?\n\nR1#show ip route | begin gateway\n\nGateway of last resort is 209.165.200.246 to network 0.0.0.0\nS*  0.0.0.0/0 [1/0] via 209.165.200.246, Serial0/1/0\n    172.16.0.0/16 is variably subnetted, 3 subnets, 3 masks\nS      172.16.0.0/24 [1/0] via 207.165.200.250, Serial0/0/0\nO      172.16.0.128/25 [110/32445] via 207.165.200.254, 00:00:33, Serial0/0/1\nD      172.16.0.192/29 [90/3184439] via 207.165.200.254, 00:00:33, Serial0/0/1\n    207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC      207.165.200.248/30 is directly connected, Serial0/0/0\nL      207.165.200.249/32 is directly connected, Serial0/0/0\nC      207.165.200.252/30 is directly connected, Serial0/0/1\nL      207.165.200.253/32 is directly connected, Serial0/0/1",
+    "image": null,
+    "options": [
+      "0",
+      "110",
+      "32445",
+      "3184439"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "Both the line \"O 172.16.0.128/25\" and \"S 172.16.0.0/24\" cover the host 172.16.0.202 but with the \"longest (prefix) match\" rule the router will choose the first route.\n\nNote: Network 172.16.0.192/29 does not cover host 172.16.0.202. For network 172.16.0.192/29:\n\nIncrement: 8\nNetwork address: 172.16.0.192\nBroadcast address: 172.16.0.199"
+  },
+  {
+    "id": "p10_q092",
+    "type": "mcq",
+    "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
+    "image": null,
+    "options": [
+      "bursting",
+      "fragmentation",
+      "dropping",
+      "remarking",
+      "buffering"
+    ],
+    "correctIndexes": [
+      2,
+      3
+    ],
+    "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed (crossed the maximum configured rate), the excess traffic is generally dropped or remarked. The result of traffic policing is an output rate that appears as a saw-tooth with crests and troughs. Traffic policing can be applied to inbound and outbound interfaces. Unlike traffic shaping, QoS policing avoids delays due to queuing. Policing is configured in bytes.\n\nQoS Traffic Shaping do not support Marking or Remarking again. This is done only with Traffic Policing.\n\nNote: In policing, remarking the packets that exceed the CIR is an alternative to simply dropping them."
+  },
+  {
+    "id": "p10_q093",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 6 subnets, 5 masks\nS      10.0.0.0/8 is directly connected, GigabitEthernet0/0\nC      10.1.1.0/24 is directly connected, GigabitEthernet0/0\nL      10.1.1.1/32 is directly connected, GigabitEthernet0/0\nS      10.10.0.0/22 is directly connected, GigabitEthernet0/0\nS      10.10.10.0/28 is directly connected, GigabitEthernet0/0\nS      10.10.10.1/32 is directly connected, GigabitEthernet0/0\nS*  0.0.0.0/0 is directly connected, GigabitEthernet0/0\n\nWhich IP route command created the best path for a packet destined for 10.10.10.3?",
+    "image": null,
+    "options": [
+      "ip route 10.0.0.0 255.0.0.0 g0/0",
+      "ip route 10.10.10.1 255.255.255.255 g0/0",
+      "ip route 10.10.10.0 255.255.255.240 g0/0",
+      "ip route 10.10.0.0 255.255.252.0 g0/0"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "The static routes here were configured as \"directly connected static routes\" (only exit interfaces were configured, not the next-hop IP address) so we see the line \"is directly connected\".\n\nAll four answers of this question were configured and generated the output as shown in the exhibit. This question asks which command created the best path for packet destined to 10.10.10.3 so the correct one is answer C."
+  },
+  {
+    "id": "p10_q094",
+    "type": "mcq",
+    "question": "A WLC sends alarms about a rogue AP, and the network administrator verifies that the alarms are caused by a legitimate autonomous AP. How must the alarms be stopped for the MAC address of the AP?",
+    "image": null,
+    "options": [
+      "Place the AP into manual containment.",
+      "Remove the AP from WLC management.",
+      "Manually remove the AP from Pending state.",
+      "Set the AP Class Type to Friendly."
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "If a rogue AP is classified as friendly, it means that the rogue AP exists in the vicinity, is a known AP, and need not be tracked. Therefore, all the rogue clients are either deleted or not tracked if they are associated with the friendly rogue AP."
+  },
+  {
+    "id": "p10_q095",
+    "type": "mcq",
+    "question": "Which security method is used to prevent man-in-the-middle attack?",
+    "image": null,
+    "options": [
+      "authorization",
+      "authentication",
+      "anti-replay",
+      "accounting"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "The anti-replay protocol provides Internet Protocol (IP) packet-level security by making it impossible for a hacker to intercept message packets and insert changed packets into the data stream between a source computer and a destination computer.\n\nHow does the anti-replay protocol work?\nThe answer to preventing replay attacks is encrypting messages and including a key. IPsec provides anti-replay protection against attackers who could potentially intercept, duplicate or resend encrypted packets.\nThe mechanism uses a unidirectional security association to establish a secure connection between the source and destination nodes in the network and check whether a received message is a replayed message. It works by assigning a monotonically increasing sequence number to each encrypted packet and then keeping track of the sequence numbers as packets arrive at the destination."
+  },
+  {
+    "id": "p11_q057",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nA network administrator configures the CPE to provide internet access to the company headquarters. Traffic must be load-balanced via ISP1 and ISP2 to ensure redundancy. Which two command sets must be configured on the CPE router? (Choose two)",
+    "image": "p11_q057.png",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1 2",
+      "ip route 0.0.0.0 128.0.0.0 198.51.100.1\nip route 128.0.0.0 128.0.0.0 203.0.113.1\nip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1",
+      "ip route 0.0.0.0 128.0.0.0 198.51.100.1\nip route 128.0.0.0 128.0.0.0 203.0.113.1",
+      "ip route 0.0.0.0 0.0.0.0 198.51.100.1 255\nip route 0.0.0.0 0.0.0.0 203.0.113.1 255\nip route 128.0.0.0 128.0.0.0 203.0.113.1",
+      "ip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "explanation": "Answer A is not correct as it uses floating static route with an AD of 2 for the second static route so traffic cannot be load-balancing.\n\nAn administrative distance of 255 is considered unreachable, and static routes with an administrative distance of 255 are never entered into the routing table -> Answer D is not correct.\n\nNow let's explain more detail about the command \"ip route 128.0.0.0 128.0.0.0 …\". It is same as \"ip route 0.0.0.0 128.0.0.0 …\" command or we can call it \"0.0.0.0/1\" route. Because of the \"longest-prefix match\" rule, it is preferred to the default static \"0.0.0.0/0\" route. So 0.0.0.0/0 route would not be used.\n\nNow we can why answer C is not correct as the route \"ip route 128.0.0.0 128.0.0.0 203.0.113.1\" is always preferred to \"ip route 0.0.0.0 128.0.0.0 198.51.100.1\".\n\nAnswer B is correct as we have two \"0.0.0.0/1\" routes (\"0.0.0.0 128.0.0.0\" and \"128.0.0.0 128.0.0.0\" are totally the same)"
+  },
+  {
+    "id": "p11_q058",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nRouter#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nRouter(config)#hostname R1\nR1(config)#ip domain-name CC-Net.com\nR1(config)#enable secret Passfornewuser\nR1(config)#line vty 0 15\nR1(config-line)#transport input ssh\nR1(config-line)#login local\n```\n\nA network administrator is configuring a router for user access via SSH. The service-password encryption command has been issued. The configuration must meet these requirements:\n\n– Create the username as CCUser.\n– Create the password as NA!2$cc.\n– Encrypt the user password.\n\nWhat must be configured to meet the requirements?",
+    "image": null,
+    "options": [
+      "username CCUser password NA!2$cc\nenable password level 5 NA!2$cc",
+      "username CCUser privilege 15 password NA!2$cc\nenable secret 0 NA!2$cc",
+      "username CCUser secret NA!2$cc",
+      "username CCUser privilege 10 password NA!2$cc"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": "In fact all other answers look good too, but answer C is the best choice as the password of the username is encrypted with highest security level."
+  },
+  {
+    "id": "p11_q059",
+    "type": "dragdrop",
+    "question": "Refer to the exhibit.\n\nAn engineer must configure a static network route between two networks so that host A communicates with host B. Drag and drop the commands from the left onto the routers where they must be configured on the right. Not all commands are used.",
+    "image": "p11_q059.png",
+    "items": [
+      {
+        "id": "i1",
+        "text": "ip route 10.10.13.0 255.255.255.128 10.10.10.1"
+      },
+      {
+        "id": "i2",
+        "text": "ip route 10.10.13.0 255.255.255.128 10.10.10.5"
+      },
+      {
+        "id": "i3",
+        "text": "ip route 10.10.13.10 255.255.255.255 10.10.10.1"
+      },
+      {
+        "id": "i4",
+        "text": "ip route 10.10.14.0 255.255.255.0 10.10.10.2"
+      },
+      {
+        "id": "i5",
+        "text": "ip route 10.10.14.0 255.255.255.0 10.10.10.6"
+      },
+      {
+        "id": "i6",
+        "text": "ip route 10.10.14.10 255.255.255.255 10.10.10.6"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "R1"
+      },
+      {
+        "id": "t2",
+        "text": "R2"
+      },
+      {
+        "id": "t3",
+        "text": "R2"
+      },
+      {
+        "id": "t4",
+        "text": "R3"
+      }
+    ],
+    "correctMapping": {
+      "i1": "t1",
+      "i2": "t2",
+      "i4": "t3",
+      "i5": "t4"
+    },
+    "explanation": "R1:\nip route 10.10.13.0 255.255.255.128 10.10.10.1\n\nR2:\nip route 10.10.13.0 255.255.255.128 10.10.10.5\nip route 10.10.14.0 255.255.255.0 10.10.10.2\n\nR3:\nip route 10.10.14.0 255.255.255.0 10.10.10.6"
+  },
+  {
+    "id": "p11_q060",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nR1# show ip route | begin Gateway\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\nS* 0.0.0.0/0 is directly connected, Serial0/0/1\n     172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks\nC        172.16.2.0/24 is directly connected, GigabitKthernet0/0\nL        172.16.2.2/32 is directly connected, GigabitEthernet0/0\nC        172.16.4.0/21 is directly connected, Serial0/0/1\nL        172.16.8.2/26 is directly connected, Serial0/0/1\n```\n\nWhat is the subnet mask for route 172.16.4.0?",
+    "image": null,
+    "options": [
+      "255.255.255.192",
+      "255.255.248.0",
+      "255.255.254.0",
+      "255.255.240.0"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q061",
+    "type": "mcq",
+    "question": "Which interface or port on the WLC is the default for in-band device administration and communications between the controller and access points?",
+    "image": null,
+    "options": [
+      "virtual interface",
+      "management interface",
+      "console port",
+      "service port"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "The management interface is the default interface for in-band management of the controller and connectivity to enterprise services such as AAA servers. It is also used for communications between the controller and access points, for all CAPWAP or intercontroller mobility messaging and tunneling traffic.\n\nReference: https://www.cisco.com/c/en/us/td/docs/wireless/controller/7-4/configuration/guides/consolidated/b_cg74_CONSOLIDATED/b_cg74_CONSOLIDATED_chapter_010011011.html"
+  },
+  {
+    "id": "p11_q062",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nThe IPv6 address for the LAN segment on router R2 must be configured using the EUI-64 format. Which address must be used?",
+    "image": "p11_q062.png",
+    "options": [
+      "ipv6 address 2001:DB8:D8D2:1009:10A0:ABFF:FECC:1 eui-64",
+      "ipv6 address 2001:DB8:D8D2:1009:12A0:AB34:FFCC:1 eui-64",
+      "ipv6 address 2001:DB8:D8D2:1009:1230:ABFF:FECC:1 eui-64",
+      "ipv6 address 2001:DB8:D8D2:1009:4345:80FF:FF16:7 eui-64"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "On R2 LAN interface we use the command \"ipv6 address 2001:db8:d8d2:1009::/64 eui-64\" to tell the router to assign an IPv6 address for this interface automatically. R2 takes the MAC address of LAN interface 12A0.ABDD.0002 and insert FFFE between these two halves to form a 64-bit address 2001:DB8:D8D2:1009:12A0.ABFF:FEdd:0002 by insert .\n\nWe have to invert the universal/local (U/L) flag (bit 7) in the OUI portion of the address so 12 (in hex) = 0001 0010 (in binary) so after flipping the 7th bit we have 0001 0000 = 10 (in hex). Therefore the EUI-64 IPv6 would be 2001:DB8:D8D2:1009:10A0:ABFF:FECC:1.\n\nNote: There are some document saying that we have to flip bit 7th while some others say we have to change the 7th bit to 1. So we tested with IOSv15.4:\n\nWe see the MAC address of E0/0 is \"aabb……\" (\"a\" in hex = \"1010″) so the 7th bit is 1. When we enable IPv6 on this interface the link-local address changed to \"FE80::A8BB……..\". So \"a\" changed to 8 (\"8\" in hex = 1000″) and we are sure bit 1 changed to 0. But this is just the link-local address so we will try to assign a global unique address:\n\nThe global unique address assigned is \"2001::A8BB……..\" so bit 1 changed to 0 too."
+  },
+  {
+    "id": "p11_q063",
+    "type": "mcq",
+    "question": "A company has each office using wireless access with multiple SSIDs while limiting roaming capabilities, covering different locations on the internal office LAN, guest networks, and BYOD access for employees. Which change must be enabled to improve the customer experience during SSID changes?",
+    "image": null,
+    "options": [
+      "Assisted Roaming Prediction Optimization",
+      "Fast Transition",
+      "Neighbor List Dual Band",
+      "Fast SSID Change"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "\"When you enable Fast SSID Change, the controller allows clients to move between SSIDs. When the client sends a new association request for a different SSID, the client entry in the controller connection table is cleared before the client is added to the new SSID."
+  },
+  {
+    "id": "p11_q064",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nThe EtherChannel is configured with a speed of 1000 and duplex as full on both ends of channel group 1. What is the next step to configure the channel on switch A to respond to but not initiate LACP communication?",
+    "image": "p11_q064.png",
+    "options": [
+      "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode desirable",
+      "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode on",
+      "interface port-channel 1\nchannel-group 1 mode auto",
+      "interface port-channel 1\nchannel-group 1 mode passive"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q065",
+    "type": "mcq",
+    "question": "Which two VPN technologies are recommended by Cisco for multiple branch offices and large-scale deployments? (Choose two)",
+    "image": null,
+    "options": [
+      "IPsec remote access",
+      "site-to-site VPN",
+      "clientless VPN",
+      "GETVPN",
+      "DMVPN"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": "Cisco DMVPN can be deployed in conjunction with Cisco IOS Firewall and Cisco IOS IPS, as well as quality of service (QoS), IP Multicast, split tunneling, and routing-based failover mechanisms. Large-scale, highly available Cisco DMVPN deployments are made possible by load balancing multiple Cisco DMVPN hubs.\n\nReference: https://www.cisco.com/c/en/us/products/collateral/security/dynamic-multipoint-vpn-dmvpn/data_sheet_c78-468520.html\n\nGet VPNs provide large scale, connectionless, tunnel free transmission protection taking advantage of existing routing infrastructure and can be used with MPLS, IP, Frame relay and ATM networks.\n\nReference: https://ipwithease.com/flexvpn-vs-getvpn/\n\nNote:\n\nSite-to-Site VPN is a simple VPN that connects a central site and a remote site, or a hub and spoke VPN that connects a central site with multiple remote sites -> It is not suitable for large-scale deployments.\n\nWith clientless VPN, a tunnel is established from a web browser on the remote user's device to the outside interface of the VPN gateway's SSL component -> It is not suitable for large-scale deployments.\n\nIPSec remote access is used to connect remote-access clients, such as a PC or small office, home office (SOHO) device."
+  },
+  {
+    "id": "p11_q066",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\n{\n    \"Test_Questions\" : [\n            \"Automation\",\n            \"Configuration\",\n    ],\n    \"Test_Exam_Level\" : [\n            \"CCNA\",\n            \"CCNP\",\n    ],\n    \"Test_Response\" : [\n            \"Correct\",\n            \"Incorrect\",\n    ]\n}\n```\n\nHow many arrays are present in the JSON data?",
+    "image": null,
+    "options": [
+      "one",
+      "three",
+      "six",
+      "nine"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "The JSON array is surrounded by square brackets [ ]. In this question there are three square brackets in total."
+  },
+  {
+    "id": "p11_q067",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\n```\n\nAn administrator received a call from a branch office regarding poor application performance hosted at the headquarters. Ethernet 1 is connected between Router1 and the LAN switch. What identifies the issue?",
+    "image": null,
+    "options": [
+      "There is a duplex mismatch.",
+      "The MTU is not set to the default value.",
+      "The link is over utilized.",
+      "The QoS policy is dropping traffic."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "This interface gets high collision (15000 collisions) so one end may be set to \"Half-duplex\"."
+  },
+  {
+    "id": "p11_q068",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nSW1#show etherchannel\n            Channel-group listing:\n            ----------------------\nGroup: 2\n--------\nGroup state = L2\nPorts: 1 Maxports = 8\nPort-channels: 1 Max Portchannels = 1\nProtocol: PAGP\n```\n\nA network engineer updates the existing configuration on interface fastethernet1/1 switch SW1. It must establish an EtherChannel by using the same group designation with another vendor switch. Which configuration must be performed to complete the process?",
+    "image": null,
+    "options": [
+      "interface port-channel 2\nchannel-group 2 mode desirable",
+      "interface fastethernet 1/1\nchannel-group 2 mode on",
+      "interface port-channel 2\nchannel-group 2 mode auto",
+      "interface fastethernet 1/1\nchannel-group 2 mode active"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "PaGP is Cisco proprietary protocol so we must change to LACP which is an open standard."
+  },
+  {
+    "id": "p11_q069",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nLocal access for R4 must be established and these requirements must be met:\n– Only Telnet access is allowed.\n– The enable password must be stored securely.\n– The enable password must be applied in plain text\n– Full access to R4 must be permitted upon successful login\n\nWhich configuration script meets the requirements?",
+    "image": "p11_q069.png",
+    "options": [
+      "Option A:\n!\nconf t\n!\nusername test1 password testpass1\nenable password level 1 7 Test123\n!\nline vty 0 15\naccounting exec default\ntransport input all",
+      "Option B:\nconf t\n!\nusername test1 password testpass1\nenable secret level 15 0 Test123\n!\nline vty 0 15\nlogin local\ntransport input telnet",
+      "Option C:\n!\nconfig t\n!\nusername test1 password testpass1\nenable secret level 1 0 Test123\n!\nline vty 0 15\nlogin authentication\npassword Test123\ntransport input telnet",
+      "Option D:\n!\nconfig t\n!\nusername test1 password testpass1\nenable password level 15 0 Test123\n!\nline vty 0 15\npassword Test123\ntransport input all"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "\"Only Telnet access is allowed\" -> Only Option B and Option C are correct.\n\nIn fact the \"login authentication\" command in Option C can only be used when AAA is enabled (with the command \"aaa new-model\"). And we cannot use the \"login authentication\" without specifying an authentication list:\n\nRouter(config-line)#login authentication ?\n  WORD    Use an authentication list with this name.\n  default   Use the default authentication list.\n\nRouter(config-line)#login authentication\n% Incomplete command.\n\nTherefore only option B is left. But in fact option B is not totally correct as \"Full access to R4 must be permitted upon successful login\" but in option B we have to type the secret password to have full access to R4 after logging in (with username \"test1\" and password \"testpass1\")."
+  },
+  {
+    "id": "p11_q070",
+    "type": "mcq",
+    "question": "A packet from a company's branch office is destined to host 172.31.0.1 at headquarters. The sending router has three possible matches in its routing table for the packet: prefixes 172.31.0.0/16, 172.31.0.0/24, and 172.31.0.0/25. How does the router handle the packet?",
+    "image": null,
+    "options": [
+      "It sends the traffic via the default gateway 0.0.0.0/0.",
+      "It sends the traffic via prefix 172.31.0.0/16.",
+      "It sends the traffic via prefix 172.31.0.0/25.",
+      "It sends the traffic via prefix 172.31.0.0/24."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q071",
+    "type": "mcq",
+    "question": "Which action must be taken when password protection is implemented?",
+    "image": null,
+    "options": [
+      "Store passwords as contacts on a mobile device with single-factor authentication.",
+      "Share passwords with senior IT management to ensure proper oversight.",
+      "Include special characters and make passwords as long as allowed.",
+      "Use less than eight characters in length when passwords are complex."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q072",
+    "type": "mcq",
+    "question": "When an access point is seeking to join a wireless LAN controller, which message is sent to the AP-Manager interface?",
+    "image": null,
+    "options": [
+      "DHCP request",
+      "DHCP discover",
+      "discovery response",
+      "discovery request"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "The LAPs always connect to the management interface address of the controller first with a discovery request. The controller then tells the LAP the Layer 3 AP-manager interface (which can also be the management by default) IP address so the LAP can send a join request to the AP-manager interface next.\n\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/5500-series-wireless-controllers/119286-lap-notjoin-wlc-tshoot.html"
+  },
+  {
+    "id": "p11_q073",
+    "type": "mcq",
+    "question": "What is a reason why an administrator would choose to implement an automated network management approach?",
+    "image": null,
+    "options": [
+      "Reduce inconsistencies in the network configuration.",
+      "Increase recurrent management costs.",
+      "Enable \"box by box\" configuration and deployment.",
+      "Decipher simple password policies."
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q074",
+    "type": "mcq",
+    "question": "Which device separates networks by security domains?",
+    "image": null,
+    "options": [
+      "access point",
+      "firewall",
+      "intrusion protection system",
+      "wireless controller"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q075",
+    "type": "mcq",
+    "question": "Which two characteristics are representative of virtual machines (VMs)? (Choose two)",
+    "image": null,
+    "options": [
+      "A VM on a hypervisor is automatically interconnected to other VMs.",
+      "A VM on an individual hypervisor shares resources equally.",
+      "Each VMs operating system depends on its hypervisor.",
+      "Each VM runs independently of any other VM in the same hypervisor.",
+      "multiple VMs operate on the same underlying hardware."
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q076",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nR7#\n172.22.0.0/24 is subnetted, 1 subnets\nD 172.22.49.0 [90/284160] via 10.81.22.2, 04:55:53, FastEthernet0/0\n10.0.0.0/8 is variably subnetted, 26 subnets, 5 masks\nD EX 10.10.10.10/32 [170/35840] via 10.3.5.1, 04:55:55, FastEthernet0/1\nD 10.9.1.0/30 [90/33280] via 10.3.5.1, 04:55:56, FastEthernet0/1\nB 10.111.99.0/24 [20/0] via 10.6.25.2, 03:58:52\nD 10.14.3.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nC 10.9.4.0/30 is directly connected, FastEthernet1/0\nB 10.100.100.0/24 [20/0] via 10.6.25.2, 03:58:53\nD 10.0.1.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nD EX 10.10.10.70/32 [170/1612801 via 10.3.5.1, 04:55:57, FastEthernet0/1\nB 10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0\nD EX 10.90.1.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD EX 10.90.2.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD 10.90.3.0/29 [90/161280] via 10.3.5.1, 02:46:03, FastEthernet0/1\nD EX 10.90.3.0/24 [170/158720] via 10.3.5.1, 02:46:04, FastEthernet0/1\nD EX 10.90.4.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nD EX 10.90.5.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.6.25.2, 02:22:38\n```\n\nAccording to the output, which parameter set is validated using the routing table of R7?",
+    "image": null,
+    "options": [
+      "R7 is missing a gateway of last resort.\nR7 is receiving routes that were redistributed from BGP\nR7 will forward traffic destined to 10.90.8.0/24.",
+      "R7 is missing a gateway of last resort.\nR7 is receiving routes that were redistributed in EIGRP\nR7 will forward traffic destined to 10.90.8.0/24.",
+      "R7 has a gateway of last resort available.\nR7 is receiving routes that were redistributed from BGP\nR7 will drop traffic destined to 10.90.8.0/24",
+      "R7 has a gateway of last resort available.\nR7 is receiving routes that were redistributed in EIGRP\nR7 will drop traffic destined to 10.90.8.0/24."
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "explanation": "Traffic destined to 10.90.8.0/24 matches the output line \"10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0\" so it will be forwarded to Null0 interface, which means it will be dropped.\n\nFrom \"D EX\" letter, we learn that R7 is receiving routes that were redistributed in EIGRP (another routing protocol was redistributed into EIGRP)."
+  },
+  {
+    "id": "p11_q077",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\n```\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC     10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL     10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS     172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC     172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL     172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\n```\n\nA packet sourced from 10.10.10.1 is destined for 172.16.3.254. What is the subnet mask of the destination route?",
+    "image": null,
+    "options": [
+      "0.0.0.0",
+      "255.255.254.0",
+      "255.255.255.0",
+      "255.255.255.255"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "The packet destined for 172.16.3.254 will be routed via the entry \"C 172.16.2.0/23 …\" as this subnet ranges from 172.16.2.0 to 172.16.3.255."
+  },
+  {
+    "id": "p11_q078",
+    "type": "mcq",
+    "question": "Refer to the exhibit.\n\nWhat is the operating mode and role of a backup port on a shared LAN segment in Rapid PVST+?",
+    "image": "p11_q078.png",
+    "options": [
+      "blocking mode and provides an alternate path toward the designated bridge",
+      "listening mode and provides an alternate path toward the root bridge",
+      "forwarding mode and provides the lowest-cost path to the root bridge for each VLAN",
+      "learning mode and provides the shortest path toward the root bridge handling traffic away from the LAN"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": "An alternate port and a backup port are in a blocking state (or discarding state) to prevent loops.\n\nReference: https://www.ciscopress.com/articles/article.asp?p=2832407&seqNum=4"
+  },
+  {
+    "id": "p11_q079",
+    "type": "mcq",
+    "question": "Which DSCP per-hop forwarding behavior is divided into subclasses based on drop probability?",
+    "image": null,
+    "options": [
+      "class-selector",
+      "assured",
+      "expedited",
+      "default"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "explanation": "The term Per-Hop Behaviour (PHB) refers to how a node will treat traffic having the same Differentiated Services Code Point (DSCP) values.\n\nAssured Forwarding has four standard classes from AF1 to AF4. It is important to note that the class number does not determine priority. Each class is treated independently and placed into different queues.\n\nEach AF class has its own IP Precedence with three drop probabilities, low, medium, and high.\n\nReference: https://www.routeprotocol.com/dscp-per-hop-behaviour-assured-forwarding/"
+  },
+  {
+    "id": "p11_q080",
+    "type": "mcq",
+    "question": "What occurs when a switch receives a frame that has a destination that is an unknown MAC address?",
+    "image": null,
+    "options": [
+      "The frame is flooded to all interfaces in the VLAN to which the frame belongs.",
+      "The frame is flooded to all interfaces in the switch.",
+      "The frame is discarded",
+      "The MAC address table of the switch is flushed"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "explanation": ""
+  },
+  {
+    "id": "p11_q081",
+    "type": "dragdrop",
+    "question": "Drag and drop the facts about wireless architectures from the left onto the types of access point on the right. Not all options are used.",
+    "image": null,
+    "items": [
+      {
+        "id": "i1",
+        "text": "configured and managed by a WLC"
+      },
+      {
+        "id": "i2",
+        "text": "managed from a Web-based dashboard"
+      },
+      {
+        "id": "i3",
+        "text": "accessible for management via Telnet, SSH, or a Web GUI"
+      },
+      {
+        "id": "i4",
+        "text": "supports different operational modes"
+      },
+      {
+        "id": "i5",
+        "text": "supports automatic deployment"
+      }
+    ],
+    "targets": [
+      {
+        "id": "t1",
+        "text": "Cloud-Based Access Point"
+      },
+      {
+        "id": "t2",
+        "text": "Cloud-Based Access Point"
+      },
+      {
+        "id": "t3",
+        "text": "Lightweight Access Point"
+      },
+      {
+        "id": "t4",
+        "text": "Lightweight Access Point"
+      }
+    ],
+    "correctMapping": {
+      "i2": "t1",
+      "i5": "t2",
+      "i1": "t3",
+      "i4": "t4"
+    },
+    "explanation": "Cloud-Based Access Point:\n+ managed from a Web-based dashboard\n+ supports automatic deployment\n\nLightweight Access Point:\n+ configured and managed by a WLC\n+ supports different operational modes"
+  },
+  {
+    "id": "p11_q082",
+    "type": "mcq",
+    "question": "SIP-based Call Admission Control must be configured in the Cisco WLC GUI. SIP call-snooping ports are configured. Which two actions must be completed next? (Choose two)",
+    "image": null,
+    "options": [
+      "Set the QoS level to silver or greater for voice traffic",
+      "Enable Media Session Snooping on the WLAN",
+      "Configure two different QoS roles for data and voice traffic",
+      "Set the QoS level to platinum for voice traffic",
+      "Enable traffic shaping for the LAN interface of the WLC"
+    ],
+    "correctIndexes": [
+      1,
+      3
+    ],
+    "explanation": "Configuring SIP-Based CAC (CLI)\nProcedure\nStep 1 Set the voice to the platinum QoS level\nStep 2 Enable the call-snooping feature for a particular WLAN\n…\n\nReference: https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-10/config-guide/b_cg810/wireless_quality_of_service.html"
   }
 ];

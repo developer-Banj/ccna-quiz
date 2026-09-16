@@ -26,11 +26,12 @@ No environment variables or build step are required — `data.js` is bundled dir
 ## Project structure
 
 - `index.html` / `styles.css` / `app.js` — the app
-- `data.js` — `BATCH_A`, `BATCH_B`, and `BATCH_C` question arrays, extracted from the source PDFs
+- `data.js` — `BATCH_A` through `BATCH_F` question arrays, extracted from the source PDFs
 - `assets/` — cropped exhibit images (topology diagrams, screenshots) referenced by question `image` fields
-- `Part_9_.pdf`, `Part_12.pdf` — original source material the questions were extracted from
-- `build_data.py` — builds `BATCH_A`/`BATCH_B` from extracted MCQ chunks
-- `build_batch_c.py` — builds `BATCH_C` from the leftover MCQ/drag-and-drop chunks (`BATCH_C` is entirely drag-and-drop questions, since every leftover MCQ question after A/B had already been used)
+- `Part_9_.pdf`, `Part_12.pdf`, `Part 10.pdf`, `Part 11.pdf` — original source material the questions were extracted from
+- `build_data.py` — builds `BATCH_A`/`BATCH_B` from Part_9_.pdf/Part_12.pdf
+- `build_batch_c.py` — builds `BATCH_C` from the leftover MCQ/drag-and-drop questions in Part_9_.pdf/Part_12.pdf (`BATCH_C` is entirely drag-and-drop, since every leftover MCQ question after A/B had already been used)
+- `build_batch_def.py` — builds `BATCH_D`/`BATCH_E`/`BATCH_F` from Part 10.pdf/Part 11.pdf, split roughly evenly across the three batches
 
 ## Question types
 

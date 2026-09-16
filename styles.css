@@ -632,6 +632,23 @@ button {
 }
 .review-item .q-image-wrap { max-width: 480px; }
 
+.review-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1rem;
+}
+.review-badge--right { background: var(--good-soft); color: var(--good); }
+.review-badge--wrong { background: var(--bad-soft); color: var(--bad); }
+
 .review-answer-row {
   display: flex;
   gap: 0.5rem;
